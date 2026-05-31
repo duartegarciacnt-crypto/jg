@@ -856,7 +856,90 @@
 
             <!-- TECHNICS SECTION -->
             <div id="technics" class="sub-tab-content">
-                <h3 style="margin-top: 0; color: #2c3e50;">Análise de Competição - Bases para Technics</h3>
+                <!-- Sub-tabs for Technics -->
+                <div class="sub-tabs">
+                    <button class="sub-tab-button active" onclick="switchSubTab('technics-compatibility', this)">Compatibilidade</button>
+                    <button class="sub-tab-button" onclick="switchSubTab('technics-market', this)">Análise de Mercado</button>
+                    <button class="sub-tab-button" onclick="switchSubTab('technics-competition', this)">Competição</button>
+                </div>
+
+                <!-- Technics Compatibilidade -->
+                <div id="technics-compatibility" class="sub-tab-content active">
+                    <h3 style="margin-top: 0; color: #2c3e50;">Modelos Technics - Compatibilidade de Bases</h3>
+                    <p style="color: #666;">Turntables Technics usam plinths fixos modelo-específico. Não são compatíveis com outras marcas.</p>
+
+                    <h4 style="margin-top: 20px; color: #2c3e50;">Série SL-1200 (Direct-Drive) - 1972+</h4>
+                    <table style="margin-top: 12px;">
+                        <thead><tr><th>Modelo</th><th>Características</th><th>Era</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>SL-1200 (Original)</strong></td><td>Platter padrão, 33/45/78 RPM</td><td>1972</td></tr>
+                            <tr><td><strong>SL-1200MK2-MK6</strong></td><td>Variantes melhoradas, most popular</td><td>1979-2010</td></tr>
+                            <tr><td><strong>SL-1200G/GR</strong></td><td>Moderno, platter 3.6kg, direct-drive premium</td><td>2000+</td></tr>
+                            <tr><td><strong>SL-1210 Series</strong></td><td>Variant, similar ao 1200</td><td>Various</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h4 style="margin-top: 20px; color: #2c3e50;">Modelos Premium/Home</h4>
+                    <table style="margin-top: 12px;">
+                        <thead><tr><th>Modelo</th><th>Características</th><th>Plinth</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>SL-1000/SL-1000R</strong></td><td>Flagship profissional, premium motor</td><td>Alumínio premium</td></tr>
+                            <tr><td><strong>SL-1500C/CS</strong></td><td>Modern audiophile, coreless motor, Ortofon cartridge</td><td>Alumínio</td></tr>
+                            <tr><td><strong>SL-50C</strong></td><td>Contemporary mid-tier</td><td>Standard</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div style="background-color: #fff3e0; padding: 12px; border-left: 4px solid #FF9800; border-radius: 4px; margin-top: 20px;">
+                        <strong>⚠️ Aviso de Compatibilidade:</strong>
+                        <p style="margin-top: 6px; color: #555; font-size: 13px;">Cada modelo Technics usa plinth integrado e fixo. Os plinths são específicos do modelo e NÃO podem ser trocados entre modelos diferentes. SL-1200 não é compatível com SL-1500 ou SL-1000.</p>
+                    </div>
+                </div>
+
+                <!-- Technics Market Analysis -->
+                <div id="technics-market" class="sub-tab-content">
+                    <h3 style="margin-top: 0; color: #2c3e50;">Análise de Mercado - Top 20 Modelos Technics</h3>
+                    <p style="color: #666; font-size: 13px;">Preços do mercado secundário (eBay, Reverb) - Maio 2026</p>
+
+                    <table style="margin-top: 15px; font-size: 12px;">
+                        <thead>
+                            <tr><th>#</th><th>Modelo</th><th>Faixa Preço (USD)</th><th>Condição</th><th>Notas</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td><strong>SL-1000/1000R</strong></td><td>$15,000-$22,000</td><td>Novo</td><td>Flagship, alumínio premium</td></tr>
+                            <tr><td>2</td><td><strong>SL-1500C</strong></td><td>$2,500-$3,200</td><td>Novo</td><td>Moderno, motor coreless, Ortofon</td></tr>
+                            <tr><td>3</td><td><strong>SL-1500CS</strong></td><td>$2,800-$3,500</td><td>Novo</td><td>Com phono integrado</td></tr>
+                            <tr><td>4</td><td><strong>SL-1200G</strong></td><td>$2,200-$2,800</td><td>Novo</td><td>Standard DJ/audiófilo</td></tr>
+                            <tr><td>5</td><td><strong>SL-1200GR</strong></td><td>$1,800-$2,400</td><td>Novo</td><td>Variante profissional</td></tr>
+                            <tr><td>6</td><td><strong>SL-1200MK2</strong></td><td>$900-$1,400</td><td>Excelente</td><td>Variante mais popular</td></tr>
+                            <tr><td>7</td><td><strong>SL-1200MK5G</strong></td><td>$1,200-$1,800</td><td>Excelente</td><td>Pitch digital, raro</td></tr>
+                            <tr><td>8</td><td><strong>SL-1200MK6</strong></td><td>$1,100-$1,600</td><td>Excelente</td><td>Último analógico</td></tr>
+                            <tr><td>9</td><td><strong>SL-1200MK5</strong></td><td>$800-$1,200</td><td>Excelente</td><td>Grande produção</td></tr>
+                            <tr><td>10</td><td><strong>SL-1200MK3/MK3D</strong></td><td>$700-$1,100</td><td>Bom</td><td>Apenas Japão</td></tr>
+                            <tr><td>11</td><td><strong>SL-1200MK4</strong></td><td>$1,200-$1,700</td><td>Excelente</td><td>Japão-only, arm titânio</td></tr>
+                            <tr><td>12</td><td><strong>SL-1200 (Original)</strong></td><td>$1,500-$2,200</td><td>Excelente</td><td>Colecionável</td></tr>
+                            <tr><td>13</td><td><strong>SL-1210</strong></td><td>$800-$1,300</td><td>Excelente</td><td>Variante MK2</td></tr>
+                            <tr><td>14</td><td><strong>SL-1100</strong></td><td>$600-$1,000</td><td>Bom</td><td>Modelo intermédio</td></tr>
+                            <tr><td>15</td><td><strong>SL-50C</strong></td><td>$1,200-$1,600</td><td>Novo</td><td>Moderno mid-tier</td></tr>
+                            <tr><td>16</td><td><strong>SL-1200MK2 (restaurado)</strong></td><td>$500-$900</td><td>Bom</td><td>Precisa serviço</td></tr>
+                            <tr><td>17</td><td><strong>SL-1200 (partes)</strong></td><td>$200-$500</td><td>Partes</td><td>Para restauração</td></tr>
+                            <tr><td>18</td><td><strong>SL-1000 (partes)</strong></td><td>$2,000-$4,500</td><td>Restauração</td><td>Projeto high-end</td></tr>
+                            <tr><td>19</td><td><strong>SL-1500C (open-box)</strong></td><td>$1,800-$2,400</td><td>Como Novo</td><td>Devoluções retail</td></tr>
+                            <tr><td>20</td><td><strong>SL-1210 (variantes)</strong></td><td>$700-$1,100</td><td>Bom</td><td>Épocas variadas</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h4 style="margin-top: 20px; color: #2c3e50;">Mercado Trends</h4>
+                    <ul style="margin-left: 20px; margin-top: 12px; font-size: 13px;">
+                        <li><strong>SL-1200MK2:</strong> Mais líquido no mercado secundário ($900-$1,400)</li>
+                        <li><strong>Apreciação anual:</strong> MK5G e MK6 aumentam 5-15% anualmente</li>
+                        <li><strong>SL-1200/1210GME Master Edition:</strong> Projetada para apreciar 5x em 10 anos</li>
+                        <li><strong>Mercado de partes:</strong> Braços originais ($400-$600), plinths ($300-$500)</li>
+                    </ul>
+                </div>
+
+                <!-- Technics Competition -->
+                <div id="technics-competition" class="sub-tab-content">
+                    <h3 style="margin-top: 0; color: #2c3e50;">Análise de Competição - Bases para Technics</h3>
                 <p style="color: #666;">Competidores especializados em plinths de madeira para turntables Technics SL-1200, SL-1210 e SL-1500 series.</p>
 
                 <table style="margin-top: 25px; font-size: 13px;">
@@ -937,7 +1020,82 @@
 
             <!-- LENCO SECTION -->
             <div id="lenco" class="sub-tab-content">
-                <h3 style="margin-top: 0; color: #2c3e50;">Análise de Competição - Bases para Lenco</h3>
+                <!-- Sub-tabs for Lenco -->
+                <div class="sub-tabs">
+                    <button class="sub-tab-button active" onclick="switchSubTab('lenco-compatibility', this)">Compatibilidade</button>
+                    <button class="sub-tab-button" onclick="switchSubTab('lenco-market', this)">Análise de Mercado</button>
+                    <button class="sub-tab-button" onclick="switchSubTab('lenco-competition', this)">Competição</button>
+                </div>
+
+                <!-- Lenco Compatibilidade -->
+                <div id="lenco-compatibility" class="sub-tab-content active">
+                    <h3 style="margin-top: 0; color: #2c3e50;">Modelos Lenco - Compatibilidade de Bases</h3>
+                    <p style="color: #666;">Lencos são máquinas suíças robustas com unidade integrada de motor+prato. Plinths são parte do sistema de transmissão e não são intercambiáveis.</p>
+
+                    <h4 style="margin-top: 20px; color: #2c3e50;">Modelos Idler-Drive (Mecânica)</h4>
+                    <table style="margin-top: 12px;">
+                        <thead><tr><th>Modelo</th><th>Características</th><th>Prato</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>L70</strong></td><td>4-speed (16, 33⅓, 45, 78 RPM)</td><td>3kg+ alumínio</td></tr>
+                            <tr><td><strong>L75/L75S</strong></td><td>Modelo primário, design robusto, tonearm Jelco (S)</td><td>3kg+ alumínio</td></tr>
+                            <tr><td><strong>L77</strong></td><td>L70 com tonearm P77</td><td>3kg+ alumínio</td></tr>
+                            <tr><td><strong>L78</strong></td><td>L75 com autostop, 4-speed</td><td>3kg+ alumínio</td></tr>
+                            <tr><td><strong>L84</strong></td><td>Variante documentada limitadamente</td><td>Variável</td></tr>
+                            <tr><td><strong>L85</strong></td><td>Belt-drive (sistema diferente)</td><td>Variável</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div style="background-color: #f1f8e9; padding: 12px; border-left: 4px solid #689F38; border-radius: 4px; margin-top: 20px;">
+                        <strong>Plinth Type:</strong>
+                        <p style="margin-top: 6px; color: #555; font-size: 13px;">Base de alumínio pesado integrada ao sistema de motor idler-wheel de 3.5+ kg. NÃO é compatível com outras marcas. Plinths customizados são populares mas requerem transplante do mecanismo completo.</p>
+                    </div>
+                </div>
+
+                <!-- Lenco Market Analysis -->
+                <div id="lenco-market" class="sub-tab-content">
+                    <h3 style="margin-top: 0; color: #2c3e50;">Análise de Mercado - Top 20 Modelos Lenco</h3>
+                    <p style="color: #666; font-size: 13px;">Preços do mercado secundário - Maio 2026</p>
+
+                    <table style="margin-top: 15px; font-size: 12px;">
+                        <thead>
+                            <tr><th>#</th><th>Modelo</th><th>Faixa Preço (USD)</th><th>Condição</th><th>Notas</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td><strong>L75S (Jelco arm)</strong></td><td>$1,200-$2,000</td><td>Excelente</td><td>Variante rara, tonearm superior</td></tr>
+                            <tr><td>2</td><td><strong>L75 (original, excelente)</strong></td><td>$800-$1,400</td><td>Excelente</td><td>Modelo primário, caixa original +30%</td></tr>
+                            <tr><td>3</td><td><strong>L78 (excelente)</strong></td><td>$700-$1,200</td><td>Excelente</td><td>Com autostop, 4-speed</td></tr>
+                            <tr><td>4</td><td><strong>L70 (excelente)</strong></td><td>$600-$1,000</td><td>Excelente</td><td>Modelo antigo, menos comum</td></tr>
+                            <tr><td>5</td><td><strong>L77 (P77 arm original)</strong></td><td>$650-$1,150</td><td>Excelente</td><td>Variante com tonearm</td></tr>
+                            <tr><td>6</td><td><strong>L75 (documentação original)</strong></td><td>$900-$1,500</td><td>Excelente</td><td>Caixa, manual, acessórios</td></tr>
+                            <tr><td>7</td><td><strong>L85 (belt-drive)</strong></td><td>$500-$900</td><td>Excelente</td><td>Sistema diferente</td></tr>
+                            <tr><td>8</td><td><strong>L75S (bom estado)</strong></td><td>$700-$1,000</td><td>Bom</td><td>Variante superior</td></tr>
+                            <tr><td>9</td><td><strong>L78 (bom estado)</strong></td><td>$550-$850</td><td>Bom</td><td>Funcional padrão</td></tr>
+                            <tr><td>10</td><td><strong>L75 (refinished/restaurado)</strong></td><td>$600-$900</td><td>Bom</td><td>Restaurado cosmeticamente</td></tr>
+                            <tr><td>11</td><td><strong>L76</strong></td><td>$550-$850</td><td>Bom</td><td>Variante, menos documentado</td></tr>
+                            <tr><td>12</td><td><strong>L70 (bom)</strong></td><td>$500-$800</td><td>Bom</td><td>Modelo anterior</td></tr>
+                            <tr><td>13</td><td><strong>L75 (funcional, pátina original)</strong></td><td>$500-$800</td><td>Bom</td><td>Pátina original, funcional</td></tr>
+                            <tr><td>14</td><td><strong>L77 (arm substituído)</strong></td><td>$450-$700</td><td>Bom</td><td>Arm original trocado</td></tr>
+                            <tr><td>15</td><td><strong>L78 (precisa serviço)</strong></td><td>$300-$550</td><td>Partes</td><td>Motor funcional, precisa serviço</td></tr>
+                            <tr><td>16</td><td><strong>L75 (problemas cosméticos)</strong></td><td>$400-$700</td><td>Bom</td><td>Funcional, danos cosméticos</td></tr>
+                            <tr><td>17</td><td><strong>L725</strong></td><td>$450-$750</td><td>Bom</td><td>Variante posterior</td></tr>
+                            <tr><td>18</td><td><strong>L84</strong></td><td>$400-$700</td><td>Bom</td><td>Modelo raro</td></tr>
+                            <tr><td>19</td><td><strong>L70/L75 (partes)</strong></td><td>$150-$400</td><td>Partes</td><td>Para colheita de peças</td></tr>
+                            <tr><td>20</td><td><strong>Achados europeus</strong></td><td>$200-$600</td><td>Variável</td><td>Preço EU 20-30% menor</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h4 style="margin-top: 20px; color: #2c3e50;">Mercado Trends</h4>
+                    <ul style="margin-left: 20px; margin-top: 12px; font-size: 13px;">
+                        <li><strong>Nicho menor:</strong> Lenco é um nicho menor comparado com Technics/Garrard</li>
+                        <li><strong>Caixa original:</strong> Aumenta preço 30-50%</li>
+                        <li><strong>Plinths customizados:</strong> Plinths em xisto, madeira dura, betão adicionam $500-$1,500</li>
+                        <li><strong>Plinths artesanais populares:</strong> Comunidade ativa de restauradores especializados em Lenco</li>
+                    </ul>
+                </div>
+
+                <!-- Lenco Competition -->
+                <div id="lenco-competition" class="sub-tab-content">
+                    <h3 style="margin-top: 0; color: #2c3e50;">Análise de Competição - Bases para Lenco</h3>
                 <p style="color: #666;">Competidores especializados em plinths de madeira para turntables Lenco L75, L78, L84.</p>
 
                 <table style="margin-top: 25px; font-size: 13px;">
@@ -985,7 +1143,77 @@
 
             <!-- GARRARD SECTION -->
             <div id="garrard" class="sub-tab-content">
-                <h3 style="margin-top: 0; color: #2c3e50;">Análise de Competição - Bases para Garrard</h3>
+                <!-- Sub-tabs for Garrard -->
+                <div class="sub-tabs">
+                    <button class="sub-tab-button active" onclick="switchSubTab('garrard-compatibility', this)">Compatibilidade</button>
+                    <button class="sub-tab-button" onclick="switchSubTab('garrard-market', this)">Análise de Mercado</button>
+                    <button class="sub-tab-button" onclick="switchSubTab('garrard-competition', this)">Competição</button>
+                </div>
+
+                <!-- Garrard Compatibilidade -->
+                <div id="garrard-compatibility" class="sub-tab-content active">
+                    <h3 style="margin-top: 0; color: #2c3e50;">Modelos Garrard - Compatibilidade de Bases</h3>
+                    <p style="color: #666;">Garrards são mecanismos compactos adaptáveis a múltiplas bases customizadas. Há um ecossistema extenso de plinths artesanais.</p>
+
+                    <h4 style="margin-top: 20px; color: #2c3e50;">Modelos Profissionais Transcrição (Idler-Drive)</h4>
+                    <table style="margin-top: 12px;">
+                        <thead><tr><th>Modelo</th><th>Características</th><th>Prato</th><th>Períodoo</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Model 301</strong></td><td>Padrão de transmissão, 3-speed (33⅓, 45, 78 RPM)</td><td>6lb</td><td>1953-1966</td></tr>
+                            <tr><td><strong>Model 301 variants</strong></td><td>Gray enamel, Cream enamel, Oil bearing (1957+)</td><td>6lb</td><td>Various</td></tr>
+                            <tr><td><strong>Model 401</strong></td><td>301 melhorado, sistema de travão eddy current</td><td>4.01kg</td><td>1964-1976</td></tr>
+                            <tr><td><strong>Model 80/85</strong></td><td>Modelos de consumidor (documentação limitada)</td><td>Variável</td><td>Various</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div style="background-color: #f3e5f5; padding: 12px; border-left: 4px solid #9C27B0; border-radius: 4px; margin-top: 20px;">
+                        <strong>Plinth Type:</strong>
+                        <p style="margin-top: 6px; color: #555; font-size: 13px;">Mecanismo compacto montável em diversos plinths customizados (madeira dura, xisto, betão, composite). Ecossistema extenso de fabricantes de plinths artesanais. 301 e 401 NÃO são intercambiáveis devido a tamanhos/pesos diferentes.</p>
+                    </div>
+                </div>
+
+                <!-- Garrard Market Analysis -->
+                <div id="garrard-market" class="sub-tab-content">
+                    <h3 style="margin-top: 0; color: #2c3e50;">Análise de Mercado - Top 20 Modelos Garrard</h3>
+                    <p style="color: #666; font-size: 13px;">Preços do mercado premium de alta gama - Maio 2026</p>
+
+                    <table style="margin-top: 15px; font-size: 12px;">
+                        <thead>
+                            <tr><th>#</th><th>Modelo</th><th>Faixa Preço (USD)</th><th>Condição</th><th>Notas</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td><strong>301 (oil bearing, excelente)</strong></td><td>$5,000-$8,000</td><td>Excelente</td><td>Variante mais rara</td></tr>
+                            <tr><td>2</td><td><strong>401 Statement SE (Artisan)</strong></td><td>$20,000-$25,000</td><td>Novo</td><td>Restauração boutique</td></tr>
+                            <tr><td>3</td><td><strong>301 (oil bearing, com SME 3009)</strong></td><td>$4,500-$7,000</td><td>Excelente</td><td>Tonearm premium incluído</td></tr>
+                            <tr><td>4</td><td><strong>401 (excelente, completo)</strong></td><td>$3,500-$5,500</td><td>Excelente</td><td>Modelo posterior</td></tr>
+                            <tr><td>5</td><td><strong>301 (cream enamel, excelente)</strong></td><td>$3,500-$5,500</td><td>Excelente</td><td>Variante mid-era</td></tr>
+                            <tr><td>6</td><td><strong>301 Statement (Artisan Fidelity)</strong></td><td>$15,000-$22,000</td><td>Novo</td><td>Restauração completa</td></tr>
+                            <tr><td>7</td><td><strong>401 (reconstruído/restaurado)</strong></td><td>$3,000-$4,500</td><td>Excelente</td><td>Serviço profissional</td></tr>
+                            <tr><td>8</td><td><strong>401 (com FR-24 arm)</strong></td><td>$1,700-$2,500</td><td>Excelente</td><td>Tonearm vintage incluído</td></tr>
+                            <tr><td>9</td><td><strong>301 (gray enamel, excelente)</strong></td><td>$3,000-$4,500</td><td>Excelente</td><td>Versão antigo</td></tr>
+                            <tr><td>10</td><td><strong>301 (excelente, sem arm)</strong></td><td>$2,500-$4,000</td><td>Excelente</td><td>Mecanismo base</td></tr>
+                            <tr><td>11</td><td><strong>401 (bom estado)</strong></td><td>$2,200-$3,200</td><td>Bom</td><td>Funcional, desgaste</td></tr>
+                            <tr><td>12</td><td><strong>301 (com plinth customizado)</strong></td><td>$4,000-$6,500</td><td>Excelente</td><td>Plinth xisto/madeira ($1,500+ valor)</td></tr>
+                            <tr><td>13</td><td><strong>301 (bom estado)</strong></td><td>$2,000-$3,200</td><td>Bom</td><td>Funcional, pátina original</td></tr>
+                            <tr><td>14</td><td><strong>401 (partes)</strong></td><td>$1,200-$2,000</td><td>Partes</td><td>Motor funcional</td></tr>
+                            <tr><td>15</td><td><strong>301 (precisa restauração)</strong></td><td>$1,500-$2,500</td><td>Bom</td><td>Motor precisa reconstrução</td></tr>
+                            <tr><td>16</td><td><strong>301 (arm Karmadon 309)</strong></td><td>$3,500-$4,500</td><td>Excelente</td><td>Tonearm upgrade</td></tr>
+                            <tr><td>17</td><td><strong>401 (bom estado)</strong></td><td>$1,200-$1,800</td><td>Bom</td><td>Desgaste cosmético</td></tr>
+                            <tr><td>18</td><td><strong>301 (funcional básico)</strong></td><td>$1,200-$1,800</td><td>Bom</td><td>Mínima condição, funcional</td></tr>
+                            <tr><td>19</td><td><strong>301/401 (partes)</strong></td><td>$500-$1,200</td><td>Partes</td><td>Colheita/restauração major</td></tr>
+                            <tr><td>20</td><td><strong>Model 80/85</strong></td><td>$400-$800</td><td>Bom</td><td>Modelos de consumidor</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h4 style="margin-top: 20px; color: #2c3e50;">Notas de Mercado</h4>
+                    <div style="background-color: #fff3e0; padding: 12px; border-left: 4px solid #FF9800; border-radius: 4px; margin-top: 12px;">
+                        <p style="margin: 0; color: #555; font-size: 13px;"><strong>Segmento Premium:</strong> Garrard 301/401 é um nicho de alta gama audiófila. Preços começam em $4,000+ até $22,000+ para sistemas completos. 301 oil bearing variante rara. Restaurações artesanais adicionam $2,000-$5,000 de valor.</p>
+                    </div>
+                </div>
+
+                <!-- Garrard Competition -->
+                <div id="garrard-competition" class="sub-tab-content">
+                    <h3 style="margin-top: 0; color: #2c3e50;">Análise de Competição - Bases para Garrard</h3>
                 <p style="color: #666;">Competidores especializados em plinths de madeira para turntables Garrard 301, 401 (segmento premium).</p>
 
                 <table style="margin-top: 25px; font-size: 13px;">
@@ -1057,7 +1285,90 @@
 
             <!-- THORENS SECTION -->
             <div id="thorens" class="sub-tab-content">
-                <h3 style="margin-top: 0; color: #2c3e50;">Análise de Competição - Bases para Thorens</h3>
+                <!-- Sub-tabs for Thorens -->
+                <div class="sub-tabs">
+                    <button class="sub-tab-button active" onclick="switchSubTab('thorens-compatibility', this)">Compatibilidade</button>
+                    <button class="sub-tab-button" onclick="switchSubTab('thorens-market', this)">Análise de Mercado</button>
+                    <button class="sub-tab-button" onclick="switchSubTab('thorens-competition', this)">Competição</button>
+                </div>
+
+                <!-- Thorens Compatibilidade -->
+                <div id="thorens-compatibility" class="sub-tab-content active">
+                    <h3 style="margin-top: 0; color: #2c3e50;">Modelos Thorens - Compatibilidade de Bases</h3>
+                    <p style="color: #666;">Thorens usa sistema de suspensão subchassis com 3 molas em configuração triangular. Designs específicos ao modelo, não intercambiáveis.</p>
+
+                    <h4 style="margin-top: 20px; color: #2c3e50;">Modelos Clássicos (Belt-Drive com Floating Subchassis)</h4>
+                    <table style="margin-top: 12px;">
+                        <thead><tr><th>Modelo</th><th>Características Principais</th><th>Era</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>TD-124</strong></td><td>Original, 4-speed, prato 9.5lb, padrão broadcast, motor 10W</td><td>1957-1960s</td></tr>
+                            <tr><td><strong>TD-124 MK2</strong></td><td>Versão melhorada, specs refinadas</td><td>-</td></tr>
+                            <tr><td><strong>TD-125 (Mk I, II, III+)</strong></td><td>Subchassis primavera (inovação de 1968), controlo eletrônico 220V</td><td>1968+</td></tr>
+                            <tr><td><strong>TD-150</strong></td><td>Subchassis primavera pioneiro (3-point), 2-speed, design revolucionário</td><td>1965/66</td></tr>
+                            <tr><td><strong>TD-160</strong></td><td>Mais pesado/estável que TD-125, flagship até 1990s, pulley motor com embraiagem</td><td>1972-90s</td></tr>
+                            <tr><td><strong>TD-165</strong></td><td>Contemporâneo TD-160, construção mais barata, sub-platter resina vs zinco</td><td>-</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h4 style="margin-top: 20px; color: #2c3e50;">Modelos Modernos e Entry-Level</h4>
+                    <table style="margin-top: 12px;">
+                        <thead><tr><th>Modelo</th><th>Tipo</th><th>Era</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>TD-170, TD-190/190-1</strong></td><td>Entry-level, sem subchassis</td><td>Vários</td></tr>
+                            <tr><td><strong>TD-124 DD (Moderno)</strong></td><td>Direct-drive (não belt), motor alta-precisão, 2025+</td><td>2020+</td></tr>
+                            <tr><td><strong>TD-124 DD Exclusive</strong></td><td>Versão premium com EMT cartridge</td><td>2025</td></tr>
+                            <tr><td><strong>TD-1500 (Moderno)</strong></td><td>Belt-drive, subchassis contemporânea</td><td>Recente</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div style="background-color: #e3f2fd; padding: 12px; border-left: 4px solid #2196F3; border-radius: 4px; margin-top: 20px;">
+                        <strong>⚠️ Plinth Compatibility:</strong>
+                        <p style="margin-top: 6px; color: #555; font-size: 13px;">Sistema de suspensão subchassis com 3-point spring mounting. Cada modelo (TD-124/125/150/160/165) usa designs específicos - NÃO é intercambiável entre modelos. Condição das molas crítica para desempenho. Modelos sem subchassis (TD-170/190) muito menos valorizados.</p>
+                    </div>
+                </div>
+
+                <!-- Thorens Market Analysis -->
+                <div id="thorens-market" class="sub-tab-content">
+                    <h3 style="margin-top: 0; color: #2c3e50;">Análise de Mercado - Top 20 Modelos Thorens</h3>
+                    <p style="color: #666; font-size: 13px;">Preços do mercado secundário - Maio 2026</p>
+
+                    <table style="margin-top: 15px; font-size: 12px;">
+                        <thead>
+                            <tr><th>#</th><th>Modelo</th><th>Faixa Preço (USD)</th><th>Condição</th><th>Notas</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td><strong>TD-124 DD Exclusive (2025)</strong></td><td>$11,999-$16,999</td><td>Novo</td><td>Moderno premium com EMT cartridge</td></tr>
+                            <tr><td>2</td><td><strong>TD-124 DD (moderno)</strong></td><td>$10,000-$13,500</td><td>Novo</td><td>Direct-drive atual, high-precision</td></tr>
+                            <tr><td>3</td><td><strong>TD-1500 (moderno)</strong></td><td>$3,500-$5,000</td><td>Novo</td><td>Belt-drive contemporâneo</td></tr>
+                            <tr><td>4</td><td><strong>TD-124 (vintage, excelente)</strong></td><td>$2,000-$3,200</td><td>Excelente</td><td>Modelo original, condição rara</td></tr>
+                            <tr><td>5</td><td><strong>TD-124 MK2 (excelente)</strong></td><td>$1,800-$2,800</td><td>Excelente</td><td>Versão melhorada</td></tr>
+                            <tr><td>6</td><td><strong>TD-160 (excelente)</strong></td><td>$1,500-$2,300</td><td>Excelente</td><td>Flagship vintage, estável</td></tr>
+                            <tr><td>7</td><td><strong>TD-160 (muito bom)</strong></td><td>$1,200-$1,800</td><td>Muito Bom</td><td>Condição padrão</td></tr>
+                            <tr><td>8</td><td><strong>TD-125 MK2/MK3 (excelente)</strong></td><td>$1,400-$2,100</td><td>Excelente</td><td>Bom design subchassis</td></tr>
+                            <tr><td>9</td><td><strong>TD-124 (bom estado)</strong></td><td>$1,200-$1,800</td><td>Bom</td><td>Funcional, desgaste cosmético</td></tr>
+                            <tr><td>10</td><td><strong>TD-165 (excelente)</strong></td><td>$900-$1,400</td><td>Excelente</td><td>Contemporâneo TD-160, mais barato</td></tr>
+                            <tr><td>11</td><td><strong>TD-125 (Mk I original, bom)</strong></td><td>$1,000-$1,500</td><td>Bom</td><td>Inovador em subchassis</td></tr>
+                            <tr><td>12</td><td><strong>TD-160 (bom)</strong></td><td>$800-$1,200</td><td>Bom</td><td>Desgaste cosmético</td></tr>
+                            <tr><td>13</td><td><strong>TD-150 (excelente)</strong></td><td>$1,200-$1,800</td><td>Excelente</td><td>Design revolucionário, original raro</td></tr>
+                            <tr><td>14</td><td><strong>TD-165 (bom)</strong></td><td>$600-$950</td><td>Bom</td><td>Variante comum</td></tr>
+                            <tr><td>15</td><td><strong>TD-125 (bom)</strong></td><td>$800-$1,200</td><td>Bom</td><td>Operação suave</td></tr>
+                            <tr><td>16</td><td><strong>TD-170 (bom)</strong></td><td>$400-$700</td><td>Bom</td><td>Entry-level, sem subchassis</td></tr>
+                            <tr><td>17</td><td><strong>TD-124 (restauração necessária)</strong></td><td>$600-$1,000</td><td>Bom</td><td>Candidato a reconstrução motor</td></tr>
+                            <tr><td>18</td><td><strong>TD-150 MK II (bom)</strong></td><td>$1,000-$1,500</td><td>Bom</td><td>Variante melhorada</td></tr>
+                            <tr><td>19</td><td><strong>TD-160 (problemas cosméticos)</strong></td><td>$500-$850</td><td>Bom</td><td>Funcional, aparência desgastada</td></tr>
+                            <tr><td>20</td><td><strong>TD-190/190-1 (bom)</strong></td><td>$300-$550</td><td>Bom</td><td>Modelo budget, menos desejável</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h4 style="margin-top: 20px; color: #2c3e50;">Mercado Trends</h4>
+                    <div style="background-color: #f1f8e9; padding: 12px; border-left: 4px solid #689F38; border-radius: 4px; margin-top: 12px;">
+                        <p style="margin: 0; color: #555; font-size: 13px;"><strong>Mercado Robusto:</strong> TD-125 e TD-160 têm mercado ativo. TD-160 é o modelo vintage mais procurado ($1,500-$2,300 excelente). Lista de espera de 5+ anos para TD-124 DD moderno. Preços Thorens mais estáveis que Technics. Belt-drive modelos preferidos vs DD moderno.</p>
+                    </div>
+                </div>
+
+                <!-- Thorens Competition -->
+                <div id="thorens-competition" class="sub-tab-content">
+                    <h3 style="margin-top: 0; color: #2c3e50;">Análise de Competição - Bases para Thorens</h3>
                 <p style="color: #666;">Competidores especializados em plinths de madeira para turntables Thorens TD-124, TD-125, TD-160.</p>
 
                 <table style="margin-top: 25px; font-size: 13px;">
