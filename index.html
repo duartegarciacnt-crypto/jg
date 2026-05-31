@@ -1592,24 +1592,11 @@
         function switchSubTab(subTabName, button) {
             // Get the parent container
             const subTabsContainer = button.closest('.sub-tabs');
-            if (!subTabsContainer) {
-                console.error('Could not find sub-tabs container');
-                return;
-            }
-
             const parentContainer = subTabsContainer.parentElement;
-            if (!parentContainer) {
-                console.error('Could not find parent container');
-                return;
-            }
 
-            // Hide all sub-tab content in this level - find both direct children and nested ones
-            const allSubTabs = parentContainer.querySelectorAll('.sub-tab-content');
-            allSubTabs.forEach(content => {
-                if (content !== parentContainer) {
-                    content.classList.remove('active');
-                }
-            });
+            // Hide all sub-tab content in this level (direct children only)
+            const subContents = parentContainer.querySelectorAll(':scope > .sub-tab-content');
+            subContents.forEach(content => content.classList.remove('active'));
 
             // Remove active class from all sub-tab buttons at this level
             const subButtons = subTabsContainer.querySelectorAll('.sub-tab-button');
@@ -1619,8 +1606,6 @@
             const target = document.getElementById(subTabName);
             if (target) {
                 target.classList.add('active');
-            } else {
-                console.error('Target element not found:', subTabName);
             }
             button.classList.add('active');
         }
