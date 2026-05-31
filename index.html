@@ -104,10 +104,17 @@
 
         .sub-tab-content {
             display: none;
+            min-height: 20px;
         }
 
         .sub-tab-content.active {
             display: block;
+        }
+
+        /* Debug: show all sections to verify they exist */
+        #brands > .sub-tab-content {
+            display: block !important;
+            opacity: 1;
         }
 
         .tab-content {
