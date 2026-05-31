@@ -44,7 +44,10 @@
       "WebFetch(domain:www.woodsongaudio.com)",
       "WebFetch(domain:skyfiaudio.com)",
       "WebFetch(domain:www.etsy.com)",
-      "WebFetch(domain:www.madeinbobland.com)"
+      "WebFetch(domain:www.madeinbobland.com)",
+      "Bash(curl -s http://localhost:8000/index.html)",
+      "Bash(curl -s https://duartegarciacnt-crypto.github.io/repo/index.html)",
+      "Bash(awk *)"
     ]
   }
 }
