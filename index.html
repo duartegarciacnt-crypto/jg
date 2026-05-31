@@ -832,9 +832,9 @@
         // Password protection
         function checkPassword() {
             const password = prompt('Enter password to access this site:');
-            const correctPassword = 'xauquintas';
+            const validPasswords = ['xauquintas', 'darkside'];
 
-            if (password !== correctPassword) {
+            if (!validPasswords.includes(password)) {
                 alert('Incorrect password');
                 document.body.innerHTML = '<div style="padding: 40px; text-align: center; font-family: sans-serif;"><p>Access denied. Incorrect password.</p></div>';
                 throw new Error('Incorrect password');
