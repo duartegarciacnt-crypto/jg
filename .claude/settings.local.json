@@ -47,7 +47,9 @@
       "WebFetch(domain:www.madeinbobland.com)",
       "Bash(curl -s http://localhost:8000/index.html)",
       "Bash(curl -s https://duartegarciacnt-crypto.github.io/repo/index.html)",
-      "Bash(awk *)"
+      "Bash(awk *)",
+      "Bash(python3 -m http.server 9000)",
+      "Bash(curl -s http://localhost:9000/index.html)"
     ]
   }
 }
