@@ -72,6 +72,43 @@
             border-bottom-color: #2c3e50;
         }
 
+        .sub-tabs {
+            display: flex;
+            border-bottom: 1px solid #e0e0e0;
+            background-color: #f5f5f5;
+            margin-bottom: 20px;
+        }
+
+        .sub-tab-button {
+            padding: 12px 20px;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            color: #999;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .sub-tab-button:hover {
+            background-color: #efefef;
+            color: #666;
+        }
+
+        .sub-tab-button.active {
+            color: #2c3e50;
+            border-bottom-color: #2c3e50;
+        }
+
+        .sub-tab-content {
+            display: none;
+        }
+
+        .sub-tab-content.active {
+            display: block;
+        }
+
         .tab-content {
             display: none;
             padding: 30px 20px;
@@ -382,16 +419,45 @@
         </header>
 
         <div class="tabs">
-            <button class="tab-button active" onclick="switchTab('compatibility')">Dual</button>
+            <button class="tab-button active" onclick="switchTab('brands')">Marcas</button>
             <button class="tab-button" onclick="switchTab('materials')">Materiais</button>
             <button class="tab-button" onclick="switchTab('about')">Sobre</button>
         </div>
 
-        <div id="compatibility" class="tab-content active">
-            <h2>Compatibilidade de Bases para Turntables Dual</h2>
-            <p>Explorar modelos Dual, faixas de preço e compatibilidade de bases.</p>
+        <div id="brands" class="tab-content active">
+            <h2>Marcas</h2>
 
-            <h3 style="margin-top: 30px; color: #2c3e50;">Top 20 Modelos por Valor de Mercado (US)</h3>
+            <div class="sub-tabs">
+                <button class="sub-tab-button active" onclick="switchSubTab('dual-content', this)">Dual</button>
+            </div>
+
+            <div id="dual-content">
+                <div class="sub-tabs">
+                    <button class="sub-tab-button active" onclick="switchSubTab('compatibility', this)">Compatibilidade</button>
+                    <button class="sub-tab-button" onclick="switchSubTab('market-analysis', this)">Análise de Mercado</button>
+                </div>
+
+                <div id="compatibility" class="sub-tab-content active">
+                    <h3 style="margin-top: 0; color: #2c3e50;">Compatibilidade de Bases para Turntables Dual</h3>
+                    <p>Explorar modelos Dual e compatibilidade de bases.</p>
+
+                    <h4 style="margin-top: 30px; color: #2c3e50;">Compatibilidade - Visão Geral</h4>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tipo de Base</th>
+                                <th>Descrição</th>
+                                <th>Modelos Compatíveis</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="plinth-type">
+                                    Tipo 1: 4-molas-grande
+                                    <div class="model-count">26 modelos</div>
+                                </td>
+                                <td>Prato de 12 polegadas<br>Família de chassis comum</td>
             <p style="font-size: 13px; color: #666;">Preços baseados em mercado vintage actual (eBay, Reverb, AudioKarma - Maio 2026)</p>
 
             <table style="margin-top: 15px;">
@@ -548,23 +614,170 @@
                 </tbody>
             </table>
 
-            <h3 style="margin-top: 40px; color: #2c3e50;">Compatibilidade de Bases - Visão Geral</h3>
+                    </tbody>
+                    </table>
+                </div>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Tipo de Base</th>
-                        <th>Descrição</th>
-                        <th>Modelos Compatíveis</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="plinth-type">
-                            Tipo 1: 4-molas-grande
-                            <div class="model-count">26 modelos</div>
-                        </td>
-                        <td>Prato de 12 polegadas<br>Família de chassis comum</td>
+                <div id="market-analysis" class="sub-tab-content">
+                    <h3 style="margin-top: 0; color: #2c3e50;">Análise de Mercado - Top 20 Modelos</h3>
+                    <p style="font-size: 13px; color: #666;">Preços baseados em mercado vintage actual (eBay, Reverb, AudioKarma - Maio 2026)</p>
+
+                    <table style="margin-top: 15px;">
+                        <thead>
+                            <tr>
+                                <th>Posição</th>
+                                <th>Modelo</th>
+                                <th>Faixa de Preço (USD)</th>
+                                <th>Tipo de Base</th>
+                                <th>Actividade de Mercado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1</strong></td>
+                                <td><strong>Dual 721</strong></td>
+                                <td>$300–$800</td>
+                                <td><span style="background-color: #d4edda; padding: 4px 8px; border-radius: 3px;">Tipo 1: 4-molas-grande</span></td>
+                                <td>★★★★★ (72 anúncios)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2</strong></td>
+                                <td><strong>Dual 1246</strong></td>
+                                <td>$575</td>
+                                <td><span style="background-color: #d4edda; padding: 4px 8px; border-radius: 3px;">Tipo 1: 4-molas-grande</span></td>
+                                <td>★★★★☆</td>
+                            </tr>
+                            <tr>
+                                <td><strong>3</strong></td>
+                                <td><strong>Dual 1229</strong></td>
+                                <td>$165–$500+</td>
+                                <td><span style="background-color: #fff3cd; padding: 4px 8px; border-radius: 3px;">Tipo 3: 1219+1229</span></td>
+                                <td>★★★★★ (82 anúncios)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>4</strong></td>
+                                <td><strong>Dual 701</strong></td>
+                                <td>$250–$500</td>
+                                <td><span style="background-color: #d4edda; padding: 4px 8px; border-radius: 3px;">Tipo 1: 4-molas-grande</span></td>
+                                <td>★★★★★ (38 anúncios)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>5</strong></td>
+                                <td><strong>Dual 606</strong></td>
+                                <td>$179–$588</td>
+                                <td><span style="background-color: #d4edda; padding: 4px 8px; border-radius: 3px;">Tipo 1: 4-molas-grande</span></td>
+                                <td>★★★★☆ (50+ anúncios)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>6</strong></td>
+                                <td><strong>Dual 1249</strong></td>
+                                <td>$150–$659</td>
+                                <td><span style="background-color: #d4edda; padding: 4px 8px; border-radius: 3px;">Tipo 1: 4-molas-grande</span></td>
+                                <td>★★★★☆</td>
+                            </tr>
+                            <tr>
+                                <td><strong>7</strong></td>
+                                <td><strong>Dual 704</strong></td>
+                                <td>$200–$450</td>
+                                <td><span style="background-color: #d4edda; padding: 4px 8px; border-radius: 3px;">Tipo 1: 4-molas-grande</span></td>
+                                <td>★★★★☆ (37 anúncios)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>8</strong></td>
+                                <td><strong>Dual 1219</strong></td>
+                                <td>$140–$425</td>
+                                <td><span style="background-color: #fff3cd; padding: 4px 8px; border-radius: 3px;">Tipo 3: 1219+1229</span></td>
+                                <td>★★★★★ (92 anúncios)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>9</strong></td>
+                                <td><strong>Dual 604</strong></td>
+                                <td>$400</td>
+                                <td><span style="background-color: #d4edda; padding: 4px 8px; border-radius: 3px;">Tipo 1: 4-molas-grande</span></td>
+                                <td>★★★☆☆</td>
+                            </tr>
+                            <tr>
+                                <td><strong>10</strong></td>
+                                <td><strong>Dual 510</strong></td>
+                                <td>$350</td>
+                                <td><span style="background-color: #d4edda; padding: 4px 8px; border-radius: 3px;">Tipo 1: 4-molas-grande</span></td>
+                                <td>★★★☆☆</td>
+                            </tr>
+                            <tr>
+                                <td><strong>11</strong></td>
+                                <td><strong>Dual 1216</strong></td>
+                                <td>$225</td>
+                                <td><span style="background-color: #e2e3e5; padding: 4px 8px; border-radius: 3px;">Tipo 2: 3-molas-pequeno</span></td>
+                                <td>★★★☆☆</td>
+                            </tr>
+                            <tr>
+                                <td><strong>12</strong></td>
+                                <td><strong>Dual 1220</strong></td>
+                                <td>$150–$250</td>
+                                <td><span style="background-color: #e2e3e5; padding: 4px 8px; border-radius: 3px;">Tipo 2: 3-molas-pequeno</span></td>
+                                <td>★★★☆☆</td>
+                            </tr>
+                            <tr>
+                                <td><strong>13</strong></td>
+                                <td><strong>Dual 502</strong></td>
+                                <td>$159</td>
+                                <td><span style="background-color: #d4edda; padding: 4px 8px; border-radius: 3px;">Tipo 1: 4-molas-grande</span></td>
+                                <td>★★★☆☆ (51 anúncios)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>14</strong></td>
+                                <td><strong>Dual 1209</strong></td>
+                                <td>$87–$297</td>
+                                <td><span style="background-color: #e2e3e5; padding: 4px 8px; border-radius: 3px;">Tipo 2: 3-molas-pequeno</span></td>
+                                <td>★★★☆☆ (51 anúncios)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>15</strong></td>
+                                <td><strong>Dual 1234</strong></td>
+                                <td>$150–$250</td>
+                                <td><span style="background-color: #e2e3e5; padding: 4px 8px; border-radius: 3px;">Tipo 2: 3-molas-pequeno</span></td>
+                                <td>★★★☆☆</td>
+                            </tr>
+                            <tr>
+                                <td><strong>16</strong></td>
+                                <td><strong>Dual 1237</strong></td>
+                                <td>$150–$250</td>
+                                <td><span style="background-color: #e2e3e5; padding: 4px 8px; border-radius: 3px;">Tipo 2: 3-molas-pequeno</span></td>
+                                <td>★★★☆☆</td>
+                            </tr>
+                            <tr>
+                                <td><strong>17</strong></td>
+                                <td><strong>Dual 504</strong></td>
+                                <td>$149–$180</td>
+                                <td><span style="background-color: #d4edda; padding: 4px 8px; border-radius: 3px;">Tipo 1: 4-molas-grande</span></td>
+                                <td>★★★☆☆</td>
+                            </tr>
+                            <tr>
+                                <td><strong>18</strong></td>
+                                <td><strong>Dual 506</strong></td>
+                                <td>$100–$350</td>
+                                <td><span style="background-color: #d4edda; padding: 4px 8px; border-radius: 3px;">Tipo 1: 4-molas-grande</span></td>
+                                <td>★★★☆☆</td>
+                            </tr>
+                            <tr>
+                                <td><strong>19</strong></td>
+                                <td><strong>Dual 1229Q</strong></td>
+                                <td>$165–$500</td>
+                                <td><span style="background-color: #fff3cd; padding: 4px 8px; border-radius: 3px;">Tipo 3: 1219+1229</span></td>
+                                <td>★★★★☆</td>
+                            </tr>
+                            <tr>
+                                <td><strong>20</strong></td>
+                                <td><strong>Dual 505</strong></td>
+                                <td>$75–$200</td>
+                                <td><span style="background-color: #d4edda; padding: 4px 8px; border-radius: 3px;">Tipo 1: 4-molas-grande</span></td>
+                                <td>★★☆☆☆</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
                         <td>
                             <div class="models">
                                 <span class="model-badge">502</span>
@@ -806,6 +1019,24 @@
             // Show selected tab and mark button as active
             document.getElementById(tabName).classList.add('active');
             event.target.classList.add('active');
+        }
+
+        function switchSubTab(subTabName, button) {
+            const parent = button.closest('.sub-tabs').nextElementSibling;
+
+            // Hide all sub-tab content
+            const subContents = parent.querySelectorAll('.sub-tab-content');
+            subContents.forEach(content => content.classList.remove('active'));
+
+            // Remove active class from all sub-tab buttons
+            const subButtons = button.closest('.sub-tabs').querySelectorAll('.sub-tab-button');
+            subButtons.forEach(btn => btn.classList.remove('active'));
+
+            // Show selected sub-tab and mark button as active
+            if (document.getElementById(subTabName)) {
+                document.getElementById(subTabName).classList.add('active');
+            }
+            button.classList.add('active');
         }
     </script>
 </body>
