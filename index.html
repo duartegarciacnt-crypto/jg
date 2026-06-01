@@ -410,6 +410,40 @@
             color: #999;
             border-top: 1px solid #e0e0e0;
         }
+
+        /* ---------- Responsive / mobile ---------- */
+        @media (max-width: 768px) {
+            body { padding: 8px; }
+            .container { border-radius: 4px; }
+            header { padding: 10px 12px; }
+            header h1 { font-size: 14px; }
+
+            /* Tab bars wrap so no tab is ever hidden */
+            .tabs, .sub-tabs { flex-wrap: wrap; }
+            .tab-button { flex: 1 1 auto; text-align: center; padding: 12px 14px; font-size: 13px; }
+            .sub-tab-button { padding: 10px 12px; font-size: 12px; }
+
+            .tab-content { padding: 16px 10px; }
+
+            /* Wide tables become horizontally scrollable (header/body stay aligned) */
+            table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            th { padding: 10px 8px; }
+            td { padding: 8px; line-height: 1.45; }
+
+            /* Stack any multi-column grids */
+            .market-grid { grid-template-columns: 1fr !important; }
+            .plinth-type { width: auto; }
+
+            h2 { font-size: 19px; }
+            h3 { font-size: 16px; }
+        }
+
+        @media (max-width: 430px) {
+            .tab-button { padding: 10px 10px; font-size: 12px; }
+            .sub-tab-button { padding: 8px 10px; font-size: 11px; }
+            th { font-size: 11px; }
+            td { font-size: 11px; }
+        }
     </style>
 </head>
 <body>
@@ -567,7 +601,7 @@
                         <thead>
                             <tr>
                                 <th>Posição</th>
-                                <th>Modelo</th>
+                                <th>Modelo</th><th title="Ano de produção aproximado">Ano</th>
                                 <th>Faixa de Preço (USD)</th>
                                 <th>Tipo de Base</th>
                                 <th>Actividade de Mercado</th>
@@ -576,140 +610,140 @@
                         <tbody>
                             <tr>
                                 <td><strong>1</strong></td>
-                                <td><strong>Dual 721</strong></td>
+                                <td><strong>Dual 721</strong></td><td>1976</td>
                                 <td>$300–$500</td>
                                 <td><span style="background-color: #d4edda; padding: 4px 8px; border-radius: 3px;">Tipo 1: 4-molas-grande</span></td>
                                 <td>★★★★★ (72 anúncios)</td>
                             </tr>
                             <tr>
                                 <td><strong>2</strong></td>
-                                <td><strong>Dual 1246</strong></td>
+                                <td><strong>Dual 1246</strong></td><td>1973</td>
                                 <td>$175–$250</td>
                                 <td><span style="background-color: #d4edda; padding: 4px 8px; border-radius: 3px;">Tipo 1: 4-molas-grande</span></td>
                                 <td>★★★★☆</td>
                             </tr>
                             <tr>
                                 <td><strong>3</strong></td>
-                                <td><strong>Dual 1229</strong></td>
+                                <td><strong>Dual 1229</strong></td><td>1972</td>
                                 <td>$300–$500</td>
                                 <td><span style="background-color: #fff3cd; padding: 4px 8px; border-radius: 3px;">Tipo 3: 1219+1229</span></td>
                                 <td>★★★★★ (82 anúncios)</td>
                             </tr>
                             <tr>
                                 <td><strong>4</strong></td>
-                                <td><strong>Dual 701</strong></td>
+                                <td><strong>Dual 701</strong></td><td>1973</td>
                                 <td>$350–$600</td>
                                 <td><span style="background-color: #d4edda; padding: 4px 8px; border-radius: 3px;">Tipo 1: 4-molas-grande</span></td>
                                 <td>★★★★★ (38 anúncios)</td>
                             </tr>
                             <tr>
                                 <td><strong>5</strong></td>
-                                <td><strong>Dual 606</strong></td>
+                                <td><strong>Dual 606</strong></td><td>1980</td>
                                 <td>$180–$275</td>
                                 <td><span style="background-color: #d4edda; padding: 4px 8px; border-radius: 3px;">Tipo 1: 4-molas-grande</span></td>
                                 <td>★★★★☆ (50+ anúncios)</td>
                             </tr>
                             <tr>
                                 <td><strong>6</strong></td>
-                                <td><strong>Dual 1249</strong></td>
+                                <td><strong>Dual 1249</strong></td><td>1977</td>
                                 <td>$200–$400</td>
                                 <td><span style="background-color: #d4edda; padding: 4px 8px; border-radius: 3px;">Tipo 1: 4-molas-grande</span></td>
                                 <td>★★★★☆</td>
                             </tr>
                             <tr>
                                 <td><strong>7</strong></td>
-                                <td><strong>Dual 704</strong></td>
+                                <td><strong>Dual 704</strong></td><td>1976</td>
                                 <td>$200–$450</td>
                                 <td><span style="background-color: #d4edda; padding: 4px 8px; border-radius: 3px;">Tipo 1: 4-molas-grande</span></td>
                                 <td>★★★★☆ (37 anúncios)</td>
                             </tr>
                             <tr>
                                 <td><strong>8</strong></td>
-                                <td><strong>Dual 1219</strong></td>
+                                <td><strong>Dual 1219</strong></td><td>1969</td>
                                 <td>$250–$450</td>
                                 <td><span style="background-color: #fff3cd; padding: 4px 8px; border-radius: 3px;">Tipo 3: 1219+1229</span></td>
                                 <td>★★★★★ (92 anúncios)</td>
                             </tr>
                             <tr>
                                 <td><strong>9</strong></td>
-                                <td><strong>Dual 604</strong></td>
+                                <td><strong>Dual 604</strong></td><td>1979</td>
                                 <td>$200–$275</td>
                                 <td><span style="background-color: #d4edda; padding: 4px 8px; border-radius: 3px;">Tipo 1: 4-molas-grande</span></td>
                                 <td>★★★☆☆</td>
                             </tr>
                             <tr>
                                 <td><strong>10</strong></td>
-                                <td><strong>Dual 510</strong></td>
+                                <td><strong>Dual 510</strong></td><td>1979</td>
                                 <td>$150–$200</td>
                                 <td><span style="background-color: #d4edda; padding: 4px 8px; border-radius: 3px;">Tipo 1: 4-molas-grande</span></td>
                                 <td>★★★☆☆</td>
                             </tr>
                             <tr>
                                 <td><strong>11</strong></td>
-                                <td><strong>Dual 1216</strong></td>
+                                <td><strong>Dual 1216</strong></td><td>1971</td>
                                 <td>$225</td>
                                 <td><span style="background-color: #e2e3e5; padding: 4px 8px; border-radius: 3px;">Tipo 2: 3-molas-pequeno</span></td>
                                 <td>★★★☆☆</td>
                             </tr>
                             <tr>
                                 <td><strong>12</strong></td>
-                                <td><strong>Dual 1220</strong></td>
+                                <td><strong>Dual 1220</strong></td><td>1973</td>
                                 <td>$150–$250</td>
                                 <td><span style="background-color: #e2e3e5; padding: 4px 8px; border-radius: 3px;">Tipo 2: 3-molas-pequeno</span></td>
                                 <td>★★★☆☆</td>
                             </tr>
                             <tr>
                                 <td><strong>13</strong></td>
-                                <td><strong>Dual 502</strong></td>
+                                <td><strong>Dual 502</strong></td><td>1979</td>
                                 <td>$100–$175</td>
                                 <td><span style="background-color: #d4edda; padding: 4px 8px; border-radius: 3px;">Tipo 1: 4-molas-grande</span></td>
                                 <td>★★★☆☆ (51 anúncios)</td>
                             </tr>
                             <tr>
                                 <td><strong>14</strong></td>
-                                <td><strong>Dual 1209</strong></td>
+                                <td><strong>Dual 1209</strong></td><td>1971</td>
                                 <td>$87–$297</td>
                                 <td><span style="background-color: #e2e3e5; padding: 4px 8px; border-radius: 3px;">Tipo 2: 3-molas-pequeno</span></td>
                                 <td>★★★☆☆ (51 anúncios)</td>
                             </tr>
                             <tr>
                                 <td><strong>15</strong></td>
-                                <td><strong>Dual 1234</strong></td>
+                                <td><strong>Dual 1234</strong></td><td>1974</td>
                                 <td>$150–$250</td>
                                 <td><span style="background-color: #e2e3e5; padding: 4px 8px; border-radius: 3px;">Tipo 2: 3-molas-pequeno</span></td>
                                 <td>★★★☆☆</td>
                             </tr>
                             <tr>
                                 <td><strong>16</strong></td>
-                                <td><strong>Dual 1237</strong></td>
+                                <td><strong>Dual 1237</strong></td><td>1974</td>
                                 <td>$150–$250</td>
                                 <td><span style="background-color: #e2e3e5; padding: 4px 8px; border-radius: 3px;">Tipo 2: 3-molas-pequeno</span></td>
                                 <td>★★★☆☆</td>
                             </tr>
                             <tr>
                                 <td><strong>17</strong></td>
-                                <td><strong>Dual 504</strong></td>
+                                <td><strong>Dual 504</strong></td><td>1980</td>
                                 <td>$149–$180</td>
                                 <td><span style="background-color: #d4edda; padding: 4px 8px; border-radius: 3px;">Tipo 1: 4-molas-grande</span></td>
                                 <td>★★★☆☆</td>
                             </tr>
                             <tr>
                                 <td><strong>18</strong></td>
-                                <td><strong>Dual 506</strong></td>
+                                <td><strong>Dual 506</strong></td><td>1980</td>
                                 <td>$100–$350</td>
                                 <td><span style="background-color: #d4edda; padding: 4px 8px; border-radius: 3px;">Tipo 1: 4-molas-grande</span></td>
                                 <td>★★★☆☆</td>
                             </tr>
                             <tr>
                                 <td><strong>19</strong></td>
-                                <td><strong>Dual 1229Q</strong></td>
+                                <td><strong>Dual 1229Q</strong></td><td>1973</td>
                                 <td>$300–$500</td>
                                 <td><span style="background-color: #fff3cd; padding: 4px 8px; border-radius: 3px;">Tipo 3: 1219+1229</span></td>
                                 <td>★★★★☆</td>
                             </tr>
                             <tr>
                                 <td><strong>20</strong></td>
-                                <td><strong>Dual 505</strong></td>
+                                <td><strong>Dual 505</strong></td><td>1982</td>
                                 <td>$75–$200</td>
                                 <td><span style="background-color: #d4edda; padding: 4px 8px; border-radius: 3px;">Tipo 1: 4-molas-grande</span></td>
                                 <td>★★☆☆☆</td>
@@ -923,29 +957,29 @@
 
                     <table style="margin-top: 15px; font-size: 12px;">
                         <thead>
-                            <tr><th>#</th><th>Modelo</th><th>Faixa Preço (USD)</th><th>Condição</th><th>Notas</th></tr>
+                            <tr><th>#</th><th>Modelo</th><th title="Ano de produção aproximado">Ano</th><th>Faixa Preço (USD)</th><th>Condição</th><th>Notas</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>1</td><td><strong>SL-1000R</strong></td><td>$13,000-$20,000</td><td>Novo/Usado</td><td>Flagship reissue; usado ~$13-16k, novo ~$18-20k</td></tr>
-                            <tr><td>2</td><td><strong>SL-1200GAE (50º aniv.)</strong></td><td>$4,000-$6,000+</td><td>Coleccionável</td><td>Limitado a 1.200 unidades; esgotou em ~30 min</td></tr>
-                            <tr><td>3</td><td><strong>SL-1200G</strong></td><td>$3,200-$4,500</td><td>Novo/Usado</td><td>Reissue topo; usado $3,200-4,000, novo ~$4,300. Descontinuado fim de 2025</td></tr>
-                            <tr><td>4</td><td><strong>SL-1200MK5G</strong></td><td>$1,200-$2,500</td><td>Excelente</td><td>Pitch digital, premium; pares até ~$3,500</td></tr>
-                            <tr><td>5</td><td><strong>SL-1200GR / GR2</strong></td><td>$1,500-$2,000</td><td>Novo/Usado</td><td>Reissue valor; novo ~$1,800</td></tr>
-                            <tr><td>6</td><td><strong>SL-1200 (Original, 1972)</strong></td><td>$900-$2,000</td><td>Excelente</td><td>Coleccionável (2 botões rotativos); pedidos até $3-4k</td></tr>
-                            <tr><td>7</td><td><strong>SL-1200MK4</strong></td><td>$1,000-$2,000</td><td>Excelente</td><td>Japão-only, arm titânio, 78rpm; escasso</td></tr>
-                            <tr><td>8</td><td><strong>SL-1500C</strong></td><td>$1,200-$1,500</td><td>Novo</td><td>Moderno, coreless, Ortofon; usado $850-1,250</td></tr>
-                            <tr><td>9</td><td><strong>SL-1500CS</strong></td><td>~$1,500</td><td>Novo</td><td>Com phono; mercado usado ainda por estabelecer</td></tr>
-                            <tr><td>10</td><td><strong>SL-1200MK6</strong></td><td>$900-$1,400</td><td>Excelente</td><td>Último mainstream, escasso</td></tr>
-                            <tr><td>11</td><td><strong>SL-1200MK2 / SL-1210MK2</strong></td><td>$700-$1,300</td><td>Excelente</td><td>Benchmark DJ; chão firme. Pares $1,500-2,500</td></tr>
-                            <tr><td>12</td><td><strong>SL-1200MK5</strong></td><td>$700-$1,300</td><td>Excelente</td><td>Grande produção, unidades limpas</td></tr>
-                            <tr><td>13</td><td><strong>SL-1200MK3/MK3D</strong></td><td>$600-$1,100</td><td>Bom</td><td>MK3D apreciado por DJs</td></tr>
-                            <tr><td>14</td><td><strong>SL-110</strong></td><td>$500-$1,200</td><td>Excelente</td><td>Armless; audiófilos montam braço SME/premium</td></tr>
-                            <tr><td>15</td><td><strong>SL-1100</strong></td><td>$500-$1,100</td><td>Bom</td><td>Vintage DD (irmão do SP-10); valor no braço EPA-110</td></tr>
-                            <tr><td>16</td><td><strong>SL-50C</strong></td><td>$650-$900</td><td>Novo</td><td>Lançado 2025; novo $899; usado ainda raro</td></tr>
-                            <tr><td>17</td><td><strong>SL-150</strong></td><td>$300-$700</td><td>Bom</td><td>SL-1100 sem braço; dados finos — estimativa</td></tr>
-                            <tr><td>18</td><td><strong>SL-1200MK2 (precisa serviço)</strong></td><td>$500-$800</td><td>Bom</td><td>Funcional, requer revisão</td></tr>
-                            <tr><td>19</td><td><strong>SL-1000 (partes/projeto)</strong></td><td>$2,000-$4,500</td><td>Restauração</td><td>Projeto high-end</td></tr>
-                            <tr><td>20</td><td><strong>SL-1200 (partes)</strong></td><td>$200-$500</td><td>Partes</td><td>Para restauração</td></tr>
+                            <tr><td>1</td><td><strong>SL-1000R</strong></td><td>2017</td><td>$13,000-$20,000</td><td>Novo/Usado</td><td>Flagship reissue; usado ~$13-16k, novo ~$18-20k</td></tr>
+                            <tr><td>2</td><td><strong>SL-1200GAE (50º aniv.)</strong></td><td>2016</td><td>$4,000-$6,000+</td><td>Coleccionável</td><td>Limitado a 1.200 unidades; esgotou em ~30 min</td></tr>
+                            <tr><td>3</td><td><strong>SL-1200G</strong></td><td>2016</td><td>$3,200-$4,500</td><td>Novo/Usado</td><td>Reissue topo; usado $3,200-4,000, novo ~$4,300. Descontinuado fim de 2025</td></tr>
+                            <tr><td>4</td><td><strong>SL-1200MK5G</strong></td><td>2002</td><td>$1,200-$2,500</td><td>Excelente</td><td>Pitch digital, premium; pares até ~$3,500</td></tr>
+                            <tr><td>5</td><td><strong>SL-1200GR / GR2</strong></td><td>2017</td><td>$1,500-$2,000</td><td>Novo/Usado</td><td>Reissue valor; novo ~$1,800</td></tr>
+                            <tr><td>6</td><td><strong>SL-1200 (Original, 1972)</strong></td><td>1972</td><td>$900-$2,000</td><td>Excelente</td><td>Coleccionável (2 botões rotativos); pedidos até $3-4k</td></tr>
+                            <tr><td>7</td><td><strong>SL-1200MK4</strong></td><td>1997</td><td>$1,000-$2,000</td><td>Excelente</td><td>Japão-only, arm titânio, 78rpm; escasso</td></tr>
+                            <tr><td>8</td><td><strong>SL-1500C</strong></td><td>2019</td><td>$1,200-$1,500</td><td>Novo</td><td>Moderno, coreless, Ortofon; usado $850-1,250</td></tr>
+                            <tr><td>9</td><td><strong>SL-1500CS</strong></td><td>2026</td><td>~$1,500</td><td>Novo</td><td>Com phono; mercado usado ainda por estabelecer</td></tr>
+                            <tr><td>10</td><td><strong>SL-1200MK6</strong></td><td>2008</td><td>$900-$1,400</td><td>Excelente</td><td>Último mainstream, escasso</td></tr>
+                            <tr><td>11</td><td><strong>SL-1200MK2 / SL-1210MK2</strong></td><td>1979</td><td>$700-$1,300</td><td>Excelente</td><td>Benchmark DJ; chão firme. Pares $1,500-2,500</td></tr>
+                            <tr><td>12</td><td><strong>SL-1200MK5</strong></td><td>1997</td><td>$700-$1,300</td><td>Excelente</td><td>Grande produção, unidades limpas</td></tr>
+                            <tr><td>13</td><td><strong>SL-1200MK3/MK3D</strong></td><td>1989</td><td>$600-$1,100</td><td>Bom</td><td>MK3D apreciado por DJs</td></tr>
+                            <tr><td>14</td><td><strong>SL-110</strong></td><td>1973</td><td>$500-$1,200</td><td>Excelente</td><td>Armless; audiófilos montam braço SME/premium</td></tr>
+                            <tr><td>15</td><td><strong>SL-1100</strong></td><td>1971</td><td>$500-$1,100</td><td>Bom</td><td>Vintage DD (irmão do SP-10); valor no braço EPA-110</td></tr>
+                            <tr><td>16</td><td><strong>SL-50C</strong></td><td>2025</td><td>$650-$900</td><td>Novo</td><td>Lançado 2025; novo $899; usado ainda raro</td></tr>
+                            <tr><td>17</td><td><strong>SL-150</strong></td><td>1973</td><td>$300-$700</td><td>Bom</td><td>SL-1100 sem braço; dados finos — estimativa</td></tr>
+                            <tr><td>18</td><td><strong>SL-1200MK2 (precisa serviço)</strong></td><td>1979</td><td>$500-$800</td><td>Bom</td><td>Funcional, requer revisão</td></tr>
+                            <tr><td>19</td><td><strong>SL-1000 (partes/projeto)</strong></td><td>1971</td><td>$2,000-$4,500</td><td>Restauração</td><td>Projeto high-end</td></tr>
+                            <tr><td>20</td><td><strong>SL-1200 (partes)</strong></td><td>1972</td><td>$200-$500</td><td>Partes</td><td>Para restauração</td></tr>
                         </tbody>
                     </table>
 
@@ -953,18 +987,18 @@
                     <p style="color: #666; font-size: 12px; margin-top: 4px;">Fontes: HiFiShark, compilações eBay (vintage-turntable.com), vendas Audiogon/Reverb, Yahoo Auctions JP — Maio 2026. <strong>Cuidado motor-nu vs completo:</strong> medianas incluem unidades com base/braço/PSU. O MkII/MkIII <em>precisa</em> da fonte externa (SH-10E / SH-10E3); sem ela vende muito abaixo.</p>
                     <table style="margin-top: 12px; font-size: 12px;">
                         <thead>
-                            <tr><th>Modelo</th><th>Faixa Preço (USD)</th><th>Condição</th><th>Notas</th></tr>
+                            <tr><th>Modelo</th><th title="Ano de produção aproximado">Ano</th><th>Faixa Preço (USD)</th><th>Condição</th><th>Notas</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td><strong>SP-10 MkIII (custom/Krebs)</strong></td><td>$15,000-$19,500</td><td>Excelente</td><td>Plinth custom + mods; vendas reais registadas</td></tr>
-                            <tr><td><strong>SP-10 MkIII (sistema completo)</strong></td><td>$8,000-$12,000+</td><td>Excelente</td><td>Serviced, c/ PSU; a valorizar</td></tr>
-                            <tr><td><strong>SP-10 MkIII (motor + PSU)</strong></td><td>$4,000-$7,000</td><td>Excelente</td><td>Raro; PSU SH-10E3 crucial e muitas vezes em falta</td></tr>
-                            <tr><td><strong>SP-10 MkII / MkIIA (motor + SH-10E)</strong></td><td>$1,200-$2,000</td><td>Excelente</td><td>O "workhorse" — modelo de volume. Precisa do PSU SH-10E</td></tr>
-                            <tr><td><strong>SP-15 (completo)</strong></td><td>$1,200-$2,200</td><td>Excelente</td><td>Quartz; mediana a subir ▲. Motor nu ~$400-900</td></tr>
-                            <tr><td><strong>SP-25 (completo)</strong></td><td>$700-$1,200</td><td>Bom</td><td>Mediana a descer ▼. Motor nu ~$240-500</td></tr>
-                            <tr><td><strong>SP-10 (MkI)</strong></td><td>$450-$900</td><td>Bom</td><td>Menos binário/desejável; o mais fraco da linha</td></tr>
-                            <tr><td><strong>SP-20</strong></td><td>$300-$700</td><td>Bom</td><td>Obscuro; dados finos (estimativa)</td></tr>
-                            <tr><td><strong>Base original SH-10B3 (só base)</strong></td><td>$400-$900</td><td>Variável</td><td>Procura real de substituição — referência de preço p/ base</td></tr>
+                            <tr><td><strong>SP-10 MkIII (custom/Krebs)</strong></td><td>1979</td><td>$15,000-$19,500</td><td>Excelente</td><td>Plinth custom + mods; vendas reais registadas</td></tr>
+                            <tr><td><strong>SP-10 MkIII (sistema completo)</strong></td><td>1979</td><td>$8,000-$12,000+</td><td>Excelente</td><td>Serviced, c/ PSU; a valorizar</td></tr>
+                            <tr><td><strong>SP-10 MkIII (motor + PSU)</strong></td><td>1979</td><td>$4,000-$7,000</td><td>Excelente</td><td>Raro; PSU SH-10E3 crucial e muitas vezes em falta</td></tr>
+                            <tr><td><strong>SP-10 MkII / MkIIA (motor + SH-10E)</strong></td><td>1975</td><td>$1,200-$2,000</td><td>Excelente</td><td>O "workhorse" — modelo de volume. Precisa do PSU SH-10E</td></tr>
+                            <tr><td><strong>SP-15 (completo)</strong></td><td>1981</td><td>$1,200-$2,200</td><td>Excelente</td><td>Quartz; mediana a subir ▲. Motor nu ~$400-900</td></tr>
+                            <tr><td><strong>SP-25 (completo)</strong></td><td>1980</td><td>$700-$1,200</td><td>Bom</td><td>Mediana a descer ▼. Motor nu ~$240-500</td></tr>
+                            <tr><td><strong>SP-10 (MkI)</strong></td><td>1970</td><td>$450-$900</td><td>Bom</td><td>Menos binário/desejável; o mais fraco da linha</td></tr>
+                            <tr><td><strong>SP-20</strong></td><td>1981</td><td>$300-$700</td><td>Bom</td><td>Obscuro; dados finos (estimativa)</td></tr>
+                            <tr><td><strong>Base original SH-10B3 (só base)</strong></td><td>~1975</td><td>$400-$900</td><td>Variável</td><td>Procura real de substituição — referência de preço p/ base</td></tr>
                         </tbody>
                     </table>
 
@@ -1099,24 +1133,24 @@
 
                     <table style="margin-top: 15px; font-size: 12px;">
                         <thead>
-                            <tr><th>#</th><th>Modelo</th><th>Faixa Preço (USD)</th><th>Condição</th><th>Notas</th></tr>
+                            <tr><th>#</th><th>Modelo</th><th title="Ano de produção aproximado">Ano</th><th>Faixa Preço (USD)</th><th>Condição</th><th>Notas</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>1</td><td><strong>L75 / L78 RE-PLINTHADO (birch/xisto + Jelco)</strong></td><td>$700-$2,800+</td><td>Rebuilt</td><td>Onde está o valor real — 3-10× o deck nu</td></tr>
-                            <tr><td>2</td><td><strong>L70 (stock, excelente)</strong></td><td>$225-$600</td><td>Excelente</td><td>O mais valorizado da família (mais pesado)</td></tr>
-                            <tr><td>3</td><td><strong>L77 (c/ braço P77)</strong></td><td>$400-$1,200</td><td>Excelente</td><td>Pedidos suíços inflacionados; estimativa</td></tr>
-                            <tr><td>4</td><td><strong>L75S</strong></td><td>$200-$475</td><td>Excelente</td><td>Variante spec/arm; dados finos</td></tr>
-                            <tr><td>5</td><td><strong>GL75 (Goldring-Lenco)</strong></td><td>$200-$475</td><td>Excelente</td><td>Badge UK; mediana HiFiShark poluída por peças</td></tr>
-                            <tr><td>6</td><td><strong>L75 (stock, excelente)</strong></td><td>$175-$450</td><td>Excelente</td><td>Modelo core; maior halo da comunidade</td></tr>
-                            <tr><td>7</td><td><strong>GL78</strong></td><td>$175-$425</td><td>Bom</td><td>Equivalente UK do L78; estimativa</td></tr>
-                            <tr><td>8</td><td><strong>L76 (stock)</strong></td><td>$165-$400</td><td>Excelente</td><td>Segue L75/L78 de perto</td></tr>
-                            <tr><td>9</td><td><strong>L78 (stock, excelente)</strong></td><td>$150-$400</td><td>Excelente</td><td>Marginalmente abaixo do L75</td></tr>
-                            <tr><td>10</td><td><strong>L725</strong></td><td>$150-$375</td><td>Bom</td><td>Era consola/sistema; dados finos — estimativa</td></tr>
-                            <tr><td>11</td><td><strong>L85</strong></td><td>$150-$350</td><td>Bom</td><td>Modelo posterior/leve; pouca procura DIY</td></tr>
-                            <tr><td>12</td><td><strong>L84</strong></td><td>$130-$300</td><td>Bom</td><td>Muito poucos dados — estimativa</td></tr>
-                            <tr><td>13</td><td><strong>B55</strong></td><td>$120-$300</td><td>Bom</td><td>Deck budget; pouco interesse de rebuild</td></tr>
-                            <tr><td>14</td><td><strong>L70/L75 (partes)</strong></td><td>$80-$250</td><td>Partes</td><td>Para colheita de peças</td></tr>
-                            <tr><td>15</td><td><strong>Achados EU (stock)</strong></td><td>$120-$350</td><td>Variável</td><td>EU é a fonte barata; comprar EU, vender US</td></tr>
+                            <tr><td>1</td><td><strong>L75 / L78 RE-PLINTHADO (birch/xisto + Jelco)</strong></td><td>1965-75</td><td>$700-$2,800+</td><td>Rebuilt</td><td>Onde está o valor real — 3-10× o deck nu</td></tr>
+                            <tr><td>2</td><td><strong>L70 (stock, excelente)</strong></td><td>1964</td><td>$225-$600</td><td>Excelente</td><td>O mais valorizado da família (mais pesado)</td></tr>
+                            <tr><td>3</td><td><strong>L77 (c/ braço P77)</strong></td><td>1966</td><td>$400-$1,200</td><td>Excelente</td><td>Pedidos suíços inflacionados; estimativa</td></tr>
+                            <tr><td>4</td><td><strong>L75S</strong></td><td>1968</td><td>$200-$475</td><td>Excelente</td><td>Variante spec/arm; dados finos</td></tr>
+                            <tr><td>5</td><td><strong>GL75 (Goldring-Lenco)</strong></td><td>1968</td><td>$200-$475</td><td>Excelente</td><td>Badge UK; mediana HiFiShark poluída por peças</td></tr>
+                            <tr><td>6</td><td><strong>L75 (stock, excelente)</strong></td><td>1968</td><td>$175-$450</td><td>Excelente</td><td>Modelo core; maior halo da comunidade</td></tr>
+                            <tr><td>7</td><td><strong>GL78</strong></td><td>1972</td><td>$175-$425</td><td>Bom</td><td>Equivalente UK do L78; estimativa</td></tr>
+                            <tr><td>8</td><td><strong>L76 (stock)</strong></td><td>1970</td><td>$165-$400</td><td>Excelente</td><td>Segue L75/L78 de perto</td></tr>
+                            <tr><td>9</td><td><strong>L78 (stock, excelente)</strong></td><td>1972</td><td>$150-$400</td><td>Excelente</td><td>Marginalmente abaixo do L75</td></tr>
+                            <tr><td>10</td><td><strong>L725</strong></td><td>1973</td><td>$150-$375</td><td>Bom</td><td>Era consola/sistema; dados finos — estimativa</td></tr>
+                            <tr><td>11</td><td><strong>L85</strong></td><td>1974</td><td>$150-$350</td><td>Bom</td><td>Modelo posterior/leve; pouca procura DIY</td></tr>
+                            <tr><td>12</td><td><strong>L84</strong></td><td>1973</td><td>$130-$300</td><td>Bom</td><td>Muito poucos dados — estimativa</td></tr>
+                            <tr><td>13</td><td><strong>B55</strong></td><td>1962</td><td>$120-$300</td><td>Bom</td><td>Deck budget; pouco interesse de rebuild</td></tr>
+                            <tr><td>14</td><td><strong>L70/L75 (partes)</strong></td><td>—</td><td>$80-$250</td><td>Partes</td><td>Para colheita de peças</td></tr>
+                            <tr><td>15</td><td><strong>Achados EU (stock)</strong></td><td>1965-75</td><td>$120-$350</td><td>Variável</td><td>EU é a fonte barata; comprar EU, vender US</td></tr>
                         </tbody>
                     </table>
 
@@ -1216,26 +1250,26 @@
 
                     <table style="margin-top: 15px; font-size: 12px;">
                         <thead>
-                            <tr><th>#</th><th>Modelo</th><th>Faixa Preço (USD)</th><th>Condição</th><th>Notas</th></tr>
+                            <tr><th>#</th><th>Modelo</th><th title="Ano de produção aproximado">Ano</th><th>Faixa Preço (USD)</th><th>Condição</th><th>Notas</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>1</td><td><strong>301 Statement (Artisan, sistema completo)</strong></td><td>$15,000-$22,000+</td><td>Novo</td><td>Restauro boutique — não âncora p/ usado</td></tr>
-                            <tr><td>2</td><td><strong>301 (grease, grey hammertone, restauro museu)</strong></td><td>$7,000-$11,000</td><td>Excelente</td><td>O mais raro/prizado; grease > oil</td></tr>
-                            <tr><td>3</td><td><strong>301 (grease, restaurado pro + SME)</strong></td><td>$4,500-$6,500</td><td>Excelente</td><td>Audiograil/Woodsong + braço premium</td></tr>
-                            <tr><td>4</td><td><strong>401 (restaurado pro, c/ plinth+braço)</strong></td><td>$4,500-$6,500</td><td>Excelente</td><td>Restauro de topo (Audiograil ~$3,750+)</td></tr>
-                            <tr><td>5</td><td><strong>301 (grease bearing, excelente, serviced)</strong></td><td>$2,400-$5,000</td><td>Excelente</td><td>Mediana ~$2,400; ~+20% vs oil bearing</td></tr>
-                            <tr><td>6</td><td><strong>301 (cream enamel, excelente)</strong></td><td>$2,400-$4,000</td><td>Excelente</td><td>Variante mid-era</td></tr>
-                            <tr><td>7</td><td><strong>301 (oil bearing, excelente)</strong></td><td>$2,000-$4,000</td><td>Excelente</td><td>Menos prizado que o grease (corrigido)</td></tr>
-                            <tr><td>8</td><td><strong>401 (excelente, serviced)</strong></td><td>$1,500-$3,000</td><td>Excelente</td><td>Mediana ~$1,500; +barato que 301 apesar de igual/melhor desempenho</td></tr>
-                            <tr><td>9</td><td><strong>301 (rough/projeto)</strong></td><td>$1,800-$2,400</td><td>Reparação</td><td>Mesmo rough raramente <$2,000 hoje</td></tr>
-                            <tr><td>10</td><td><strong>401 (bom estado)</strong></td><td>$1,400-$2,200</td><td>Bom</td><td>Funcional, desgaste</td></tr>
-                            <tr><td>11</td><td><strong>301/401 (partes)</strong></td><td>$500-$1,200</td><td>Partes</td><td>Colheita/restauro major</td></tr>
-                            <tr><td>12</td><td><strong>Zero 100 / 100SB</strong></td><td>$100-$350</td><td>Bom</td><td>Braço zero-erro; até ~$500 c/ bom cartucho</td></tr>
-                            <tr><td>13</td><td><strong>Type A / Type A MkII</strong></td><td>$80-$300</td><td>Bom</td><td>Auto-transcription consumo — NÃO classe 301/401</td></tr>
-                            <tr><td>14</td><td><strong>Lab 80</strong></td><td>$50-$300</td><td>Bom</td><td>Auto-transcription; topo = totalmente funcional</td></tr>
-                            <tr><td>15</td><td><strong>4HF</strong></td><td>$50-$150</td><td>Bom</td><td>Dados finos — estimativa por analogia</td></tr>
-                            <tr><td>16</td><td><strong>SP-25 (MkI-IV)</strong></td><td>$40-$120</td><td>Bom</td><td>Budget single-play; interesse mínimo</td></tr>
-                            <tr><td>17</td><td><strong>Série 3000</strong></td><td>$40-$120</td><td>Bom</td><td>Linha budget posterior; estimativa</td></tr>
+                            <tr><td>1</td><td><strong>301 Statement (Artisan, sistema completo)</strong></td><td>1954-64</td><td>$15,000-$22,000+</td><td>Novo</td><td>Restauro boutique — não âncora p/ usado</td></tr>
+                            <tr><td>2</td><td><strong>301 (grease, grey hammertone, restauro museu)</strong></td><td>1954</td><td>$7,000-$11,000</td><td>Excelente</td><td>O mais raro/prizado; grease > oil</td></tr>
+                            <tr><td>3</td><td><strong>301 (grease, restaurado pro + SME)</strong></td><td>1954-64</td><td>$4,500-$6,500</td><td>Excelente</td><td>Audiograil/Woodsong + braço premium</td></tr>
+                            <tr><td>4</td><td><strong>401 (restaurado pro, c/ plinth+braço)</strong></td><td>1965-76</td><td>$4,500-$6,500</td><td>Excelente</td><td>Restauro de topo (Audiograil ~$3,750+)</td></tr>
+                            <tr><td>5</td><td><strong>301 (grease bearing, excelente, serviced)</strong></td><td>1955</td><td>$2,400-$5,000</td><td>Excelente</td><td>Mediana ~$2,400; ~+20% vs oil bearing</td></tr>
+                            <tr><td>6</td><td><strong>301 (cream enamel, excelente)</strong></td><td>1960</td><td>$2,400-$4,000</td><td>Excelente</td><td>Variante mid-era</td></tr>
+                            <tr><td>7</td><td><strong>301 (oil bearing, excelente)</strong></td><td>1962</td><td>$2,000-$4,000</td><td>Excelente</td><td>Menos prizado que o grease (corrigido)</td></tr>
+                            <tr><td>8</td><td><strong>401 (excelente, serviced)</strong></td><td>1965</td><td>$1,500-$3,000</td><td>Excelente</td><td>Mediana ~$1,500; +barato que 301 apesar de igual/melhor desempenho</td></tr>
+                            <tr><td>9</td><td><strong>301 (rough/projeto)</strong></td><td>1954-64</td><td>$1,800-$2,400</td><td>Reparação</td><td>Mesmo rough raramente <$2,000 hoje</td></tr>
+                            <tr><td>10</td><td><strong>401 (bom estado)</strong></td><td>1965</td><td>$1,400-$2,200</td><td>Bom</td><td>Funcional, desgaste</td></tr>
+                            <tr><td>11</td><td><strong>301/401 (partes)</strong></td><td>—</td><td>$500-$1,200</td><td>Partes</td><td>Colheita/restauro major</td></tr>
+                            <tr><td>12</td><td><strong>Zero 100 / 100SB</strong></td><td>1971</td><td>$100-$350</td><td>Bom</td><td>Braço zero-erro; até ~$500 c/ bom cartucho</td></tr>
+                            <tr><td>13</td><td><strong>Type A / Type A MkII</strong></td><td>1962</td><td>$80-$300</td><td>Bom</td><td>Auto-transcription consumo — NÃO classe 301/401</td></tr>
+                            <tr><td>14</td><td><strong>Lab 80</strong></td><td>1964</td><td>$50-$300</td><td>Bom</td><td>Auto-transcription; topo = totalmente funcional</td></tr>
+                            <tr><td>15</td><td><strong>4HF</strong></td><td>1959</td><td>$50-$150</td><td>Bom</td><td>Dados finos — estimativa por analogia</td></tr>
+                            <tr><td>16</td><td><strong>SP-25 (MkI-IV)</strong></td><td>1968</td><td>$40-$120</td><td>Bom</td><td>Budget single-play; interesse mínimo</td></tr>
+                            <tr><td>17</td><td><strong>Série 3000</strong></td><td>1976</td><td>$40-$120</td><td>Bom</td><td>Linha budget posterior; estimativa</td></tr>
                         </tbody>
                     </table>
 
@@ -1369,29 +1403,29 @@
 
                     <table style="margin-top: 15px; font-size: 12px;">
                         <thead>
-                            <tr><th>#</th><th>Modelo</th><th>Faixa Preço (USD)</th><th>Condição</th><th>Notas</th></tr>
+                            <tr><th>#</th><th>Modelo</th><th title="Ano de produção aproximado">Ano</th><th>Faixa Preço (USD)</th><th>Condição</th><th>Notas</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>1</td><td><strong>TD-124 DD Exclusive (2025, novo)</strong></td><td>$11,999-$16,999</td><td>Novo</td><td>Produto moderno premium c/ EMT</td></tr>
-                            <tr><td>2</td><td><strong>TD-124 DD (moderno, novo)</strong></td><td>$10,000-$13,500</td><td>Novo</td><td>Direct-drive atual</td></tr>
-                            <tr><td>3</td><td><strong>TD-1500 (moderno, novo)</strong></td><td>$3,500-$5,000</td><td>Novo</td><td>Belt-drive contemporâneo</td></tr>
-                            <tr><td>4</td><td><strong>TD-124 MkII (vintage, restaurado)</strong></td><td>$3,500-$6,000+</td><td>Excelente</td><td>Restauro c/ upgrades modernos</td></tr>
-                            <tr><td>5</td><td><strong>TD-124 MkI (vintage, restaurado + SME)</strong></td><td>$3,500-$6,500+</td><td>Excelente</td><td>Ícone idler; plinth + braço premium</td></tr>
-                            <tr><td>6</td><td><strong>TD-124 MkII (stock, excelente)</strong></td><td>$1,800-$3,500</td><td>Excelente</td><td>Ligeiramente acima do MkI a igual condição</td></tr>
-                            <tr><td>7</td><td><strong>TD-124 MkI (stock, excelente)</strong></td><td>$1,600-$3,200</td><td>Excelente</td><td>A valorizar; par do Garrard 301</td></tr>
-                            <tr><td>8</td><td><strong>TD-125 / 125 MkII (c/ SME ou plinth custom)</strong></td><td>$1,200-$1,800</td><td>Excelente</td><td>MkII preferido; braço/plinth no topo</td></tr>
-                            <tr><td>9</td><td><strong>TD-124 (rough/projeto)</strong></td><td>$800-$1,200</td><td>Reparação</td><td>Reconstrução motor/idler</td></tr>
-                            <tr><td>10</td><td><strong>TD-160 (upgraded: plinth/braço/bearing)</strong></td><td>$650-$1,300+</td><td>Rebuilt</td><td>A plataforma de modding por excelência</td></tr>
-                            <tr><td>11</td><td><strong>TD-160 Super</strong></td><td>$700-$1,400</td><td>Excelente</td><td>Platter pesado, sold armless; c/ braço $1,200-1,800</td></tr>
-                            <tr><td>12</td><td><strong>TD-126 (MkII/MkIII)</strong></td><td>$400-$1,000</td><td>Excelente</td><td>Quartz suspenso; MkIII > MkII</td></tr>
-                            <tr><td>13</td><td><strong>TD-147</strong></td><td>$400-$900</td><td>Excelente</td><td>Melhor da família auto 14x; US > EU</td></tr>
-                            <tr><td>14</td><td><strong>TD-125 / 125 MkII (stock)</strong></td><td>$500-$900</td><td>Excelente</td><td>Subchassis suspenso, controlo electrónico</td></tr>
-                            <tr><td>15</td><td><strong>TD-160 (stock)</strong></td><td>$350-$600</td><td>Excelente</td><td>Barato em stock; o valor está no upgrade</td></tr>
-                            <tr><td>16</td><td><strong>TD-145 / TD-146</strong></td><td>$300-$550</td><td>Bom</td><td>Semi-auto, braço TP-16</td></tr>
-                            <tr><td>17</td><td><strong>TD-320 (MkII)</strong></td><td>$300-$600</td><td>Bom</td><td>Topo da linha late-80s</td></tr>
-                            <tr><td>18</td><td><strong>TD-166 (MkII)</strong></td><td>$250-$600</td><td>Bom</td><td>Belt suspenso budget-classic</td></tr>
-                            <tr><td>19</td><td><strong>TD-318 / TD-165</strong></td><td>$200-$450</td><td>Bom</td><td>Entrada/late; modesto</td></tr>
-                            <tr><td>20</td><td><strong>TD-150 / 150 MkII · TD-280 · TD-190</strong></td><td>$120-$350</td><td>Bom</td><td>TD-150 = ancestral do LP12; budget. Dados finos</td></tr>
+                            <tr><td>1</td><td><strong>TD-124 DD Exclusive (2025, novo)</strong></td><td>2025</td><td>$11,999-$16,999</td><td>Novo</td><td>Produto moderno premium c/ EMT</td></tr>
+                            <tr><td>2</td><td><strong>TD-124 DD (moderno, novo)</strong></td><td>2023</td><td>$10,000-$13,500</td><td>Novo</td><td>Direct-drive atual</td></tr>
+                            <tr><td>3</td><td><strong>TD-1500 (moderno, novo)</strong></td><td>2022</td><td>$3,500-$5,000</td><td>Novo</td><td>Belt-drive contemporâneo</td></tr>
+                            <tr><td>4</td><td><strong>TD-124 MkII (vintage, restaurado)</strong></td><td>1966</td><td>$3,500-$6,000+</td><td>Excelente</td><td>Restauro c/ upgrades modernos</td></tr>
+                            <tr><td>5</td><td><strong>TD-124 MkI (vintage, restaurado + SME)</strong></td><td>1957</td><td>$3,500-$6,500+</td><td>Excelente</td><td>Ícone idler; plinth + braço premium</td></tr>
+                            <tr><td>6</td><td><strong>TD-124 MkII (stock, excelente)</strong></td><td>1966</td><td>$1,800-$3,500</td><td>Excelente</td><td>Ligeiramente acima do MkI a igual condição</td></tr>
+                            <tr><td>7</td><td><strong>TD-124 MkI (stock, excelente)</strong></td><td>1957</td><td>$1,600-$3,200</td><td>Excelente</td><td>A valorizar; par do Garrard 301</td></tr>
+                            <tr><td>8</td><td><strong>TD-125 / 125 MkII (c/ SME ou plinth custom)</strong></td><td>1968</td><td>$1,200-$1,800</td><td>Excelente</td><td>MkII preferido; braço/plinth no topo</td></tr>
+                            <tr><td>9</td><td><strong>TD-124 (rough/projeto)</strong></td><td>1957-68</td><td>$800-$1,200</td><td>Reparação</td><td>Reconstrução motor/idler</td></tr>
+                            <tr><td>10</td><td><strong>TD-160 (upgraded: plinth/braço/bearing)</strong></td><td>1972</td><td>$650-$1,300+</td><td>Rebuilt</td><td>A plataforma de modding por excelência</td></tr>
+                            <tr><td>11</td><td><strong>TD-160 Super</strong></td><td>1979</td><td>$700-$1,400</td><td>Excelente</td><td>Platter pesado, sold armless; c/ braço $1,200-1,800</td></tr>
+                            <tr><td>12</td><td><strong>TD-126 (MkII/MkIII)</strong></td><td>1976</td><td>$400-$1,000</td><td>Excelente</td><td>Quartz suspenso; MkIII > MkII</td></tr>
+                            <tr><td>13</td><td><strong>TD-147</strong></td><td>1981</td><td>$400-$900</td><td>Excelente</td><td>Melhor da família auto 14x; US > EU</td></tr>
+                            <tr><td>14</td><td><strong>TD-125 / 125 MkII (stock)</strong></td><td>1968</td><td>$500-$900</td><td>Excelente</td><td>Subchassis suspenso, controlo electrónico</td></tr>
+                            <tr><td>15</td><td><strong>TD-160 (stock)</strong></td><td>1972</td><td>$350-$600</td><td>Excelente</td><td>Barato em stock; o valor está no upgrade</td></tr>
+                            <tr><td>16</td><td><strong>TD-145 / TD-146</strong></td><td>1977</td><td>$300-$550</td><td>Bom</td><td>Semi-auto, braço TP-16</td></tr>
+                            <tr><td>17</td><td><strong>TD-320 (MkII)</strong></td><td>1984</td><td>$300-$600</td><td>Bom</td><td>Topo da linha late-80s</td></tr>
+                            <tr><td>18</td><td><strong>TD-166 (MkII)</strong></td><td>1980</td><td>$250-$600</td><td>Bom</td><td>Belt suspenso budget-classic</td></tr>
+                            <tr><td>19</td><td><strong>TD-318 / TD-165</strong></td><td>1985</td><td>$200-$450</td><td>Bom</td><td>Entrada/late; modesto</td></tr>
+                            <tr><td>20</td><td><strong>TD-150 / 150 MkII · TD-280 · TD-190</strong></td><td>1965+</td><td>$120-$350</td><td>Bom</td><td>TD-150 = ancestral do LP12; budget. Dados finos</td></tr>
                         </tbody>
                     </table>
 
@@ -1524,25 +1558,25 @@
 
                     <table style="margin-top: 15px; font-size: 12px;">
                         <thead>
-                            <tr><th>#</th><th>Modelo</th><th>Faixa Preço (USD)</th><th>Condição</th><th>Notas</th></tr>
+                            <tr><th>#</th><th>Modelo</th><th title="Ano de produção aproximado">Ano</th><th>Faixa Preço (USD)</th><th>Condição</th><th>Notas</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>1</td><td><strong>DP-100</strong></td><td>$8,000-$20,000+</td><td>Excelente</td><td>Flagship broadcast raro; dados finos (nível dealer). Não confundir c/ DP-A100 moderno</td></tr>
-                            <tr><td>2</td><td><strong>DP-72L</strong></td><td>$1,800-$2,800</td><td>Excelente</td><td>Topo integrado, escasso; dados finos (pedidos altos)</td></tr>
-                            <tr><td>3</td><td><strong>DP-80 (motor unit)</strong></td><td>$1,100-$1,900</td><td>Excelente</td><td>Mais líquido; tira magnética frágil → "verificado" tem prémio</td></tr>
-                            <tr><td>4</td><td><strong>DP-59L</strong></td><td>$900-$1,400</td><td>Excelente</td><td>Servo dinâmico, líquido (dados bons)</td></tr>
-                            <tr><td>5</td><td><strong>DP-3000 (motor unit)</strong></td><td>$700-$1,400</td><td>Excelente</td><td>O DD mais comum; varia muito c/ base/condição</td></tr>
-                            <tr><td>6</td><td><strong>DP-6000 (motor unit)</strong></td><td>$700-$1,200</td><td>Excelente</td><td>Mesma tira magnética que o DP-80</td></tr>
-                            <tr><td>7</td><td><strong>DP-62L</strong></td><td>$600-$900</td><td>Excelente</td><td>Poucos dados limpos — estimativa</td></tr>
-                            <tr><td>8</td><td><strong>DP-57L</strong></td><td>$550-$850</td><td>Excelente</td><td>Boa liquidez, intervalo consistente</td></tr>
-                            <tr><td>9</td><td><strong>DP-60L</strong></td><td>$450-$1,000</td><td>Excelente</td><td>Muito comum; falhas servo conhecidas</td></tr>
-                            <tr><td>10</td><td><strong>DP-47F</strong></td><td>$400-$900</td><td>Bom</td><td>Auto comum; mais dados de todos</td></tr>
-                            <tr><td>11</td><td><strong>DP-45F</strong></td><td>$325-$650</td><td>Bom</td><td>Auto comum, dados fiáveis</td></tr>
-                            <tr><td>12</td><td><strong>DP-5000 (motor unit)</strong></td><td>$300-$700</td><td>Excelente</td><td>Sobretudo mercado Japão</td></tr>
-                            <tr><td>13</td><td><strong>DP-2000 (motor unit)</strong></td><td>$300-$600</td><td>Excelente</td><td>Motor nu mais barato; +controlador no topo</td></tr>
-                            <tr><td>14</td><td><strong>DP-790</strong></td><td>$300-$550</td><td>Bom</td><td>Sobretudo EU; dados US finos</td></tr>
-                            <tr><td>15</td><td><strong>DP-1200</strong></td><td>$200-$450</td><td>Bom</td><td>Flutuação de velocidade conhecida (caps)</td></tr>
-                            <tr><td>16</td><td><strong>DP-1700</strong></td><td>$130-$300</td><td>Bom</td><td>Budget; poucos dados limpos</td></tr>
+                            <tr><td>1</td><td><strong>DP-100</strong></td><td>1979</td><td>$8,000-$20,000+</td><td>Excelente</td><td>Flagship broadcast raro; dados finos (nível dealer). Não confundir c/ DP-A100 moderno</td></tr>
+                            <tr><td>2</td><td><strong>DP-72L</strong></td><td>1981</td><td>$1,800-$2,800</td><td>Excelente</td><td>Topo integrado, escasso; dados finos (pedidos altos)</td></tr>
+                            <tr><td>3</td><td><strong>DP-80 (motor unit)</strong></td><td>1979</td><td>$1,100-$1,900</td><td>Excelente</td><td>Mais líquido; tira magnética frágil → "verificado" tem prémio</td></tr>
+                            <tr><td>4</td><td><strong>DP-59L</strong></td><td>1982</td><td>$900-$1,400</td><td>Excelente</td><td>Servo dinâmico, líquido (dados bons)</td></tr>
+                            <tr><td>5</td><td><strong>DP-3000 (motor unit)</strong></td><td>1972</td><td>$700-$1,400</td><td>Excelente</td><td>O DD mais comum; varia muito c/ base/condição</td></tr>
+                            <tr><td>6</td><td><strong>DP-6000 (motor unit)</strong></td><td>1972</td><td>$700-$1,200</td><td>Excelente</td><td>Mesma tira magnética que o DP-80</td></tr>
+                            <tr><td>7</td><td><strong>DP-62L</strong></td><td>1983</td><td>$600-$900</td><td>Excelente</td><td>Poucos dados limpos — estimativa</td></tr>
+                            <tr><td>8</td><td><strong>DP-57L</strong></td><td>1983</td><td>$550-$850</td><td>Excelente</td><td>Boa liquidez, intervalo consistente</td></tr>
+                            <tr><td>9</td><td><strong>DP-60L</strong></td><td>1981</td><td>$450-$1,000</td><td>Excelente</td><td>Muito comum; falhas servo conhecidas</td></tr>
+                            <tr><td>10</td><td><strong>DP-47F</strong></td><td>1983</td><td>$400-$900</td><td>Bom</td><td>Auto comum; mais dados de todos</td></tr>
+                            <tr><td>11</td><td><strong>DP-45F</strong></td><td>1983</td><td>$325-$650</td><td>Bom</td><td>Auto comum, dados fiáveis</td></tr>
+                            <tr><td>12</td><td><strong>DP-5000 (motor unit)</strong></td><td>1971</td><td>$300-$700</td><td>Excelente</td><td>Sobretudo mercado Japão</td></tr>
+                            <tr><td>13</td><td><strong>DP-2000 (motor unit)</strong></td><td>1976</td><td>$300-$600</td><td>Excelente</td><td>Motor nu mais barato; +controlador no topo</td></tr>
+                            <tr><td>14</td><td><strong>DP-790</strong></td><td>1981</td><td>$300-$550</td><td>Bom</td><td>Sobretudo EU; dados US finos</td></tr>
+                            <tr><td>15</td><td><strong>DP-1200</strong></td><td>1976</td><td>$200-$450</td><td>Bom</td><td>Flutuação de velocidade conhecida (caps)</td></tr>
+                            <tr><td>16</td><td><strong>DP-1700</strong></td><td>1979</td><td>$130-$300</td><td>Bom</td><td>Budget; poucos dados limpos</td></tr>
                         </tbody>
                     </table>
 
@@ -1623,21 +1657,21 @@
 
                     <table style="margin-top: 15px; font-size: 12px;">
                         <thead>
-                            <tr><th>#</th><th>Modelo</th><th>Faixa Preço (USD)</th><th>Condição</th><th>Notas</th></tr>
+                            <tr><th>#</th><th>Modelo</th><th title="Ano de produção aproximado">Ano</th><th>Faixa Preço (USD)</th><th>Condição</th><th>Notas</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>1</td><td><strong>TT-101 (funcional, servo OK)</strong></td><td>$900-$1,800</td><td>Excelente</td><td>Culto; c/ braço/cabinet pode chegar a $2,000-$2,800</td></tr>
-                            <tr><td>2</td><td><strong>QL-10 (completo, funcional)</strong></td><td>$700-$1,500</td><td>Excelente</td><td>Usa motor TT-101; herda risco servo. Escasso</td></tr>
-                            <tr><td>3</td><td><strong>QL-A75</strong></td><td>$700-$1,200</td><td>Excelente</td><td>Prémio EU forte (DE/BE/NL); pedidos €1,400-1,800</td></tr>
-                            <tr><td>4</td><td><strong>QL-Y66F</strong></td><td>$800-$1,200</td><td>Excelente</td><td>Raro, 100V japonês (precisa conversor)</td></tr>
-                            <tr><td>5</td><td><strong>TT-81 (motor unit)</strong></td><td>$250-$600</td><td>Excelente</td><td>Mais fiável que TT-101; nu ~$250-450</td></tr>
-                            <tr><td>6</td><td><strong>QL-7</strong></td><td>$300-$600</td><td>Bom</td><td>Construído à volta do motor TT-71</td></tr>
-                            <tr><td>7</td><td><strong>TT-101 (servo com falhas)</strong></td><td>$150-$500</td><td>Partes/Reparação</td><td>Falha servo notória; difícil de reparar</td></tr>
-                            <tr><td>8</td><td><strong>QL-Y5F</strong></td><td>$250-$450</td><td>Bom</td><td>Comum, oferta abundante</td></tr>
-                            <tr><td>9</td><td><strong>QL-F4</strong></td><td>$200-$450</td><td>Bom</td><td>Auto quartz; dados consistentes</td></tr>
-                            <tr><td>10</td><td><strong>TT-71 (motor unit)</strong></td><td>$150-$400</td><td>Excelente</td><td>Dados finos; muitas vezes vendido em QL-7</td></tr>
-                            <tr><td>11</td><td><strong>QL-F6 / QL-F61</strong></td><td>$150-$350</td><td>Bom</td><td>Baixo volume — estimativa</td></tr>
-                            <tr><td>12</td><td><strong>QL-A2</strong></td><td>$100-$300</td><td>Bom</td><td>Entrada DD auto, abundante</td></tr>
+                            <tr><td>1</td><td><strong>TT-101 (funcional, servo OK)</strong></td><td>1978</td><td>$900-$1,800</td><td>Excelente</td><td>Culto; c/ braço/cabinet pode chegar a $2,000-$2,800</td></tr>
+                            <tr><td>2</td><td><strong>QL-10 (completo, funcional)</strong></td><td>1977</td><td>$700-$1,500</td><td>Excelente</td><td>Usa motor TT-101; herda risco servo. Escasso</td></tr>
+                            <tr><td>3</td><td><strong>QL-A75</strong></td><td>1978</td><td>$700-$1,200</td><td>Excelente</td><td>Prémio EU forte (DE/BE/NL); pedidos €1,400-1,800</td></tr>
+                            <tr><td>4</td><td><strong>QL-Y66F</strong></td><td>1982</td><td>$800-$1,200</td><td>Excelente</td><td>Raro, 100V japonês (precisa conversor)</td></tr>
+                            <tr><td>5</td><td><strong>TT-81 (motor unit)</strong></td><td>1977</td><td>$250-$600</td><td>Excelente</td><td>Mais fiável que TT-101; nu ~$250-450</td></tr>
+                            <tr><td>6</td><td><strong>QL-7</strong></td><td>1976</td><td>$300-$600</td><td>Bom</td><td>Construído à volta do motor TT-71</td></tr>
+                            <tr><td>7</td><td><strong>TT-101 (servo com falhas)</strong></td><td>1978</td><td>$150-$500</td><td>Partes/Reparação</td><td>Falha servo notória; difícil de reparar</td></tr>
+                            <tr><td>8</td><td><strong>QL-Y5F</strong></td><td>1981</td><td>$250-$450</td><td>Bom</td><td>Comum, oferta abundante</td></tr>
+                            <tr><td>9</td><td><strong>QL-F4</strong></td><td>1980</td><td>$200-$450</td><td>Bom</td><td>Auto quartz; dados consistentes</td></tr>
+                            <tr><td>10</td><td><strong>TT-71 (motor unit)</strong></td><td>1977</td><td>$150-$400</td><td>Excelente</td><td>Dados finos; muitas vezes vendido em QL-7</td></tr>
+                            <tr><td>11</td><td><strong>QL-F6 / QL-F61</strong></td><td>1980</td><td>$150-$350</td><td>Bom</td><td>Baixo volume — estimativa</td></tr>
+                            <tr><td>12</td><td><strong>QL-A2</strong></td><td>1979</td><td>$100-$300</td><td>Bom</td><td>Entrada DD auto, abundante</td></tr>
                         </tbody>
                     </table>
 
@@ -1719,22 +1753,22 @@
 
                     <table style="margin-top: 15px; font-size: 12px;">
                         <thead>
-                            <tr><th>#</th><th>Modelo</th><th>Faixa Preço (USD)</th><th>Condição</th><th>Notas</th></tr>
+                            <tr><th>#</th><th>Modelo</th><th title="Ano de produção aproximado">Ano</th><th>Faixa Preço (USD)</th><th>Condição</th><th>Notas</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>1</td><td><strong>PS-X9</strong></td><td>$4,500-$9,000+</td><td>Excelente</td><td>Flagship raro; funcional vale múltiplos de um avariado. Ilíquido</td></tr>
-                            <tr><td>2</td><td><strong>PS-X800 (linear)</strong></td><td>$1,100-$2,100</td><td>Excelente</td><td>Maior risco de falha; revisado = prémio grande</td></tr>
-                            <tr><td>3</td><td><strong>PS-B80</strong></td><td>$1,200-$2,000</td><td>Excelente</td><td>Alta gama escassa; 2º a seguir a X9/X800</td></tr>
-                            <tr><td>4</td><td><strong>TTS-8000 (motor unit)</strong></td><td>$700-$1,200</td><td>Excelente</td><td>Top motor Sony; valor depende do braço/base</td></tr>
-                            <tr><td>5</td><td><strong>PS-X555ES</strong></td><td>$550-$1,000</td><td>Excelente</td><td>O mais líquido do topo; mint até ~$1,400</td></tr>
-                            <tr><td>6</td><td><strong>PS-X75</strong></td><td>$450-$900</td><td>Excelente</td><td>Quartz, popular e líquido</td></tr>
-                            <tr><td>7</td><td><strong>PS-X70</strong></td><td>$300-$600</td><td>Excelente</td><td>Um patamar abaixo do X75</td></tr>
-                            <tr><td>8</td><td><strong>PS-X65</strong></td><td>$300-$600</td><td>Excelente</td><td>Biotracer gama média, comum na EU</td></tr>
-                            <tr><td>9</td><td><strong>TTS-3000A (motor unit)</strong></td><td>$300-$600</td><td>Excelente</td><td>Dados muito finos — estimativa</td></tr>
-                            <tr><td>10</td><td><strong>TTS-3000 (motor unit)</strong></td><td>$300-$550</td><td>Bom</td><td>Verificar tração (belt vs DD); c/ braço+caixa $700-1,200</td></tr>
-                            <tr><td>11</td><td><strong>PS-X7</strong></td><td>$250-$500</td><td>Bom</td><td>Biotracer inicial; estável/soft</td></tr>
-                            <tr><td>12</td><td><strong>PS-X600</strong></td><td>$250-$450</td><td>Bom</td><td>Hum/ground e servo do braço conhecidos</td></tr>
-                            <tr><td>13</td><td><strong>PS-X60</strong></td><td>$200-$450</td><td>Bom</td><td>Entrada Biotracer, a mais comum</td></tr>
+                            <tr><td>1</td><td><strong>PS-X9</strong></td><td>1978</td><td>$4,500-$9,000+</td><td>Excelente</td><td>Flagship raro; funcional vale múltiplos de um avariado. Ilíquido</td></tr>
+                            <tr><td>2</td><td><strong>PS-X800 (linear)</strong></td><td>1982</td><td>$1,100-$2,100</td><td>Excelente</td><td>Maior risco de falha; revisado = prémio grande</td></tr>
+                            <tr><td>3</td><td><strong>PS-B80</strong></td><td>1979</td><td>$1,200-$2,000</td><td>Excelente</td><td>Alta gama escassa; 2º a seguir a X9/X800</td></tr>
+                            <tr><td>4</td><td><strong>TTS-8000 (motor unit)</strong></td><td>1972</td><td>$700-$1,200</td><td>Excelente</td><td>Top motor Sony; valor depende do braço/base</td></tr>
+                            <tr><td>5</td><td><strong>PS-X555ES</strong></td><td>1982</td><td>$550-$1,000</td><td>Excelente</td><td>O mais líquido do topo; mint até ~$1,400</td></tr>
+                            <tr><td>6</td><td><strong>PS-X75</strong></td><td>1979</td><td>$450-$900</td><td>Excelente</td><td>Quartz, popular e líquido</td></tr>
+                            <tr><td>7</td><td><strong>PS-X70</strong></td><td>1978</td><td>$300-$600</td><td>Excelente</td><td>Um patamar abaixo do X75</td></tr>
+                            <tr><td>8</td><td><strong>PS-X65</strong></td><td>1979</td><td>$300-$600</td><td>Excelente</td><td>Biotracer gama média, comum na EU</td></tr>
+                            <tr><td>9</td><td><strong>TTS-3000A (motor unit)</strong></td><td>1971</td><td>$300-$600</td><td>Excelente</td><td>Dados muito finos — estimativa</td></tr>
+                            <tr><td>10</td><td><strong>TTS-3000 (motor unit)</strong></td><td>1970</td><td>$300-$550</td><td>Bom</td><td>Verificar tração (belt vs DD); c/ braço+caixa $700-1,200</td></tr>
+                            <tr><td>11</td><td><strong>PS-X7</strong></td><td>1977</td><td>$250-$500</td><td>Bom</td><td>Biotracer inicial; estável/soft</td></tr>
+                            <tr><td>12</td><td><strong>PS-X600</strong></td><td>1980</td><td>$250-$450</td><td>Bom</td><td>Hum/ground e servo do braço conhecidos</td></tr>
+                            <tr><td>13</td><td><strong>PS-X60</strong></td><td>1978</td><td>$200-$450</td><td>Bom</td><td>Entrada Biotracer, a mais comum</td></tr>
                         </tbody>
                     </table>
 
@@ -1806,19 +1840,19 @@
 
                     <table style="margin-top: 15px; font-size: 12px;">
                         <thead>
-                            <tr><th>#</th><th>Modelo</th><th>Faixa Preço (USD)</th><th>Condição</th><th>Notas</th></tr>
+                            <tr><th>#</th><th>Modelo</th><th title="Ano de produção aproximado">Ano</th><th>Faixa Preço (USD)</th><th>Condição</th><th>Notas</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>1</td><td><strong>TT-1000 (Esotec)</strong></td><td>$5,000-$7,000</td><td>Excelente</td><td>Esotec raro; a única Marantz que compete com DD japonês. Dados finos</td></tr>
-                            <tr><td>2</td><td><strong>TT-1000 Mk II</strong></td><td>$3,500-$6,000</td><td>Excelente</td><td>Mais escasso; estimativa (1 lance €3,500)</td></tr>
-                            <tr><td>3</td><td><strong>Model 6300 (excelente/revisado)</strong></td><td>$1,500-$2,500</td><td>Excelente</td><td>O que coleccionadores procuram; "só sobe". Até ~$2,800 mint</td></tr>
-                            <tr><td>4</td><td><strong>Model 6200 (c/ base madeira)</strong></td><td>$300-$820</td><td>Bom</td><td>Melhor da gama média; vendas eBay $270-$820</td></tr>
-                            <tr><td>5</td><td><strong>Model 6170</strong></td><td>$300-$600</td><td>Bom</td><td>Pedidos (~$900) bem acima das vendas (~$200)</td></tr>
-                            <tr><td>6</td><td><strong>Model 6300 (reparação)</strong></td><td>$200-$600</td><td>Partes</td><td>Não-funcional / projeto</td></tr>
-                            <tr><td>7</td><td><strong>Model 6100</strong></td><td>$250-$450</td><td>Bom</td><td>Belt-drive; mint ~$400-500</td></tr>
-                            <tr><td>8</td><td><strong>Model 6150</strong></td><td>$250-$400</td><td>Bom</td><td>Vendas eBay $165-$399</td></tr>
-                            <tr><td>9</td><td><strong>Model 6110</strong></td><td>$150-$425</td><td>Bom</td><td>Semi-auto; DD mais baixo</td></tr>
-                            <tr><td>10</td><td><strong>Model 6025</strong></td><td>$120-$250</td><td>Bom</td><td>Entrada belt-drive, menor valor</td></tr>
+                            <tr><td>1</td><td><strong>TT-1000 (Esotec)</strong></td><td>1978</td><td>$5,000-$7,000</td><td>Excelente</td><td>Esotec raro; a única Marantz que compete com DD japonês. Dados finos</td></tr>
+                            <tr><td>2</td><td><strong>TT-1000 Mk II</strong></td><td>1980</td><td>$3,500-$6,000</td><td>Excelente</td><td>Mais escasso; estimativa (1 lance €3,500)</td></tr>
+                            <tr><td>3</td><td><strong>Model 6300 (excelente/revisado)</strong></td><td>1977</td><td>$1,500-$2,500</td><td>Excelente</td><td>O que coleccionadores procuram; "só sobe". Até ~$2,800 mint</td></tr>
+                            <tr><td>4</td><td><strong>Model 6200 (c/ base madeira)</strong></td><td>1977</td><td>$300-$820</td><td>Bom</td><td>Melhor da gama média; vendas eBay $270-$820</td></tr>
+                            <tr><td>5</td><td><strong>Model 6170</strong></td><td>1977</td><td>$300-$600</td><td>Bom</td><td>Pedidos (~$900) bem acima das vendas (~$200)</td></tr>
+                            <tr><td>6</td><td><strong>Model 6300 (reparação)</strong></td><td>1977</td><td>$200-$600</td><td>Partes</td><td>Não-funcional / projeto</td></tr>
+                            <tr><td>7</td><td><strong>Model 6100</strong></td><td>1976</td><td>$250-$450</td><td>Bom</td><td>Belt-drive; mint ~$400-500</td></tr>
+                            <tr><td>8</td><td><strong>Model 6150</strong></td><td>1977</td><td>$250-$400</td><td>Bom</td><td>Vendas eBay $165-$399</td></tr>
+                            <tr><td>9</td><td><strong>Model 6110</strong></td><td>1977</td><td>$150-$425</td><td>Bom</td><td>Semi-auto; DD mais baixo</td></tr>
+                            <tr><td>10</td><td><strong>Model 6025</strong></td><td>1978</td><td>$120-$250</td><td>Bom</td><td>Entrada belt-drive, menor valor</td></tr>
                         </tbody>
                     </table>
 
@@ -1973,7 +2007,7 @@
         // Password protection
         function checkPassword() {
             const password = prompt('Enter password to access this site:');
-            const validPasswords = ['xauquintas', 'darkside'];
+            const validPasswords = ['xauquintas', 'darkside', 'Ok'];
 
             if (!validPasswords.includes(password)) {
                 alert('Incorrect password');
