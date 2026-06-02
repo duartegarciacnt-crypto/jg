@@ -2195,6 +2195,18 @@
             <h2>To-Do / Próximos Passos</h2>
             <p style="color: #666;">Lista de trabalho viva. Prioridades: <span style="background:#ffcdd2; padding:1px 6px; border-radius:3px;">Alta</span> &nbsp; <span style="background:#fff3cd; padding:1px 6px; border-radius:3px;">Média</span> &nbsp; <span style="background:#d4edda; padding:1px 6px; border-radius:3px;">Baixa</span>. Última actualização: 2026-06-02.</p>
 
+            <div class="sub-tabs">
+                <button class="sub-tab-button active" onclick="switchSubTab('todo-1', this)">1. Candidatas</button>
+                <button class="sub-tab-button" onclick="switchSubTab('todo-2', this)">2. Dados</button>
+                <button class="sub-tab-button" onclick="switchSubTab('todo-3', this)">3. Cortes</button>
+                <button class="sub-tab-button" onclick="switchSubTab('todo-4', this)">4. Negócio</button>
+                <button class="sub-tab-button" onclick="switchSubTab('todo-5', this)">5. Go-to-market</button>
+                <button class="sub-tab-button" onclick="switchSubTab('todo-6', this)">6. Mapeamento</button>
+                <button class="sub-tab-button" onclick="switchSubTab('todo-7', this)">7. Concorrência</button>
+                <button class="sub-tab-button" onclick="switchSubTab('todo-dec', this)">Decisões</button>
+            </div>
+
+            <div id="todo-1" class="sub-tab-content active">
             <h3 style="margin-top: 25px; color: #2c3e50;">1. Validar marcas candidatas (tab "Outros")</h3>
             <div style="background-color: #fff3e0; padding: 12px; border-left: 4px solid #FF9800; border-radius: 4px;">
                 <ul style="margin: 0; padding-left: 20px; font-size: 14px; line-height: 1.9;">
@@ -2206,6 +2218,8 @@
                 </ul>
             </div>
 
+            </div>
+            <div id="todo-2" class="sub-tab-content">
             <h3 style="margin-top: 25px; color: #2c3e50;">2. Verificação de dados (antes de uso comercial)</h3>
             <div style="background-color: #e3f2fd; padding: 12px; border-left: 4px solid #2196F3; border-radius: 4px;">
                 <ul style="margin: 0; padding-left: 20px; font-size: 14px; line-height: 1.9;">
@@ -2215,6 +2229,8 @@
                 </ul>
             </div>
 
+            </div>
+            <div id="todo-3" class="sub-tab-content">
             <h3 style="margin-top: 25px; color: #2c3e50;">3. Dimensões de corte por modelo (engenharia)</h3>
             <div style="background-color: #f1f8e9; padding: 12px; border-left: 4px solid #689F38; border-radius: 4px;">
                 <ul style="margin: 0; padding-left: 20px; font-size: 14px; line-height: 1.9;">
@@ -2224,6 +2240,8 @@
                 </ul>
             </div>
 
+            </div>
+            <div id="todo-4" class="sub-tab-content">
             <h3 style="margin-top: 25px; color: #2c3e50;">4. Negócio &amp; lançamento</h3>
             <div style="background-color: #f3e5f5; padding: 12px; border-left: 4px solid #9C27B0; border-radius: 4px;">
                 <ul style="margin: 0; padding-left: 20px; font-size: 14px; line-height: 1.9;">
@@ -2233,6 +2251,8 @@
                 </ul>
             </div>
 
+            </div>
+            <div id="todo-5" class="sub-tab-content">
             <h3 style="margin-top: 25px; color: #2c3e50;">5. Go-to-market (marketing &amp; vendas)</h3>
             <div style="background-color: #e1f5fe; padding: 12px; border-left: 4px solid #03A9F4; border-radius: 4px;">
                 <ul style="margin: 0 0 10px; padding-left: 20px; font-size: 14px; line-height: 1.9;">
@@ -2245,6 +2265,8 @@
                 <p style="margin: 6px 0 0; font-size: 12px; color: #777;">Variações: hero a 3/4 · detalhe macro do grão/junta · lifestyle (sala hi-fi, luz natural) · top-down com a unidade de motor montada.</p>
             </div>
 
+            </div>
+            <div id="todo-6" class="sub-tab-content">
             <h3 style="margin-top: 25px; color: #2c3e50;">6. Lista exaustiva de mapeamento físico — unidades a adquirir</h3>
             <p style="color: #666; font-size: 13px;"><strong>Mapear = ter acesso físico a um deck e tirar as medições à mão.</strong> Como cada grupo partilha footprint, basta <strong>uma unidade física por mapa</strong>. Esta é a lista completa do que é preciso "pôr as mãos em cima". <strong>Estado actual: 0 de 26 mapeados.</strong> Estado: ☐ por mapear · ☑ mapeado.</p>
             <table style="margin-top: 12px; font-size: 12px;">
@@ -2280,6 +2302,8 @@
             </table>
             <p style="margin-top: 8px; font-size: 12px; color: #777;"><strong>26 unidades = 26 mapas.</strong> Núcleo da tese = 16 (Alta + Média + Baixa). Candidatos Outros = 4 (mapear só após validação da secção 1). Expansão fora da tese = 6 (só se alargar o foco). ⚠️ Comprar/medir a unidade <em>exacta</em> — a "compatibilidade" de caixa não garante corte idêntico (ex.: DP-3000 ≠ DP-6000). Fonte barata: idlers/Lenco/Thorens belt = UE; unidades de motor japonesas = Yahoo Auctions JP; Dual = UE/Alemanha.</p>
 
+            </div>
+            <div id="todo-7" class="sub-tab-content">
             <h3 style="margin-top: 25px; color: #2c3e50;">7. Concorrência — quem vende plinths (directório por empresa)</h3>
             <p style="color: #666; font-size: 13px;">Negócios como o nosso, organizados por empresa (não por modelo — esse cruzamento está na secção 6). Útil para benchmarking de preço, posicionamento e lacunas. Compilado da pesquisa desta sessão.</p>
 
@@ -2323,11 +2347,14 @@
             </table>
             <p style="margin-top: 8px; font-size: 12px; color: #777;"><strong>Leitura:</strong> mercado premium concentrado em <em>idlers</em> (Garrard/Thorens TD-124) e poucos especialistas DD; as unidades de motor japonesas (Denon/JVC/Sony) e a Dual têm oferta acabada escassa — a lacuna onde uma marca polida, enviada de Portugal, pode entrar. ⚠️ Confirmar catálogos/preços nos sites antes de tratar como definitivo.</p>
 
+            </div>
+            <div id="todo-dec" class="sub-tab-content">
             <h3 style="margin-top: 25px; color: #2c3e50;">Decisões registadas</h3>
             <ul style="margin-left: 20px; font-size: 13px; color: #666; line-height: 1.8;">
                 <li>Linn LP12 e Acoustic Research AR-XA/XB <strong>excluídos</strong> (fora da tese; re-plinth de hobby de alto volume) — manter foco premium em unidades de motor.</li>
                 <li>Todas as tabelas de Compatibilidade agora agrupam modelos por base partilhada (footprint).</li>
             </ul>
+            </div>
         </div>
 
 <footer>
