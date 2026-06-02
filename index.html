@@ -471,6 +471,7 @@
                 <button class="sub-tab-button" onclick="switchSubTab('jvc', this)">JVC / Victor</button>
                 <button class="sub-tab-button" onclick="switchSubTab('sony', this)">Sony</button>
                 <button class="sub-tab-button" onclick="switchSubTab('marantz', this)">Marantz</button>
+                <button class="sub-tab-button" onclick="switchSubTab('outros', this)">Outros</button>
             </div>
 
             <!-- Dual Section -->
@@ -930,18 +931,16 @@
                     <h4 style="margin-top: 25px; color: #2c3e50;">⭐ Série SP-10 / SP-15 — Unidades de Motor (Base Obrigatória)</h4>
                     <p style="color: #666; font-size: 13px;">Ao contrário dos SL integrados, os <strong>SP-10/SP-15</strong> são motores de tração directa vendidos como <em>unidades de motor</em>, sem base. São o candidato a base premium nº1 de toda a documentação: procura estrutural, valor elevado e comunidade DIY enorme.</p>
                     <table style="margin-top: 12px;">
-                        <thead><tr><th>Modelo</th><th>Características</th><th>Notas de Base</th></tr></thead>
+                        <thead><tr><th>Grupo de Base</th><th>Modelos (partilham footprint)</th><th>Notas</th></tr></thead>
                         <tbody>
-                            <tr><td><strong>SP-10 MkIII</strong></td><td>Motor de referência, binário altíssimo, raro</td><td>Base muito grande/pesada; topo absoluto</td></tr>
-                            <tr><td><strong>SP-10 MkII / MkIIA</strong></td><td>Padrão de estúdio/broadcast, quartz-lock</td><td>O alvo de base mais procurado</td></tr>
-                            <tr><td><strong>SP-10 (MkI)</strong></td><td>Primeiro DD profissional (1970)</td><td>Base obrigatória; histórico</td></tr>
-                            <tr><td><strong>SP-15</strong></td><td>Versão mais compacta do MkII, quartz</td><td>Base obrigatória; excelente custo/benefício</td></tr>
-                            <tr><td><strong>SP-25 / SP-20</strong></td><td>Motores DD de gama inferior</td><td>Base obrigatória; entrada</td></tr>
+                            <tr><td><strong>1 — Chassi grande quadrado (~369mm)</strong></td><td><strong>SP-10 MkII / MkIIA · SP-10 MkIII · SP-20 · SL-1000</strong></td><td>Mesmo furo de montagem — um corte serve MkII e MkIII (c/ inserções de enchimento). ⚠️ O MkIII (binário 16 kg·cm) exige plinth mais alto/pesado/rígido. A base de fábrica SH-10B4 serve SP-20 <em>e</em> SP-10 MkII</td></tr>
+                            <tr><td><strong>2 — Chassi compacto redondo (~295mm)</strong></td><td><strong>SP-15 · SP-25</strong></td><td>Partilham plinth (mesmo corte redondo ~295mm; template do manual do SP-15 serve ambos). Mais pequenos que o grupo 1 — NÃO intercambiáveis com ele</td></tr>
+                            <tr><td><strong>3 — Footprint próprio</strong></td><td><strong>SP-10 (MkI)</strong></td><td>Mais pequeno/diferente do MkII; base própria. Primeiro DD profissional (1970), histórico</td></tr>
                         </tbody>
                     </table>
                     <div style="background-color: #f1f8e9; padding: 12px; border-left: 4px solid #689F38; border-radius: 4px; margin-top: 15px;">
                         <strong>Plinth Type (SP-10/SP-15):</strong>
-                        <p style="margin-top: 6px; color: #555; font-size: 13px;">Bases originais Technics (ex.: SH-10B3) são caras e procuradas. Comunidade DIYaudio constrói bases em madeira maciça, contraplacado báltico, Panzerholz e construções em camadas (CLD). Procura estrutural — o motor não funciona sem base.</p>
+                        <p style="margin-top: 6px; color: #555; font-size: 13px;">Bases originais Technics (ex.: SH-10B3, SH-10B4) são caras e procuradas. Comunidade DIYaudio constrói bases em madeira maciça, contraplacado báltico, Panzerholz e construções em camadas (CLD). <strong>Dois footprints distintos:</strong> chassi grande quadrado (SP-10 MkII/MkIII, SP-20, SL-1000) vs compacto redondo (SP-15/SP-25) — não intercambiáveis. O corte do motor é independente do furo do braço (cada plinth é cortado para um braço específico). Vendedores: Woodsong/Dobbins, Porterhouse (Albert Porter), Artisan Fidelity, Spinner Town (ficheiros CNC), Etsy/eBay. Procura estrutural — o motor não funciona sem base.</p>
                     </div>
 
                     <div style="background-color: #fff3e0; padding: 12px; border-left: 4px solid #FF9800; border-radius: 4px; margin-top: 20px;">
@@ -1107,22 +1106,21 @@
                     <h3 style="margin-top: 0; color: #2c3e50;">Modelos Lenco - Compatibilidade de Bases</h3>
                     <p style="color: #666;">Lencos são máquinas suíças robustas com unidade integrada de motor+prato. Plinths são parte do sistema de transmissão e não são intercambiáveis.</p>
 
-                    <h4 style="margin-top: 20px; color: #2c3e50;">Modelos Idler-Drive (Mecânica)</h4>
+                    <h4 style="margin-top: 20px; color: #2c3e50;">Modelos Idler-Drive — agrupados por base partilhada</h4>
                     <table style="margin-top: 12px;">
-                        <thead><tr><th>Modelo</th><th>Características</th><th>Prato</th></tr></thead>
+                        <thead><tr><th>Grupo de Base</th><th>Modelos (partilham footprint)</th><th>Notas</th></tr></thead>
                         <tbody>
-                            <tr><td><strong>L70</strong></td><td>4-speed (16, 33⅓, 45, 78 RPM)</td><td>3kg+ alumínio</td></tr>
-                            <tr><td><strong>L75/L75S</strong></td><td>Modelo primário, design robusto, tonearm Jelco (S)</td><td>3kg+ alumínio</td></tr>
-                            <tr><td><strong>L77</strong></td><td>L70 com tonearm P77</td><td>3kg+ alumínio</td></tr>
-                            <tr><td><strong>L78</strong></td><td>L75 com autostop, 4-speed</td><td>3kg+ alumínio</td></tr>
-                            <tr><td><strong>L84</strong></td><td>Variante documentada limitadamente</td><td>Variável</td></tr>
-                            <tr><td><strong>L85</strong></td><td>Belt-drive (sistema diferente)</td><td>Variável</td></tr>
+                            <tr><td><strong>A — Template L75 ⭐ (alvo canónico)</strong></td><td><strong>L75 · L75S · L76 · L77 · GL75 · Bogen B75</strong></td><td>Mesma chapa superior L75 — o alvo clássico de re-plinth (birch-ply em camadas / xisto). L76/L77 = variantes auto-trip do mesmo chassi. GL75/B75 = o mesmo deck re-etiquetado</td></tr>
+                            <tr><td><strong>B — L78 (quase igual ao L75)</strong></td><td><strong>L78 · GL78</strong></td><td>Mesmo chassi idler com auto-return/stop; footprint quase idêntico ao L75 mas com template próprio (zona de controlo difere)</td></tr>
+                            <tr><td><strong>C — Template L70 (próprio)</strong></td><td><strong>L70 · GL70 · Bogen B62</strong></td><td>Idler popular para re-plinth, MAS geometria de braço diferente (~230mm vs ~210mm) → template próprio, NÃO é drop-in do L75</td></tr>
+                            <tr><td><strong>D — Família idler menor</strong></td><td><strong>B55 / B52</strong></td><td>Mesma família idler mas mais leve/inferior; footprint provavelmente próprio — verificar por medição (dados finos)</td></tr>
+                            <tr><td><strong>— Belt-drive (excluir)</strong></td><td><strong>L85</strong></td><td>Belt-drive, chassi totalmente diferente — não partilha base idler. L83/L84 indeterminados</td></tr>
                         </tbody>
                     </table>
 
                     <div style="background-color: #f1f8e9; padding: 12px; border-left: 4px solid #689F38; border-radius: 4px; margin-top: 20px;">
                         <strong>Plinth Type:</strong>
-                        <p style="margin-top: 6px; color: #555; font-size: 13px;">Base de alumínio pesado integrada ao sistema de motor idler-wheel de 3.5+ kg. NÃO é compatível com outras marcas. Plinths customizados são populares mas requerem transplante do mecanismo completo.</p>
+                        <p style="margin-top: 6px; color: #555; font-size: 13px;">Base de alumínio pesado integrada ao sistema de motor idler-wheel de 3.5+ kg. NÃO é compatível com outras marcas. O re-plinth (transplante para birch-ply em camadas, xisto ou madeira maciça) é a prática central da comunidade Lenco Heaven. <strong>Atenção:</strong> o método de fixação varia com o ano (4 ilhós de canto nos primeiros vs molas planas concêntricas nos tardios). Templates/plinths à venda: plinthtemplates.wordpress.com (PDF grátis + DWG CNC, templates distintos L75/L70/L78), template Lenco Heaven do Troels Gravesen, e plinths prontos na Etsy (woodoosound) e eBay para "L75/L70/L78".</p>
                     </div>
                 </div>
 
@@ -1228,18 +1226,18 @@
 
                     <h4 style="margin-top: 20px; color: #2c3e50;">Modelos Profissionais Transcrição (Idler-Drive)</h4>
                     <table style="margin-top: 12px;">
-                        <thead><tr><th>Modelo</th><th>Características</th><th>Prato</th><th>Períodoo</th></tr></thead>
+                        <thead><tr><th>Modelo</th><th>Características</th><th>Prato</th><th>Período</th></tr></thead>
                         <tbody>
-                            <tr><td><strong>Model 301</strong></td><td>Padrão de transmissão, 3-speed (33⅓, 45, 78 RPM)</td><td>6lb</td><td>1953-1966</td></tr>
-                            <tr><td><strong>Model 301 variants</strong></td><td>Gray enamel, Cream enamel, Oil bearing (1957+)</td><td>6lb</td><td>Various</td></tr>
-                            <tr><td><strong>Model 401</strong></td><td>301 melhorado, sistema de travão eddy current</td><td>4.01kg</td><td>1964-1976</td></tr>
+                            <tr><td><strong>Model 301 (todas as variantes)</strong></td><td>3-speed (33⅓, 45, 78 RPM). Grease bearing e oil bearing (1957+); esmalte cream, branco e grey hammertone — todas partilham a mesma base (ver nota)</td><td>6lb</td><td>1953-1966</td></tr>
+                            <tr><td><strong>Model 401</strong></td><td>301 melhorado, sistema de travão eddy current. Base própria (NÃO partilha com o 301)</td><td>4.01kg</td><td>1964-1976</td></tr>
+                            <tr><td><strong>Model 4HF / 5HF</strong></td><td>Idler-drive de gama média, montável em base. Mercado de plinths sobretudo artesanal (Etsy/forums) — sem oferta premium como no 301/401. Footprint próprio, distinto do 301/401</td><td>Variável</td><td>Anos 50-60</td></tr>
                             <tr><td><strong>Model 80/85</strong></td><td>Modelos de consumidor (documentação limitada)</td><td>Variável</td><td>Various</td></tr>
                         </tbody>
                     </table>
 
                     <div style="background-color: #f3e5f5; padding: 12px; border-left: 4px solid #9C27B0; border-radius: 4px; margin-top: 20px;">
                         <strong>Plinth Type:</strong>
-                        <p style="margin-top: 6px; color: #555; font-size: 13px;">Mecanismo compacto montável em diversos plinths customizados (madeira dura, xisto, betão, composite). Ecossistema extenso de fabricantes de plinths artesanais. 301 e 401 NÃO são intercambiáveis devido a tamanhos/pesos diferentes.</p>
+                        <p style="margin-top: 6px; color: #555; font-size: 13px;">Mecanismo compacto montável em diversos plinths customizados (madeira dura, xisto, betão, composite). Ecossistema extenso de fabricantes de plinths artesanais. <strong>Todas as variantes do 301 (grease/oil bearing, cream/grey/branco) partilham a mesma base</strong> — as diferenças são internas (tipo de chumaceira) ou cosméticas e não alteram o furo de montagem nem o contorno da chapa superior; os fabricantes (Woodsong, OMA, Atelier 13) vendem um único plinth "Garrard 301" sem distinguir variante. O <strong>301 e o 401 NÃO são intercambiáveis</strong> (tamanhos/pesos diferentes), e o 4HF/5HF requer base própria.</p>
                     </div>
                 </div>
 
@@ -1366,16 +1364,14 @@
                     <h3 style="margin-top: 0; color: #2c3e50;">Modelos Thorens - Compatibilidade de Bases</h3>
                     <p style="color: #666;">Thorens usa sistema de suspensão subchassis com 3 molas em configuração triangular. Designs específicos ao modelo, não intercambiáveis.</p>
 
-                    <h4 style="margin-top: 20px; color: #2c3e50;">Modelos Clássicos (Belt-Drive com Floating Subchassis)</h4>
+                    <h4 style="margin-top: 20px; color: #2c3e50;">Modelos Clássicos — agrupados por base partilhada</h4>
                     <table style="margin-top: 12px;">
-                        <thead><tr><th>Modelo</th><th>Características Principais</th><th>Era</th></tr></thead>
+                        <thead><tr><th>Grupo de Base</th><th>Modelos (partilham base)</th><th>Características</th><th>Era</th></tr></thead>
                         <tbody>
-                            <tr><td><strong>TD-124</strong></td><td>Original, 4-speed, prato 9.5lb, padrão broadcast, motor 10W</td><td>1957-1960s</td></tr>
-                            <tr><td><strong>TD-124 MK2</strong></td><td>Versão melhorada, specs refinadas</td><td>-</td></tr>
-                            <tr><td><strong>TD-125 (Mk I, II, III+)</strong></td><td>Subchassis primavera (inovação de 1968), controlo eletrônico 220V</td><td>1968+</td></tr>
-                            <tr><td><strong>TD-150</strong></td><td>Subchassis primavera pioneiro (3-point), 2-speed, design revolucionário</td><td>1965/66</td></tr>
-                            <tr><td><strong>TD-160</strong></td><td>Mais pesado/estável que TD-125, flagship até 1990s, pulley motor com embraiagem</td><td>1972-90s</td></tr>
-                            <tr><td><strong>TD-165</strong></td><td>Contemporâneo TD-160, construção mais barata, sub-platter resina vs zinco</td><td>-</td></tr>
+                            <tr><td><strong>A — Idler ⭐ (alvo premium)</strong></td><td><strong>TD-124 · TD-124 MkII · TD-224</strong></td><td>Idler, prato 9.5lb, padrão broadcast. MkI→MkII muda só internamente (bobina, prato não-magnético) — mesma chapa e furo de montagem. <em>Armboard</em> varia conforme o braço (SME / Schick 9"/12")</td><td>1957-60s</td></tr>
+                            <tr><td><strong>B — Belt floating (família 160)</strong></td><td><strong>TD-160 · TD-165 · TD-166 (MkII)</strong></td><td>Subchassis suspenso 3-point; mesma chapa superior (~398×308mm) → footprint de plinth partilhado. TD-165 = internos mais baratos (sub-prato resina)</td><td>1972-90s</td></tr>
+                            <tr><td><strong>C — Belt floating (base própria)</strong></td><td><strong>TD-125 / TD-125 MkII</strong></td><td>Subchassis suspenso maior, controlo electrónico. Surround ~345×441mm — footprint distinto dos grupos A e B</td><td>1968+</td></tr>
+                            <tr><td><strong>D — Belt floating (ancestral)</strong></td><td><strong>TD-150 / TD-150 MkII</strong></td><td>Subchassis suspenso pioneiro, ancestral do Linn LP12. Relacionado com o grupo B mas layout mais antigo — base própria</td><td>1965/66</td></tr>
                         </tbody>
                     </table>
 
@@ -1391,8 +1387,8 @@
                     </table>
 
                     <div style="background-color: #e3f2fd; padding: 12px; border-left: 4px solid #2196F3; border-radius: 4px; margin-top: 20px;">
-                        <strong>⚠️ Plinth Compatibility:</strong>
-                        <p style="margin-top: 6px; color: #555; font-size: 13px;">Sistema de suspensão subchassis com 3-point spring mounting. Cada modelo (TD-124/125/150/160/165) usa designs específicos - NÃO é intercambiável entre modelos. Condição das molas crítica para desempenho. Modelos sem subchassis (TD-170/190) muito menos valorizados.</p>
+                        <strong>⚠️ Compatibilidade de Base (por grupo):</strong>
+                        <p style="margin-top: 6px; color: #555; font-size: 13px;">O <strong>TD-124 é idler</strong> (chapa montada num plinth recessado) e <strong>nunca partilha base</strong> com os belt-drive de subchassis flutuante. Dentro dos belt: o <strong>TD-160/165/166 partilha footprint</strong>; o <strong>TD-125</strong> e o <strong>TD-150</strong> têm cada um a sua base. Em todos, a <em>armboard</em> tem de corresponder ao braço (9"/12"). O mercado de plinths <strong>premium concentra-se no TD-124</strong> (Woodsong, Artisan Fidelity, Bobland); os belt suspensos são servidos sobretudo por DIY/Etsy. Condição das molas crítica. Modelos sem subchassis (TD-170/190) muito menos valorizados.</p>
                     </div>
                 </div>
 
@@ -1521,16 +1517,14 @@
                     <h3 style="margin-top: 0; color: #2c3e50;">Modelos Denon - Compatibilidade de Bases</h3>
                     <p style="color: #666;">A Denon produziu alguns dos melhores motores de tração directa do mundo. Os modelos profissionais foram vendidos como <strong>unidades de motor (motor units)</strong> destinadas a serem montadas numa base personalizada — o segmento ideal para bases de madeira premium.</p>
 
-                    <h4 style="margin-top: 20px; color: #2c3e50;">Grupo 1: Unidades de Motor (Base Obrigatória)</h4>
+                    <h4 style="margin-top: 20px; color: #2c3e50;">Grupo 1: Unidades de Motor (Base Obrigatória) — por footprint</h4>
                     <table style="margin-top: 12px;">
-                        <thead><tr><th>Modelo</th><th>Características</th><th>Notas de Base</th></tr></thead>
+                        <thead><tr><th>Footprint de Base</th><th>Modelos</th><th>Notas</th></tr></thead>
                         <tbody>
-                            <tr><td><strong>DP-100</strong></td><td>Motor DD profissional de referência, quartz-lock</td><td>Topo de gama absoluto; bases enormes</td></tr>
-                            <tr><td><strong>DP-80</strong></td><td>Motor DD quartz, usado em estúdios</td><td>O candidato a base mais procurado</td></tr>
-                            <tr><td><strong>DP-6000</strong></td><td>Servo DD de alta precisão (antecessor do DP-80)</td><td>Forte procura de bases custom</td></tr>
-                            <tr><td><strong>DP-5000</strong></td><td>Motor DD servo</td><td>Necessita base + braço</td></tr>
-                            <tr><td><strong>DP-3000</strong></td><td>Motor DD servo popular</td><td>Base obrigatória; comunidade DIY activa</td></tr>
-                            <tr><td><strong>DP-2000</strong></td><td>Motor DD servo compacto</td><td>Base obrigatória; entrada acessível</td></tr>
+                            <tr><td><strong>A — Chassi redondo (~376mm Ø)</strong></td><td><strong>DP-80 · DP-75 · DP-6000 · DP-7000</strong></td><td>Mesma família de bases de fábrica DK (DK-300/110/2000/2300). ⚠️ Cortar ao modelo exacto — o DP-6000/7000 tem sensor magnético na borda; um corte de DP-80 pode não servir</td></tr>
+                            <tr><td><strong>B — Chassi rectangular (370×374mm)</strong></td><td><strong>DP-3000 · DP-5000 / DP-5000F</strong></td><td>Dimensões idênticas ao mm → footprint genuinamente partilhado. Base de fábrica DK-100/DK-100F. Um corte de DP-3000 NÃO aceita um DP-6000</td></tr>
+                            <tr><td><strong>C — Base própria de fábrica</strong></td><td><strong>DP-2000</strong></td><td>Vendido em plinths próprios (DP-2500/2550/2800); não assumir compatível com cortes DK-100/300</td></tr>
+                            <tr><td><strong>— Integrado (não é candidato)</strong></td><td><strong>DP-100</strong></td><td>Unidade integrada enorme (570×285×465mm, ~46kg), frame fixo — não é separável nem leva plinth</td></tr>
                         </tbody>
                     </table>
 
@@ -1547,7 +1541,7 @@
 
                     <div style="background-color: #f1f8e9; padding: 12px; border-left: 4px solid #689F38; border-radius: 4px; margin-top: 20px;">
                         <strong>Plinth Type:</strong>
-                        <p style="margin-top: 6px; color: #555; font-size: 13px;">As unidades DP-80 / DP-6000 / DP-3000 são vendidas sem base — o cliente <em>tem</em> de adquirir ou construir uma. Comunidade DIYaudio extremamente activa com construções em madeira maciça, contraplacado báltico e Panzerholz. Procura estrutural, não discricionária.</p>
+                        <p style="margin-top: 6px; color: #555; font-size: 13px;">As unidades DP-80 / DP-6000 / DP-3000 são vendidas sem base — o cliente <em>tem</em> de adquirir ou construir uma. <strong>Dois footprints:</strong> redondo (DP-80/75/6000/7000) e rectangular (DP-3000/5000). ⚠️ As "compatibilidades" das caixas DK de fábrica usam tampos específicos por modelo — cada plinth deve ser cortado à unidade exacta (um corte de DP-3000 não aceita um DP-6000). Comunidade DIYaudio extremamente activa (madeira maciça, contraplacado báltico, Panzerholz). Bases de fábrica DK-300/DK-100 e makers: Aemilia Audio, Acoustand, Lead Console; mais Etsy/eBay. Procura estrutural, não discricionária.</p>
                     </div>
                 </div>
 
@@ -1623,13 +1617,15 @@
                     <h3 style="margin-top: 0; color: #2c3e50;">Modelos JVC / Victor - Compatibilidade de Bases</h3>
                     <p style="color: #666;">A JVC (Victor no Japão) produziu a série <strong>TT</strong> de unidades de motor DD concebidas explicitamente para montagem em base personalizada. A TT-101 tem estatuto de culto entre audiófilos.</p>
 
-                    <h4 style="margin-top: 20px; color: #2c3e50;">Grupo 1: Unidades de Motor (Base Obrigatória)</h4>
+                    <h4 style="margin-top: 20px; color: #2c3e50;">Grupo 1: Unidades de Motor (Base Obrigatória) — corte 281mm partilhado</h4>
+                    <p style="color: #666; font-size: 13px;">As quatro unidades de motor TT partilham o <strong>mesmo corte redondo de 281mm</strong> — um único design de plinth serve todas (ajustar apenas a profundidade à altura do chassi).</p>
                     <table style="margin-top: 12px;">
                         <thead><tr><th>Modelo</th><th>Características</th><th>Notas de Base</th></tr></thead>
                         <tbody>
-                            <tr><td><strong>TT-101</strong></td><td>Servo bidireccional, quartz, lendário</td><td>Topo; servo frágil — exemplares funcionais com prémio</td></tr>
-                            <tr><td><strong>TT-81</strong></td><td>DD quartz, versão simplificada da TT-101</td><td>Excelente candidato, mais fiável</td></tr>
-                            <tr><td><strong>TT-71</strong></td><td>DD quartz de entrada da série TT</td><td>Acessível; base obrigatória</td></tr>
+                            <tr><td><strong>TT-101</strong></td><td>Servo bidireccional, quartz, lendário</td><td>Topo; servo frágil — exemplares funcionais com prémio. ~358×358×150mm</td></tr>
+                            <tr><td><strong>TT-81</strong></td><td>DD quartz, versão simplificada da TT-101</td><td>Excelente candidato, mais fiável. ~358×358×150mm</td></tr>
+                            <tr><td><strong>TT-801</strong></td><td>DD quartz da série TT (~8.5kg)</td><td>Mesmo corte 281mm; ~356×356×137mm</td></tr>
+                            <tr><td><strong>TT-71</strong></td><td>DD quartz de entrada da série TT</td><td>Acessível; chassi mais baixo (~350×350×120mm)</td></tr>
                         </tbody>
                     </table>
 
@@ -1646,7 +1642,7 @@
 
                     <div style="background-color: #f1f8e9; padding: 12px; border-left: 4px solid #689F38; border-radius: 4px; margin-top: 20px;">
                         <strong>Plinth Type:</strong>
-                        <p style="margin-top: 6px; color: #555; font-size: 13px;">As TT-101/81/71 são vendidas como unidades de motor nuas. Existe uma comunidade DIY muito activa a construir bases — procura estrutural comprovada. A QL-10 usa a base de fábrica CL-P, frequentemente substituída por madeira maciça.</p>
+                        <p style="margin-top: 6px; color: #555; font-size: 13px;">As TT-101/81/71/801 são vendidas como unidades de motor nuas e <strong>partilham o mesmo corte de 281mm</strong> — um design serve as quatro. As bases de fábrica Victor/JVC CL-P1 / CL-P2 / CL-P10 servem TT-71/81/101(/801); a QL-10 é o pacote de "separates" (TT-101 + braço UA-7045 + base CL-P1). Oferta comercial actual escassa (sobretudo bases de fábrica usadas no eBay/US Audio Mart + construções DIY) — lacuna clara para uma oferta premium acabada.</p>
                     </div>
                 </div>
 
@@ -1695,7 +1691,7 @@
                         </thead>
                         <tbody>
                             <tr><td><strong>Comunidade DIYaudio</strong></td><td>DIY / planos</td><td>Online</td><td>Grátis (planos)</td><td>Fórum</td><td><a href="https://www.diyaudio.com" target="_blank" style="color: #2c3e50;">diyaudio.com</a></td></tr>
-                            <tr><td><strong>Artisan Fidelity</strong></td><td>Fabricante premium</td><td>USA</td><td>Orçamento</td><td>Website</td><td><a href="https://www.artisanfidelity.com" target="_blank" style="color: #2c3e50;">artisanfidelity.com</a></td></tr>
+                            <tr><td><strong>Bases de fábrica CL-P (usadas)</strong></td><td>Victor/JVC OEM</td><td>Japão/Global</td><td>Variável</td><td>eBay / US Audio Mart</td><td><a href="https://www.usaudiomart.com/search/?keywords=victor+cl-p" target="_blank" style="color: #2c3e50;">US Audio Mart</a></td></tr>
                             <tr><td><strong>Vendedores Etsy</strong></td><td>Artesãos</td><td>Misto</td><td>Variável</td><td>Etsy</td><td><a href="https://www.etsy.com/search?q=jvc+tt-101+plinth" target="_blank" style="color: #2c3e50;">Etsy</a></td></tr>
                         </tbody>
                     </table>
@@ -1718,13 +1714,13 @@
                     <h3 style="margin-top: 0; color: #2c3e50;">Modelos Sony - Compatibilidade de Bases</h3>
                     <p style="color: #666;">A Sony produziu unidades de motor DD da série <strong>TTS</strong> (base obrigatória) e os flagships integrados da série <strong>PS-X</strong> com sistema Biotracer.</p>
 
-                    <h4 style="margin-top: 20px; color: #2c3e50;">Grupo 1: Unidades de Motor (Base Obrigatória)</h4>
+                    <h4 style="margin-top: 20px; color: #2c3e50;">Grupo 1: Unidades de Motor (Base Obrigatória) — por footprint</h4>
                     <table style="margin-top: 12px;">
-                        <thead><tr><th>Modelo</th><th>Características</th><th>Notas de Base</th></tr></thead>
+                        <thead><tr><th>Footprint de Base</th><th>Modelos</th><th>Notas</th></tr></thead>
                         <tbody>
-                            <tr><td><strong>TTS-8000</strong></td><td>Motor DD servo de alta gama</td><td>Candidato a base premium</td></tr>
-                            <tr><td><strong>TTS-3000A</strong></td><td>Motor DD servo</td><td>Base obrigatória</td></tr>
-                            <tr><td><strong>TTS-3000</strong></td><td>Motor DD servo (versão anterior)</td><td>Base obrigatória; entrada</td></tr>
+                            <tr><td><strong>A — TTS-8000 ⭐ (e TTS-6000)</strong></td><td><strong>TTS-8000 · TTS-6000</strong></td><td>DD de topo; partilham base (bases de fábrica TB-1000/TB-2000 SBMC; cabinets Resinamic Sound). ~370×395×130mm. O alvo principal</td></tr>
+                            <tr><td><strong>B — TTS-3000 / 3000A</strong></td><td><strong>TTS-3000 · TTS-3000A</strong></td><td>Mesmo motor/montagem; o 3000A tem canto removível (contorno difere ligeiramente). ~370×380mm. Footprint distinto do TTS-8000</td></tr>
+                            <tr><td><strong>C — Própria (integrada de fábrica)</strong></td><td><strong>TTS-2500 · TTS-4000</strong></td><td>O 2500 vivia no PS-2250/2251; o 4000 (corpo redondo + caixa de controlo) no PSE-4000 — pouca procura de plinth avulso</td></tr>
                         </tbody>
                     </table>
 
@@ -1742,7 +1738,7 @@
 
                     <div style="background-color: #f1f8e9; padding: 12px; border-left: 4px solid #689F38; border-radius: 4px; margin-top: 20px;">
                         <strong>Plinth Type:</strong>
-                        <p style="margin-top: 6px; color: #555; font-size: 13px;">As TTS-8000/3000 são unidades de motor que exigem base — alvo ideal. Os flagships PS-X têm bases integradas sofisticadas (Biotracer), pelo que o upgrade é menos frequente, mas o valor elevado justifica trabalho de restauro premium.</p>
+                        <p style="margin-top: 6px; color: #555; font-size: 13px;">As TTS-8000/3000 são unidades de motor que exigem base — alvo ideal. <strong>Cinco footprints distintos:</strong> só o TTS-8000 e o TTS-6000 partilham base; o TTS-8000 e o TTS-3000 NÃO são intercambiáveis (drives e dimensões diferentes). Oferta comercial mínima (bases de fábrica usadas + cabinets Resinamic Sound + DIY) — lacuna real para o par 8000/6000. ⚠️ As dimensões de corte não são públicas: medir a unidade antes de cortar. Os flagships PS-X têm bases integradas Biotracer (sem mercado de plinth avulso).</p>
                     </div>
                 </div>
 
@@ -1815,21 +1811,20 @@
                     <h3 style="margin-top: 0; color: #2c3e50;">Modelos Marantz - Compatibilidade de Bases</h3>
                     <p style="color: #666;">A Marantz vintage usa principalmente gira-discos de tração directa com base integrada (frequentemente fabricados pela Standard/Philips). O <strong>Model 6300</strong> é o pico audiófilo da linha.</p>
 
-                    <h4 style="margin-top: 20px; color: #2c3e50;">Modelos Vintage Relevantes</h4>
+                    <h4 style="margin-top: 20px; color: #2c3e50;">Modelos Vintage — agrupados por base</h4>
                     <table style="margin-top: 12px;">
-                        <thead><tr><th>Modelo</th><th>Características</th><th>Notas de Base</th></tr></thead>
+                        <thead><tr><th>Grupo de Base</th><th>Modelos</th><th>Notas de Base</th></tr></thead>
                         <tbody>
-                            <tr><td><strong>Model 6300</strong></td><td>DD topo de gama, braço de qualidade</td><td>Base integrada; upgrade premium possível</td></tr>
-                            <tr><td><strong>TT-1000 / TT-1000 Mk II</strong></td><td>Gira-discos de alta gama posterior</td><td>Raro; nicho de coleccionador</td></tr>
-                            <tr><td><strong>Model 6170 / 6150</strong></td><td>DD/belt gama média</td><td>Base de fábrica; upgrade modesto</td></tr>
-                            <tr><td><strong>Model 6100 / 6110</strong></td><td>Belt-drive de consumo</td><td>Mercado de base menor</td></tr>
-                            <tr><td><strong>Model 6025 / 6200</strong></td><td>Gama de entrada</td><td>Pouco relevante para base premium</td></tr>
+                            <tr><td><strong>A — Servo DD "6300"</strong></td><td><strong>6300 · 6350 · 6350Q</strong></td><td>Mesma geração servo-DD; footprint partilhado (o mesmo conjunto de pés Mnpctech serve os três). 6350Q = variante quadrafónica CD-4. Base integrada</td></tr>
+                            <tr><td><strong>B — Belt-drive "61xx"</strong></td><td><strong>6025 · 6050 · 6100 · 6110 · 6200</strong></td><td>Mesma plataforma belt-drive (uma só correia serve os cinco). Família partilhada — mas dimensões exteriores não confirmadas idênticas. Base integrada</td></tr>
+                            <tr><td><strong>C — DD autónomo</strong></td><td><strong>6170</strong></td><td>Direct-drive (NÃO belt como os 61xx); prato die-cast. Footprint provavelmente próprio</td></tr>
+                            <tr><td><strong>D — Monolito Esotec</strong></td><td><strong>TT-1000 / TT-1000 MkII</strong></td><td>Base fixa massiva (vidro+alumínio), PSU externa, pés Micro Seiki. Classe à parte; não partilha nada</td></tr>
                         </tbody>
                     </table>
 
                     <div style="background-color: #fff3e0; padding: 12px; border-left: 4px solid #FF9800; border-radius: 4px; margin-top: 20px;">
                         <strong>Aviso de Nicho:</strong>
-                        <p style="margin-top: 6px; color: #555; font-size: 13px;">A Marantz é um mercado de bases <em>mais fraco</em> que as marcas de unidades de motor — a maioria tem base integrada e procura de upgrade modesta. <strong>Duas excepções confirmadas pela pesquisa:</strong> o Model 6300 (DD) vale $1,500-$2,500 e está a valorizar, e o TT-1000 Esotec ($5,000-$7,000) compete com o DD japonês de topo. Ainda assim, trata-se de linha secundária/por encomenda — não SKU principal.</p>
+                        <p style="margin-top: 6px; color: #555; font-size: 13px;">A Marantz é um mercado de bases <em>fraco</em>: <strong>todos os 6xxx são decks integrados</strong> (motor/braço fixos numa base de aglomerado folheado a nogueira), pelo que NÃO há mercado de plinth avulso como nas marcas de unidades de motor — nem existe fabricante dedicado de plinths Marantz. A única base partilhada confirmada é <strong>6300 = 6350 = 6350Q</strong>. O "premium" realista é re-folhear a base original (nogueira/ébano/zebrano) ou bases OEM salvadas no eBay. Excepções de valor: Model 6300 (DD, $1,500-$2,500, a valorizar) e TT-1000 Esotec ($5,000-$7,000). Linha secundária/por encomenda — não SKU principal.</p>
                     </div>
                 </div>
 
@@ -1882,6 +1877,51 @@
 
                     <h4 style="margin-top: 25px; color: #2c3e50;">Nota</h4>
                     <p style="font-size: 13px; color: #666;">Quase sem concorrência dedicada — reflexo de procura limitada. Tratar como oferta por encomenda/oportunista em vez de produção em série.</p>
+                </div>
+            </div>
+
+            <!-- OUTROS SECTION (marcas candidatas) -->
+            <div id="outros" class="sub-tab-content">
+                <h3 style="margin-top: 0; color: #2c3e50;">Outras Marcas — Candidatas a Avaliar</h3>
+                <p style="color: #666;">Marcas identificadas por pesquisa de mercado (Etsy/eBay/Reverb) como potenciais alvos para bases premium, mas <strong>ainda sem secção completa</strong>. Listadas aqui por encaixarem na tese do negócio — sobretudo <em>unidades de motor</em> de tração directa/idler que exigem base. Carecem de validação de preços e de footprint antes de promoção a marca própria.</p>
+
+                <table style="margin-top: 15px;">
+                    <thead><tr><th>Marca</th><th>Modelos-chave</th><th>Tipo</th><th>Porque é relevante</th><th>Fit</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Luxman</strong></td>
+                            <td>PD-441 · PD-444 (· PD-277)</td>
+                            <td>Direct-drive — deck nu / multi-braço</td>
+                            <td>O melhor encaixe na tese: deck DD japonês premium que aceita múltiplos braços e é vendido essencialmente como unidade de motor. Procura confirmada (eBay/Reverb) e quase nenhuma oferta de plinth na Etsy — espaço em branco claro com poder de preço.</td>
+                            <td><strong>Forte</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kenwood / Trio</strong></td>
+                            <td>KD-500 · KD-550 · L-07D</td>
+                            <td>Direct-drive (base+chassi / flagship integrado)</td>
+                            <td>Alvo de re-plinth reconhecido na comunidade (KD-500 vendido como base+chassi de resina carregada), com oferta fina na Etsy. O L-07D acrescenta um flagship. Sobrepõe-se ao posicionamento DD japonês existente (Denon/JVC/Sony).</td>
+                            <td>Médio-Forte</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Rek-O-Kut</strong></td>
+                            <td>Rondine L-34 · B-12H</td>
+                            <td>Idler — unidade de motor nua</td>
+                            <td>Encaixe puro na tese: unidade de motor idler de broadcast norte-americana, já a receber plinths de nogueira por encomenda (eBay/Mnpctech). Par natural com a narrativa idler Garrard/Lenco. Procura mais de nicho e centrada nos EUA.</td>
+                            <td><strong>Forte</strong> (nicho)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Micro Seiki</strong></td>
+                            <td>RX-1500 · RX-5000 · BL-91 · DDX-1000</td>
+                            <td>Belt &amp; DD — várias são unidades de motor</td>
+                            <td>Nome audiófilo de prestígio que justifica o topo da escada de preços, ao lado de SP-10/DP-80/TT-101. Procura limitada por escassez de oferta — volume de plinths é ocasional, mas o halo de marca é valioso.</td>
+                            <td>Forte (tese) / volume incerto</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div style="background-color: #fff3e0; padding: 12px; border-left: 4px solid #FF9800; border-radius: 4px; margin-top: 20px;">
+                    <strong>Estado:</strong>
+                    <p style="margin-top: 6px; color: #555; font-size: 13px;">Lista de trabalho, não catálogo. Próximo passo por marca: confirmar dimensões/footprint de montagem, agrupar modelos por base partilhada (como nas marcas existentes) e validar preços de mercado secundário antes de criar secção dedicada. Marcas <em>fora da tese</em> mas de alto volume na Etsy (Linn LP12, Acoustic Research AR-XA/XB) foram deliberadamente excluídas para manter o foco premium.</p>
                 </div>
             </div>
         </div>
