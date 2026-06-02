@@ -456,6 +456,7 @@
         <div class="tabs">
             <button class="tab-button active" onclick="switchTab('brands')">Marcas</button>
             <button class="tab-button" onclick="switchTab('materials')">Materiais</button>
+            <button class="tab-button" onclick="switchTab('howto')">Como Construir uma Base</button>
             <button class="tab-button" onclick="switchTab('todo')">To-Do / Próximos Passos</button>
         </div>
 
@@ -2037,6 +2038,156 @@
             <p><strong>Construção Multi-Camada:</strong> As construções laminadas e empilhadas são muito mais eficazes que folhas sólidas para controlar ressonância e prevenir deformação.</p>
             <p style="margin-top: 10px;"><strong>Melhor para Estabilidade de Madeira:</strong> Nogueira rift-sawn, teca e madeiras duras de qualidade com acabamentos apropriados (cera de abelha, acabamentos a óleo ou manchas tradicionais).</p>
             <p style="margin-top: 10px;"><strong>Método de Construção Premium:</strong> Constrained Layer Damping (CLD) – camadas alternadas de material rígido com camadas de amortecimento visco-elástico entre elas fornece desempenho acústico óptimo.</p>
+        </div>
+
+        <!-- HOW TO BUILD A PLINTH TAB -->
+        <div id="howto" class="tab-content">
+            <h2>Como Construir uma Base (Plinth)</h2>
+            <p style="color: #666;">Guia compilado de pesquisa nas principais fontes DIY (DIYAudio, Lenco Heaven, Vinyl Engine, Audiokarma, Pink Fish Media) e de fabricantes (Woodsong, Artisan Fidelity, OMA). Cobre teoria, materiais, processo passo-a-passo, geometria do braço, erros comuns e ferramentas. Onde os especialistas discordam, isso é assinalado.</p>
+
+            <h3 style="margin-top: 28px; color: #2c3e50;">1. Porque é que a base importa (teoria)</h3>
+            <p>Um gira-discos é, no fundo, um instrumento de medição de vibração: a agulha não distingue a vibração gravada no sulco da vibração indesejada que lhe chega por outra via. A base tem quatro funções simultâneas:</p>
+            <ul style="margin-left: 20px; line-height: 1.8;">
+                <li><strong>Rejeitar vibração estrutural</strong> (passos, móvel, edifício, o próprio motor) que entraria pelos apoios.</li>
+                <li><strong>Rejeitar vibração aérea e evitar feedback acústico</strong> — a pressão sonora das colunas faz vibrar a base; se essa energia chega à agulha e é re-amplificada, gera-se o "uivo" a volume alto.</li>
+                <li><strong>Controlar a ressonância</strong> — toda a estrutura rígida "toca" às suas frequências naturais; a base não pode armazenar e devolver energia onde a cápsula a lê.</li>
+                <li><strong>Manter a geometria fixa</strong> — chumaceira, motor e pivô do braço têm de ficar numa relação rígida e imutável.</li>
+            </ul>
+
+            <h3 style="margin-top: 28px; color: #2c3e50;">2. O grande debate: Alta massa vs. baixa massa + alto amortecimento</h3>
+            <p><strong>Escola da alta massa:</strong> para uma dada força, a aceleração é inversamente proporcional à massa (a = F/m); mais massa = menos movimento, e dá ao motor algo inerte contra que reagir. É por isso que reconstruções idler e DD de alto binário usam bases de 20–110 lb.</p>
+            <p><strong>Contra-argumento (baixa massa + amortecimento):</strong> acrescentar massa <em>sem amortecimento</em> não destrói a energia — apenas a armazena. Uma base pesada mas não amortecida é um sino pesado.</p>
+            <div style="background-color: #f1f8e9; padding: 12px; border-left: 4px solid #689F38; border-radius: 4px;">
+                <strong>Consenso:</strong>
+                <p style="margin-top: 6px; color: #555; font-size: 13px;">O que importa é o <strong>factor de amortecimento</strong>, não a massa bruta. Uma ressonância caracteriza-se pelo seu <strong>Q</strong> (altura/largura do pico); Q é inversamente proporcional ao amortecimento. Uma base de baixa massa <em>bem amortecida</em> bate uma base pesada <em>não amortecida</em>. Na prática, massa e amortecimento trabalham juntos: a massa baixa a amplitude, o amortecimento mata o "toque".</p>
+            </div>
+
+            <h3 style="margin-top: 28px; color: #2c3e50;">3. Acoplar vs. desacoplar</h3>
+            <p>Segunda grande questão: <em>drenar</em> a energia ou <em>isolar</em> dela?</p>
+            <ul style="margin-left: 20px; line-height: 1.8;">
+                <li><strong>Acoplar / drenar:</strong> ligar o motor rigidamente a uma base maciça e "espetar" (spikes) a base ao suporte, tratando a estrutura como caminho que conduz a vibração para fora da agulha, para a massa/chão. Melhor para componentes pesados e DD de alto binário.</li>
+                <li><strong>Desacoplar / isolar:</strong> inserir um elemento complacente (mola, elastómero) que funciona como filtro passa-baixo — não deixa passar nada acima da sua frequência natural. Melhor para componentes leves e contra vibração do chão.</li>
+                <li><strong>Regra prática:</strong> acoplar o que é pesado, desacoplar o que é leve.</li>
+            </ul>
+            <div style="background-color: #fff3e0; padding: 12px; border-left: 4px solid #FF9800; border-radius: 4px;">
+                <strong>⚠️ A armadilha de desacoplar o motor:</strong>
+                <p style="margin-top: 6px; color: #555; font-size: 13px;">Montar o motor numa suspensão complacente pode fazê-lo oscilar, degradando a estabilidade de velocidade (flutter audível em notas longas de piano). Escolher uma estratégia coerente — não meias-medidas.</p>
+            </div>
+
+            <h3 style="margin-top: 28px; color: #2c3e50;">4. Constrained Layer Damping (CLD) — amortecimento por camadas restringidas</h3>
+            <p>A ferramenta DIY mais eficaz para matar o "toque" da base. <strong>Construção:</strong> camadas alternadas de material rígido (contraplacado, Panzerholz, xisto, metal) coladas com uma fina camada <strong>visco-elástica</strong>.</p>
+            <p><strong>Porque funciona — corte, não flexão:</strong> quando o painel tenta flectir, as duas camadas rígidas deslizam microscopicamente em sentidos opostos, forçando a camada visco-elástica ao <em>corte (shear)</em>, que dissipa a energia em <strong>calor</strong> em vez de a armazenar. A camada de cima "restringe" — daí "constrained".</p>
+            <p style="font-size: 13px; color: #555;"><strong>A cola é parte do mecanismo:</strong> tem de ficar ligeiramente flexível (compostos de amortecimento tipo Green Glue, poliuretano flexível, cortiça, betume). Uma epóxi rígida em toda a interface <em>anula</em> o CLD ao soldar as camadas num só painel. Exemplo real — Woodsong: Panzerholz + contraplacado de bétula + camada de amortecimento + xisto sintético na base.</p>
+
+            <h3 style="margin-top: 28px; color: #2c3e50;">5. Ressonância e a "base morta"</h3>
+            <p>O objectivo não é zero ressonância (impossível) mas pô-la onde a cápsula não a lê, e torná-la larga e breve.</p>
+            <ul style="margin-left: 20px; line-height: 1.8;">
+                <li><strong>Ressonância braço/cápsula:</strong> alvo <strong>8–12 Hz</strong> — acima dos empenos/rumble (~0–5 Hz) e abaixo do sinal musical mais grave (~15–20 Hz).</li>
+                <li><strong>Ressonância da base/suspensão:</strong> empurrar para <strong>baixo de ~5 Hz</strong>. Zona de perigo: ~3–6 Hz.</li>
+                <li><strong>Duas estratégias válidas, opostas:</strong> (a) empurrar a ressonância para <em>baixo</em> da banda audível (suspensão/molas ou massa muito alta isolada); (b) empurrá-la para <em>cima</em> e amortecê-la com força (abordagem Panzerholz, auto-ressonância benigna ~2,5 kHz).</li>
+                <li><strong>O ideal de "base morta":</strong> rigidez alta (geometria fixa) + alta perda interna (a energia que entra morre de imediato). A OMA chama-lhe "amortecimento crítico — morta, mas não sem vida".</li>
+            </ul>
+
+            <h3 style="margin-top: 28px; color: #2c3e50;">6. Isolamento e pés</h3>
+            <ul style="margin-left: 20px; line-height: 1.8;">
+                <li><strong>Spikes (acoplar/drenar):</strong> área de contacto mínima, rígidos; preferidos sob decks rígidos e pesados (DD). Pés moles <em>não</em> recomendados sob um DD de alto binário (SP-10).</li>
+                <li><strong>Sorbothane:</strong> elastómero visco-elástico barato e eficaz, mas com janela de carga estreita — sobre/sub-carregado deixa de isolar; dimensionar ao peso real.</li>
+                <li><strong>IsoAcoustics Gaia / Delos:</strong> isoladores de engenharia, escolhidos por capacidade de carga (Gaia III ≤32 kg, II ≤54 kg, I ≤100 kg).</li>
+                <li><strong>Massa sobre mola:</strong> o isolador de manual — filtro passa-baixo; base do subchassis suspenso e das plataformas de mola.</li>
+                <li><strong>Prateleira de parede:</strong> solução de força bruta contra vibração do chão/passos; nada faz contra o feedback aéreo.</li>
+            </ul>
+
+            <h3 style="margin-top: 28px; color: #2c3e50;">7. A filosofia muda com o tipo de tração</h3>
+            <table style="margin-top: 12px;">
+                <thead><tr><th>Tração</th><th>Problema dominante</th><th>Abordagem de base</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Idler</strong> (Garrard 301/401, Lenco L75)</td><td>Vibração do motor tem caminho mecânico directo ao prato</td><td><strong>Massa + acoplamento rígido.</strong> Remover a cavidade ressonante, embeber numa base CLD pesada, acoplar firmemente (método Nantais). Casa do xisto/Panzerholz/bétula.</td></tr>
+                    <tr><td><strong>Direct-drive</strong> (Technics SP-10)</td><td>Binário/cogging do motor + torque de reacção</td><td><strong>Rigidez rotacional e ancoragem pesada.</strong> Aparafusar sólido; suspensão mole prejudica. Ex.: OMA em ferro fundido ~110 lb com câmaras cheias de polímero.</td></tr>
+                    <tr><td><strong>Belt</strong> (Thorens/Linn suspensos)</td><td>A correia já filtra a maior parte da vibração do motor</td><td><strong>Foco no isolamento externo</strong> — paradigma do subchassis suspenso (ver abaixo).</td></tr>
+                </tbody>
+            </table>
+            <p style="margin-top: 12px;"><strong>Subchassis suspenso vs. base sólida:</strong> o suspenso (Thorens TD-150+, Linn LP12) flutua a chumaceira+braço em molas afinadas baixo (~2–4 Hz) — filtra motor, chão e feedback antes de chegarem ao braço; usa propositadamente bases <em>leves</em> (uma pesada ressoaria e lutaria contra a suspensão). Trade-off: imune a feedback mas sensível a passos e precisa de afinação. A base <strong>sólida/amortecida</strong> serve idler/DD e pisos sólidos: estabilidade geométrica e graves, mas a escolha dos pés e da prateleira torna-se crítica.</p>
+
+            <h3 style="margin-top: 28px; color: #2c3e50;">8. Materiais</h3>
+            <p style="color:#666; font-size:13px;">Dois parâmetros mandam: <strong>factor de amortecimento</strong> e <strong>comportamento de ressonância</strong>. Nenhum material é ideal em todos os eixos — daí a convergência para laminados muito "mortos" (Panzerholz/xisto) ou sanduíches CLD.</p>
+            <table style="margin-top: 12px; font-size: 12px;">
+                <thead><tr><th>Material</th><th>Amortecimento</th><th>Trabalhabilidade</th><th>Custo</th><th>Usado em / notas</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Contraplacado de bétula báltica</strong></td><td>Baixo-médio sozinho (~0,04); bom em CLD</td><td>Excelente, sem vazios (~13 lâminas/18mm)</td><td>Baixo</td><td>O favorito DIY (Lenco PTP); núcleo de CLD</td></tr>
+                    <tr><td><strong>Panzerholz / Permali / Dellite</strong></td><td>Muito alto (referência); ~1,4 g/cm³</td><td>Duro — exige ferramenta de carboneto</td><td>Muito alto (~$1000/folha)</td><td>O padrão premium (Artisan Fidelity SP-10)</td></tr>
+                    <tr><td><strong>MDF / HDF</strong></td><td>Alto, "morto"</td><td>Muito fácil (muito pó)</td><td>O mais baixo</td><td>Original de fábrica; selar contra humidade</td></tr>
+                    <tr><td><strong>Madeira maciça</strong> (nogueira, carvalho...)</td><td>Fraco; rígida</td><td>Fácil mas <strong>move/empena</strong></td><td>Médio-alto</td><td>Usar como folheado sobre núcleo estável, não estrutural</td></tr>
+                    <tr><td><strong>Xisto (slate)</strong></td><td>Alto via massa</td><td>Duro, frágil; diamante/waterjet</td><td>Médio</td><td>Favorito idler (Garrard/Lenco, OMA); biselar furos</td></tr>
+                    <tr><td><strong>Corian / solid-surface</strong></td><td>Médio</td><td>Maquina como madeira dura</td><td>Baixo (sobras grátis)</td><td>Camada de CLD, plataformas</td></tr>
+                    <tr><td><strong>Betão / GFRC</strong></td><td>Baixo intrínseco; depende da massa</td><td>Moldado; muito pesado</td><td>Baixo (muito trabalho)</td><td>Tem de ser composto/amortecido (EAT C-Dur)</td></tr>
+                    <tr><td><strong>Acrílico / metal</strong></td><td>Acrílico médio; metal toca mal</td><td>Acrílico fácil; metal maquinar</td><td>Médio-alto</td><td>Metal só com amortecimento interno (SL-1200, OMA ferro)</td></tr>
+                    <tr><td><strong>Sanduíche CLD composta</strong></td><td>O mais alto na prática</td><td>Mais trabalhosa</td><td>Variável</td><td>OMA, Artisan Fidelity, alto-end DIY</td></tr>
+                </tbody>
+            </table>
+            <p style="margin-top: 10px; font-size: 13px; color:#555;"><strong>Porque laminar bate uma placa maciça:</strong> controla a ressonância (divide um pico forte em muitos pequenos e amortecidos), controla o empeno (tensões equilibradas) e gere o movimento da madeira. <strong>Colas:</strong> PVA (Titebond) para laminações estruturais; epóxi obrigatória para exóticas oleosas (cocobolo, teca, wengé — limpar com acetona e colar em 30–60 min); camada <em>deliberadamente mole</em> (Green Glue/cortiça/betume) onde se quer amortecimento.</p>
+
+            <h3 style="margin-top: 28px; color: #2c3e50;">9. Processo passo-a-passo</h3>
+            <ol style="margin-left: 20px; line-height: 1.9;">
+                <li><strong>Planear e medir:</strong> capturar tudo o que fica <em>abaixo</em> da chapa superior — profundidade da chumaceira (a mais funda), motor, mecanismo, sensor/strobe, cablagem. Fixar a posição do veio primeiro. Não fechar o motor hermeticamente (precisa de ventilação). Definir já espessura/massa-alvo.</li>
+                <li><strong>Fazer o template do recorte:</strong> obter template (PDF/DWG de plinthtemplates, manual de serviço, ou traçar o chassi). Imprimir a 100% e <strong>verificar a escala</strong> contra a chapa real. Planear o recorte <em>escalonado</em>: furo passante + rebaixo raso (lip) onde a flange da chapa assenta nivelada.</li>
+                <li><strong>Colagem em camadas:</strong> bétula ~13 lâminas/18mm; espalhar cola em <em>ambas</em> as faces com espátula até ver camada translúcida. Alinhar pelos recortes. <strong>Apertar de leve primeiro, esperar ~1 h, só depois apertar a fundo</strong> (apertar com cola húmida desalinha). Muitos grampos com cauls. Em alternativa, colar camada a camada com pesos.</li>
+                <li><strong>Cortar as aberturas:</strong> fresa (router) + template com broca copiadora (rolamento que segue o template) ou CNC (mais preciso) ou serra de recortes para o desbaste. Cortar primeiro o rebaixo raso, depois o furo passante, depois os insets locais (chumaceira/motor) e o canal de cabo. Folha sacrificial por baixo evita esmagamento.</li>
+                <li><strong>Tábua do braço (armboard):</strong> separada (permite trocar braço e afinar ressonância) ou integral (mais rígida). Furar à <strong>distância pivô-veio exacta</strong> (ver secção 10). Definir a altura para o VTA correcto.</li>
+                <li><strong>Montar a unidade de motor:</strong> em idler, remover molas/grommets de fábrica e <strong>acoplar directamente</strong> com junta fina de neopreno (~3 mm) — acoplamento com um fio de amortecimento. Verificar que nada toca antes do aperto final. Nivelar.</li>
+                <li><strong>Pés / isolamento:</strong> como a base ficou rígida, toda a complacência vive agora nos pés. Escolher pés à medida da massa real (Isonoe, Gaia, Sorbothane, ou spikes para drenar).</li>
+                <li><strong>Acabamento:</strong> lixar progressivamente; <strong>selar o topo de grão primeiro</strong> (as bordas do contraplacado bebem o acabamento). Folhear ou mostrar as lâminas; óleo/cera/goma-laca/laca. Selar também o interior da cavidade contra a humidade.</li>
+            </ol>
+
+            <h3 style="margin-top: 28px; color: #2c3e50;">10. Geometria do braço (a tarefa mais crítica)</h3>
+            <p>Quatro números ligados: <strong>distância pivô-veio</strong> (a que se constrói na base, fixa para sempre), <strong>comprimento efectivo</strong> (pivô→agulha), <strong>overhang</strong> (quanto a agulha passa do veio) e <strong>ângulo de offset</strong>. Relação a memorizar:</p>
+            <p style="text-align:center; font-size:15px;"><strong>Comprimento efectivo = Distância de montagem + Overhang</strong></p>
+            <p>O overhang e o offset ajustam-se depois (na cápsula/headshell); a <strong>distância de montagem não se corrige sem re-furar</strong> — daí ter de ser exacta (alvo ±0,5 mm). Use a base de dados de braços do Vinyl Engine + um transferidor de 2 pontos (Baerwald) para afinar.</p>
+            <p><strong>Geometrias de alinhamento</strong> (dois pontos nulos, diferem em <em>onde</em> ficam): <strong>Baerwald/Löfgren A</strong> (nulos 66,0/120,9 mm — menor erro de pico, o default sensato); <strong>Löfgren B</strong> (~70,3/116,6 — menor erro médio); <strong>Stevenson</strong> (~60,3/117,4 — minimiza no sulco interior). A escolha quase não muda a distância de montagem.</p>
+            <table style="margin-top: 12px; font-size: 12px;">
+                <thead><tr><th>Braço</th><th>Comp. efectivo</th><th>Overhang</th><th>Distância pivô-veio</th></tr></thead>
+                <tbody>
+                    <tr><td>SME Series V (9")</td><td>233,15 mm</td><td>17,8 mm</td><td><strong>215,35 mm</strong> (usar template SME — base deslizante)</td></tr>
+                    <tr><td>Rega RB (9")</td><td>239,3 mm</td><td>17,6 mm</td><td><strong>221,7 mm</strong></td></tr>
+                    <tr><td>Jelco SA-750D (9")</td><td>229 mm</td><td>15 mm</td><td><strong>214 mm</strong> (colar 30 mm)</td></tr>
+                    <tr><td>Jelco SA-750L (12")</td><td>305 mm</td><td>15 mm</td><td><strong>290 mm</strong></td></tr>
+                    <tr><td>Ortofon TA-100 (9")</td><td>231 mm</td><td>18 mm</td><td><strong>213 mm</strong></td></tr>
+                </tbody>
+            </table>
+            <p style="margin-top: 10px;"><strong>Furar:</strong> riscar um arco do raio = distância de montagem, centrado no veio. <em>Colar redondo</em> (SME/Jelco/Linn — furo 30 mm) vs <em>montagem Rega de 3 pontos</em> (furo 24–25 mm + 3 furos M3 a 120° — usar o próprio braço como gabarito). <strong>VTA/altura:</strong> tábua à altura que deixe o braço paralelo ao disco (ex.: Rega ~31 mm tábua→prato); afinar com pilar ajustável ou shims (0,5/1 mm). <strong>Braços de 12"</strong> exigem base maior (~40 cm) e folga para o contrapeso. Tábuas removíveis = trocar braços e bases multi-braço (riscar um arco por braço a partir do mesmo veio).</p>
+
+            <h3 style="margin-top: 28px; color: #2c3e50;">11. Erros comuns (e como evitá-los)</h3>
+            <div style="background-color: #ffebee; padding: 12px; border-left: 4px solid #E53935; border-radius: 4px;">
+                <ol style="margin: 0; padding-left: 20px; font-size: 13px; line-height: 1.8;">
+                    <li><strong>Motor/chumaceira a tocar na base</strong> — medir tudo o que fica abaixo da chapa e testar a seco antes do corte final.</li>
+                    <li><strong>Distância de montagem do braço errada</strong> — usar a spec do fabricante; furar o braço por último; verificar com transferidor.</li>
+                    <li><strong>Amortecimento inadequado / massa sem amortecimento</strong> — CLD (camadas dissimilares); massa não substitui amortecimento.</li>
+                    <li><strong>Madeira maciça que move/empena</strong> — preferir painéis estáveis (bétula/MDF); maciço só como folheado.</li>
+                    <li><strong>Não nivelar / pés desnivelados</strong> — pés ajustáveis; nível sobre o prato, não só na base.</li>
+                    <li><strong>Acoplar o ruído do motor à base (rumble idler)</strong> — desacoplar o motor OU drenar para a massa; escolher uma estratégia.</li>
+                    <li><strong>Vazios de cola / delaminação</strong> — muitos grampos, cauls, cobertura total; sub-pilhas geríveis.</li>
+                    <li><strong>Recorte não nivelado / chapa mal apoiada</strong> — rebaixar em passagens rasas; rebordo de apoio contínuo.</li>
+                    <li><strong>Hum / massa / cabos</strong> — afastar sinal da rede/motor; massa em estrela (um ponto), não em cadeia.</li>
+                    <li><strong>Cosmética: tear-out, manchas</strong> — brocas down-cut/compressão, passagem final rasa, selar com goma-laca antes de tingir; selar topo de grão.</li>
+                    <li><strong>Sobre-engenharia / placebo</strong> — resolver primeiro o mensurável (rigidez, nível, isolamento, massa, geometria); cépticos quanto a alegações sem A/B nivelado.</li>
+                </ol>
+            </div>
+
+            <h3 style="margin-top: 28px; color: #2c3e50;">12. Ferramentas e oficina</h3>
+            <ul style="margin-left: 20px; line-height: 1.8;">
+                <li><strong>Fresa (router) + brocas</strong> — a ferramenta mais usada: rebaixo, recorte, flush-trim. Brocas: espiral down-cut/compressão (corte limpo), copiadora com rolamento, arredondar/chanfrar.</li>
+                <li><strong>Serra</strong> de mesa ou track-saw para esquadrar; <strong>serra de recortes</strong> para o desbaste curvo.</li>
+                <li><strong>Berbequim / engenho</strong> (esquadria para o furo do braço).</li>
+                <li><strong>Muitos grampos</strong> + cauls (colagens uniformes evitam vazios).</li>
+                <li><strong>Lixadeira</strong> orbital + lixas graduadas.</li>
+                <li><strong>Medição:</strong> régua de aço, esquadro, <strong>paquímetro</strong> (profundidade do rebaixo), <strong>nível de bolha</strong> fiável, transferidor de alinhamento.</li>
+                <li><strong>Templates/gabaritos</strong> em MDF — a chave para resultados repetíveis e sem tear-out.</li>
+                <li><strong>Acabamento:</strong> goma-laca/selante, óleo/verniz, abrasivos finos, extração de pó.</li>
+                <li><strong>CNC (opcional):</strong> repetibilidade alta (vale a pena para várias unidades), mas não obrigatório — um construtor paciente com fresa + templates chega ao mesmo.</li>
+            </ul>
+            <p style="font-size: 13px; color:#666;"><strong>Nível de competência:</strong> marcenaria intermédia — o difícil é a precisão (profundidade do rebaixo, posição/esquadria do furo do braço) e colagens limpas. <strong>Tempo:</strong> vários dias a dois fins-de-semana, dominado pelos tempos de cura das colagens e do acabamento. É a pressa nas colagens e no acabamento que estraga os projectos.</p>
+
+            <h3 style="margin-top: 28px; color: #2c3e50;">Fontes principais</h3>
+            <p style="font-size: 12px; color: #777; line-height: 1.7;">DIYAudio ("The Incredible Technics SP-10 Thread", "DIY CLD Plinth Design — A Measured Approach") · Lenco Heaven (templates L75, CLD, Panzerholz/xisto) · Vinyl Engine (base de dados de braços, calculadora de alinhamento, transferidores, fóruns de materiais/montagem/grounding) · plinthtemplates.wordpress.com (templates PDF/DWG) · Audio Appraisal (dimensões DIY para suspensos) · high-endaudio.com (Lenco "Reference" de Jean Nantais) · Origin Live & SME (montagem de braços) · TNT-Audio "Plinthology" · Woodsong Audio, Artisan Fidelity, Oswalds Mill Audio (CLD/Panzerholz/ferro fundido) · Audiokarma, HiFiVision, Pink Fish Media (relatos de construção) · The Wood Database (colagem de exóticas) · Rockler/Toolstoday/CNCCookbook (rotear contraplacado).</p>
         </div>
 
         <!-- TO-DO / NEXT STEPS TAB -->
