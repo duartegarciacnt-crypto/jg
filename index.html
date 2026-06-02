@@ -456,6 +456,7 @@
         <div class="tabs">
             <button class="tab-button active" onclick="switchTab('brands')">Marcas</button>
             <button class="tab-button" onclick="switchTab('materials')">Materiais</button>
+            <button class="tab-button" onclick="switchTab('todo')">To-Do / Próximos Passos</button>
         </div>
 
         <!-- MARCAS TAB -->
@@ -2036,6 +2037,56 @@
             <p><strong>Construção Multi-Camada:</strong> As construções laminadas e empilhadas são muito mais eficazes que folhas sólidas para controlar ressonância e prevenir deformação.</p>
             <p style="margin-top: 10px;"><strong>Melhor para Estabilidade de Madeira:</strong> Nogueira rift-sawn, teca e madeiras duras de qualidade com acabamentos apropriados (cera de abelha, acabamentos a óleo ou manchas tradicionais).</p>
             <p style="margin-top: 10px;"><strong>Método de Construção Premium:</strong> Constrained Layer Damping (CLD) – camadas alternadas de material rígido com camadas de amortecimento visco-elástico entre elas fornece desempenho acústico óptimo.</p>
+        </div>
+
+        <!-- TO-DO / NEXT STEPS TAB -->
+        <div id="todo" class="tab-content">
+            <h2>To-Do / Próximos Passos</h2>
+            <p style="color: #666;">Lista de trabalho viva. Prioridades: <span style="background:#ffcdd2; padding:1px 6px; border-radius:3px;">Alta</span> &nbsp; <span style="background:#fff3cd; padding:1px 6px; border-radius:3px;">Média</span> &nbsp; <span style="background:#d4edda; padding:1px 6px; border-radius:3px;">Baixa</span>. Última actualização: 2026-06-02.</p>
+
+            <h3 style="margin-top: 25px; color: #2c3e50;">1. Validar marcas candidatas (tab "Outros")</h3>
+            <div style="background-color: #fff3e0; padding: 12px; border-left: 4px solid #FF9800; border-radius: 4px;">
+                <ul style="margin: 0; padding-left: 20px; font-size: 14px; line-height: 1.9;">
+                    <li><span style="background:#ffcdd2; padding:1px 6px; border-radius:3px;">Alta</span> <strong>Luxman PD-441/444</strong> — confirmar dimensões/footprint de montagem e procura de plinth; é o melhor candidato a promover a secção própria.</li>
+                    <li><span style="background:#fff3cd; padding:1px 6px; border-radius:3px;">Média</span> <strong>Kenwood/Trio KD-500/550, L-07D</strong> — validar footprint e preços de mercado secundário.</li>
+                    <li><span style="background:#fff3cd; padding:1px 6px; border-radius:3px;">Média</span> <strong>Rek-O-Kut Rondine L-34/B-12H</strong> — confirmar dimensões da unidade de motor idler; medir procura (centrada nos EUA).</li>
+                    <li><span style="background:#d4edda; padding:1px 6px; border-radius:3px;">Baixa</span> <strong>Micro Seiki RX/BL</strong> — halo de marca; volume de plinths ocasional — manter em observação.</li>
+                    <li>Por cada marca validada: agrupar modelos por base partilhada e criar sub-tabs Compatibilidade / Mercado / Competição (como nas marcas existentes).</li>
+                </ul>
+            </div>
+
+            <h3 style="margin-top: 25px; color: #2c3e50;">2. Verificação de dados (antes de uso comercial)</h3>
+            <div style="background-color: #e3f2fd; padding: 12px; border-left: 4px solid #2196F3; border-radius: 4px;">
+                <ul style="margin: 0; padding-left: 20px; font-size: 14px; line-height: 1.9;">
+                    <li><span style="background:#ffcdd2; padding:1px 6px; border-radius:3px;">Alta</span> <strong>Coluna "Ano":</strong> os anos de produção são APROXIMADOS e não verificados por fonte — confirmar contra manuais de serviço/bases de dados antes de publicar como facto.</li>
+                    <li><span style="background:#fff3cd; padding:1px 6px; border-radius:3px;">Média</span> Verificar afirmações de footprint/chumaceira (ex.: variantes Garrard 301, corte 281mm JVC) contra fontes documentadas.</li>
+                    <li><span style="background:#fff3cd; padding:1px 6px; border-radius:3px;">Média</span> Preços de mercado: maioria são valores <em>pedidos</em>; refinar com vendas reais (Yahoo Auctions JP, vendas eBay concluídas).</li>
+                </ul>
+            </div>
+
+            <h3 style="margin-top: 25px; color: #2c3e50;">3. Dimensões de corte por modelo (engenharia)</h3>
+            <div style="background-color: #f1f8e9; padding: 12px; border-left: 4px solid #689F38; border-radius: 4px;">
+                <ul style="margin: 0; padding-left: 20px; font-size: 14px; line-height: 1.9;">
+                    <li><span style="background:#ffcdd2; padding:1px 6px; border-radius:3px;">Alta</span> <strong>Regra-mãe:</strong> "compatibilidade" de caixa ≠ corte idêntico — cortar sempre à unidade exacta (ex.: corte Denon DP-3000 não aceita DP-6000).</li>
+                    <li><span style="background:#fff3cd; padding:1px 6px; border-radius:3px;">Média</span> <strong>Sony TTS-8000/3000:</strong> dimensões de corte não públicas — medir a unidade antes de produzir.</li>
+                    <li><span style="background:#fff3cd; padding:1px 6px; border-radius:3px;">Média</span> O corte do motor é independente do furo do braço — definir comprimentos de braço suportados (9"/12") por footprint.</li>
+                </ul>
+            </div>
+
+            <h3 style="margin-top: 25px; color: #2c3e50;">4. Negócio &amp; lançamento</h3>
+            <div style="background-color: #f3e5f5; padding: 12px; border-left: 4px solid #9C27B0; border-radius: 4px;">
+                <ul style="margin: 0; padding-left: 20px; font-size: 14px; line-height: 1.9;">
+                    <li><span style="background:#ffcdd2; padding:1px 6px; border-radius:3px;">Alta</span> Escolher o 1º SKU de lançamento entre os alvos de tese: Technics SP-10 MkII, Denon DP-80, JVC TT-81, Garrard 301/401, Thorens TD-124.</li>
+                    <li><span style="background:#fff3cd; padding:1px 6px; border-radius:3px;">Média</span> Definir preços, fotografia profissional e logística de envio a partir de Portugal.</li>
+                    <li><span style="background:#d4edda; padding:1px 6px; border-radius:3px;">Baixa</span> Avaliar oferta "por encomenda" para nichos (Marantz 6300, Sony TTS, Micro Seiki).</li>
+                </ul>
+            </div>
+
+            <h3 style="margin-top: 25px; color: #2c3e50;">Decisões registadas</h3>
+            <ul style="margin-left: 20px; font-size: 13px; color: #666; line-height: 1.8;">
+                <li>Linn LP12 e Acoustic Research AR-XA/XB <strong>excluídos</strong> (fora da tese; re-plinth de hobby de alto volume) — manter foco premium em unidades de motor.</li>
+                <li>Todas as tabelas de Compatibilidade agora agrupam modelos por base partilhada (footprint).</li>
+            </ul>
         </div>
 
 <footer>
