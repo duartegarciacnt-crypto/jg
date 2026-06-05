@@ -767,13 +767,18 @@
 /* ── Password ────────────────────────────────────────────── */
 const PW = ['xauquintas', 'darkside', 'Ok'];
 
+function unlock() {
+    sessionStorage.setItem('s55_unlocked', '1');
+    document.getElementById('pw-overlay').style.display = 'none';
+    document.getElementById('site').style.display = 'flex';
+}
+
 function checkPw() {
     const v = document.getElementById('pw-input').value;
     const e = document.getElementById('pw-error');
     if (!v) { e.textContent = 'Please enter a password.'; return; }
     if (PW.includes(v)) {
-        document.getElementById('pw-overlay').style.display = 'none';
-        document.getElementById('site').style.display = 'flex';
+        unlock();
     } else {
         e.textContent = 'Incorrect password.';
         document.getElementById('pw-input').value = '';
@@ -781,6 +786,7 @@ function checkPw() {
     }
 }
 document.getElementById('pw-input').addEventListener('keydown', e => { if (e.key === 'Enter') checkPw(); });
+if (sessionStorage.getItem('s55_unlocked')) unlock();
 
 /* ── Navigation ─────────────────────────────────────────── */
 function nav(name) {
