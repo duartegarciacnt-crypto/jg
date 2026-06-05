@@ -108,7 +108,11 @@
                 repeating-linear-gradient(91deg, transparent 0, transparent 36px, rgba(255,255,255,0.008) 36px, rgba(255,255,255,0.008) 38px),
                 linear-gradient(170deg, #0A0806 0%, #1A1008 28%, #281A0C 52%, #1A1008 74%, #0A0806 100%);
         }
-        .hero-inner { max-width: var(--max); margin: 0 auto; width: 100%; }
+        .hero-inner { max-width: var(--max); margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+        .hero-right { padding-top: 8px; }
+        .hero-maker-label { font-size: 0.64rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--oak); margin-bottom: 20px; }
+        .hero-right p { color: rgba(255,255,255,0.5); font-size: 0.9rem; line-height: 1.85; margin-bottom: 16px; max-width: none; }
+        .hero-maker-sig { font-family: var(--serif); color: var(--oak-l); font-style: italic; font-size: 0.9rem; margin-top: 8px; }
         .hero-eyebrow {
             font-size: 0.68rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase;
             color: var(--oak-l); margin-bottom: 22px; white-space: nowrap;
@@ -298,7 +302,7 @@
         .prod-body h3 { font-family: var(--serif); font-size: 1rem; font-weight: 400; color: var(--walnut); margin-bottom: 9px; line-height: 1.3; }
         .prod-body p { font-size: 0.8rem; color: var(--ink-l); line-height: 1.65; flex: 1; }
         .prod-foot { padding: 13px 20px; border-top: 1px solid var(--divider); display: flex; justify-content: space-between; align-items: center; gap: 8px; }
-        .wood-pill { font-size: 0.7rem; color: var(--ink-l); background: #242424; padding: 4px 10px; border-radius: 20px; white-space: nowrap; }
+        .wood-pill { font-size: 0.7rem; color: var(--ink-l); background: #242424; padding: 4px 10px; border-radius: 20px; flex-wrap: wrap; }
         .btn-order-small {
             font-size: 0.7rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
             padding: 8px 16px; background: var(--walnut); color: #fff; border: none;
@@ -384,6 +388,8 @@
 
         /* ── Responsive ─────────────────────────────────────── */
         @media (max-width: 960px) {
+            .hero-inner { grid-template-columns: 1fr; gap: 36px; }
+            .hero-right { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 28px; }
             .cats-grid { grid-template-columns: repeat(3,1fr); }
             .craft-inner { grid-template-columns: 1fr; gap: 40px; }
             .craft-visual { max-width: 480px; }
@@ -454,18 +460,21 @@
 
     <div class="hero">
         <div class="hero-inner">
-            <p class="hero-eyebrow">Handcrafted in Portugal &nbsp;·&nbsp; Shipped worldwide</p>
-            <h1>Precision woodwork for the dedicated audiophile</h1>
-            <div class="craft-details">
-                <div class="cd-item"><h5>Construction</h5><p>Handmade by someone with 50 years of woodcraft experience</p></div>
-                <div class="cd-item"><h5>Material</h5><p>Solid wood from Portugal</p></div>
-                <div class="cd-item"><h5>Lead time</h5><p>1–4 weeks from order confirmation</p></div>
-                <div class="cd-item"><h5>Compatibility</h5><p>Garrard, Technics SP, Thorens, Denon DP, JVC TT, Dual, Lenco &amp; others — can't find yours? Challenge us.</p></div>
+            <div class="hero-left">
+                <p class="hero-eyebrow">Handcrafted in Portugal &nbsp;·&nbsp; Shipped worldwide</p>
+                <h1>Precision woodwork for the dedicated audiophile</h1>
+                <div class="craft-details">
+                    <div class="cd-item"><h5>Construction</h5><p>Handmade by someone with 50 years of woodcraft experience</p></div>
+                    <div class="cd-item"><h5>Material</h5><p>Solid wood from Portugal</p></div>
+                    <div class="cd-item"><h5>Lead time</h5><p>1–4 weeks from order confirmation</p></div>
+                    <div class="cd-item"><h5>Compatibility</h5><p>Garrard, Technics SP, Thorens, Denon DP, JVC TT, Dual, Lenco &amp; others — can't find yours? Challenge us.</p></div>
+                </div>
             </div>
-            <p>Every piece is built to order from solid Portuguese hardwood — designed around the exact tolerances that vintage and modern turntable mechanics demand.</p>
-            <div class="hero-ctas">
-                <button class="btn-hero btn-hero-primary" onclick="nav('products')">View Products</button>
-                <button class="btn-hero btn-hero-ghost"   onclick="nav('order')">Request a Piece</button>
+            <div class="hero-right">
+                <p class="hero-maker-label">The maker</p>
+                <p>A lifelong passion for woodcraft, music and photography — the craftsman behind Studio 55 spent 50 years working and running a small woodworking company.</p>
+                <p>Now retired, he brings that half-century of craft to every piece — built by hand, one at a time, for those who take sound seriously.</p>
+                <p class="hero-maker-sig">Father of two, grandfather of three.</p>
             </div>
         </div>
     </div>
@@ -525,23 +534,6 @@
         </div>
     </div>
 
-    <div class="values-strip">
-        <div class="values-inner">
-            <div class="val-item">
-                <h4>Made to measure</h4>
-                <p>Every piece is built to your motor unit's exact footprint — tolerances held to ±0.5 mm on all machined apertures.</p>
-            </div>
-            <div class="val-item">
-                <h4>Solid Portuguese wood</h4>
-                <p>We source local walnut, oak, cherry and chestnut. No veneered particle board. No visual-only timbers.</p>
-            </div>
-            <div class="val-item">
-                <h4>Shipped worldwide</h4>
-                <p>Packaged in custom-cut foam and shipped from Lisbon. Lead time 4–8 weeks from confirmed order.</p>
-            </div>
-        </div>
-    </div>
-
 
 </section>
 
@@ -589,7 +581,7 @@
                     </div>
                     <div class="prod-body">
                         <h3>Thorens TD-160 &nbsp;·&nbsp; Plinth</h3>
-                        <p>Drop-in replacement plinth for the TD-160 family. Solid Portuguese hardwood. Fitted to your exact motor unit with no modifications needed.</p>
+                        <p>Drop-in replacement plinth for the TD-160 family. Solid Portuguese hardwood. No modifications needed. Compatible with TD-160, TD-160 Super, TD-145, TD-146, TD-147 and TD-165.</p>
                     </div>
                     <div class="prod-foot">
                         <span class="wood-pill">Walnut · Oak · Cherry · Beech · Mahogany · Olive · Dark Ash</span>
@@ -612,7 +604,7 @@
                     </div>
                     <div class="prod-body">
                         <h3>Dual 701 &nbsp;·&nbsp; 721 &nbsp;·&nbsp; Plinth</h3>
-                        <p>Drop-in replacement plinth for the Dual 701 and 721 motor units. Solid Portuguese hardwood. Fitted to your exact motor unit with no modifications needed.</p>
+                        <p>Drop-in replacement plinth for the Dual 701 and 721. Solid Portuguese hardwood. No modifications needed. Compatible with Dual 701 and Dual 721.</p>
                     </div>
                     <div class="prod-foot">
                         <span class="wood-pill">Walnut · Oak · Cherry · Beech · Mahogany · Olive · Dark Ash</span>
@@ -635,7 +627,7 @@
                     </div>
                     <div class="prod-body">
                         <h3>Dual 1209 &nbsp;·&nbsp; Plinth</h3>
-                        <p>Drop-in replacement plinth for the Dual 1209. Solid Portuguese hardwood. Fitted to your exact motor unit with no modifications needed.</p>
+                        <p>Drop-in replacement plinth for the Dual 1209. Solid Portuguese hardwood. No modifications needed. Compatible with Dual 1209, 1218, 1228 and 1229.</p>
                     </div>
                     <div class="prod-foot">
                         <span class="wood-pill">Walnut · Oak · Cherry · Beech · Mahogany · Olive · Dark Ash</span>
