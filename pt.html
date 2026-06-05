@@ -807,7 +807,7 @@
             <p class="footer-tagline">Studio 55 &nbsp;·&nbsp; Feito à mão em Portugal</p>
         </div>
         <div class="footer-right">
-            <p>contacto: duartegarciacnt@gmail.com</p>
+            <p>contacto: info@studio55.com</p>
             <p>&copy; 2026 Studio 55. Todos os direitos reservados.</p>
         </div>
     </div>
@@ -1031,7 +1031,7 @@ async function submitOrder() {
     };
 
     try {
-        const res = await fetch('https://formsubmit.co/ajax/duartegarciacnt@gmail.com', {
+        const res = await fetch('https://formsubmit.co/ajax/info@studio55.com', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
             body: JSON.stringify(payload)
@@ -1045,7 +1045,7 @@ async function submitOrder() {
             throw new Error('failed');
         }
     } catch {
-        errEl.textContent = 'Algo correu mal. Por favor tente novamente ou envie email directamente para duartegarciacnt@gmail.com.';
+        errEl.textContent = 'Algo correu mal. Por favor tente novamente ou envie email directamente para info@studio55.com.';
         errEl.style.display = 'block';
         btn.disabled = false;
         btn.textContent = 'Send request';
