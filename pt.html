@@ -501,7 +501,7 @@
                         <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg>
                     </div>
                 </div>
-                <div class="cat-info"><h3>Suportes</h3><p>Pranchas de braço &amp; estruturas de montagem</p></div>
+                <div class="cat-info"><h3>Molduras</h3><p>Molduras de madeira para expor os teus discos</p></div>
             </button>
 
             <button class="cat-card" onclick="jumpToProducts('Record Holder')">
@@ -552,10 +552,9 @@
                     <button class="filter-sub-btn" data-brand="Dual"    onclick="applyBrand(this)">Dual</button>
                     <button class="filter-sub-btn" data-brand="Thorens" onclick="applyBrand(this)">Thorens</button>
                 </div>
-                <button class="filter-btn"         data-filter="Armboard"              onclick="applyFilter(this)">Tampos de Pickup</button>
-                <button class="filter-btn"         data-filter="Frame"                 onclick="applyFilter(this)">Suportes</button>
+                <button class="filter-btn"         data-filter="Frame"                 onclick="applyFilter(this)">Molduras</button>
                 <button class="filter-btn"         data-filter="Record Holder"         onclick="applyFilter(this)">Suportes de Discos</button>
-                <button class="filter-btn"         data-filter="Wooden Cartridge Case" onclick="applyFilter(this)">Caixas p/ Gira-Agulhas</button>
+                <button class="filter-btn"         data-filter="Wooden Cartridge Case" onclick="applyFilter(this)">Caixas para Gira-Agulhas</button>
                 <button class="filter-btn"         data-filter="Full Vinyl Furniture"  onclick="applyFilter(this)">Mobiliário Vinil</button>
             </div>
         </aside>
@@ -637,30 +636,7 @@
                 </div>
 
 
-                <div class="prod-card" data-type="Armboard" data-brand="">
-                    <div class="pic-wrap" data-carousel>
-                        <div class="pic-track">
-                            <div class="pic-slide"><img src="images/armboard-1.webp" alt="Tampo de pickup em madeira maciça" loading="lazy"></div>
-                            <div class="pic-slide"><img src="images/lp-stand-4.webp" alt="Opções de madeira para tampo de pickup" loading="lazy"></div>
-                        </div>
-                        <button class="pic-arr prev" aria-label="Anterior">&#8249;</button>
-                        <button class="pic-arr next" aria-label="Próximo">&#8250;</button>
-                        <div class="pic-dots">
-                            <button class="pic-dot active" aria-label="Imagem 1"></button>
-                            <button class="pic-dot" aria-label="Imagem 2"></button>
-                        </div>
-                    </div>
-                    <div class="prod-body">
-                        <h3>Tampo de Pickup</h3>
-                        <p>Tampo de pickup de precisão em madeira maciça portuguesa. Disponível em todos os tipos de madeira. Encomendado em conjunto com um plinth, cortamos ambos do mesmo bloco — o veio e a cor ficam exactamente iguais.</p>
-                    </div>
-                    <div class="prod-foot">
-                        <span class="wood-pill">Nogueira · Carvalho · Cerejeira · Faia · Mogno · Oliveira · Dark Ash · Teca</span>
-                        <button class="btn-order-small" onclick="nav('order')">Pedir</button>
-                    </div>
-                </div>
-
-                <div class="prod-card" data-type="Record Holder" data-brand="">
+                <div class="prod-card" data-type="Frame" data-brand="">
                     <div class="pic-wrap" data-carousel>
                         <div class="pic-track">
                             <div class="pic-slide"><img src="images/lp-frame-1.webp" alt="Moldura para disco em madeira maciça" loading="lazy"></div>
@@ -734,21 +710,26 @@
                 </div>
 
                 <div class="prod-card" data-type="Full Vinyl Furniture" data-brand="">
-                    <div class="pic-wrap" data-carousel>
-                        <div class="pic-track">
-                            <div class="pic-slide"><img src="images/vinyl-furniture-1.webp" alt="Estação de vinil completa em madeira maciça" loading="lazy"></div>
-                            <div class="pic-slide"><img src="images/lp-storage-1.webp" alt="Caixote de LP em madeira maciça" loading="lazy"></div>
-                        </div>
-                        <button class="pic-arr prev" aria-label="Anterior">&#8249;</button>
-                        <button class="pic-arr next" aria-label="Próximo">&#8250;</button>
-                        <div class="pic-dots">
-                            <button class="pic-dot active" aria-label="Imagem 1"></button>
-                            <button class="pic-dot" aria-label="Imagem 2"></button>
-                        </div>
+                    <div class="pic-wrap">
+                        <img src="images/vinyl-furniture-1.webp" alt="Estação de vinil completa em madeira maciça" loading="lazy" onclick="openLightbox(this.src)" style="width:100%;height:100%;object-fit:cover;cursor:zoom-in">
                     </div>
                     <div class="prod-body">
-                        <h3>Mobiliário de Vinil</h3>
-                        <p>Estação de vinil completa ou caixote de LP compacto — madeira maciça construída para colecções a sério. Disponível em todos os tipos de madeira. Encomendado com um plinth, cortamos ambos do mesmo bloco — o veio e a cor ficam exactamente iguais.</p>
+                        <h3>Estação de Vinil</h3>
+                        <p>Estação hi-fi completa em madeira maciça — prateleira para gira-discos, compartimento para amplificador e armazenamento de discos numa só peça. Feita por encomenda. Disponível em todos os tipos de madeira. Encomendado com um plinth, cortamos ambos do mesmo bloco — o veio e a cor ficam exactamente iguais.</p>
+                    </div>
+                    <div class="prod-foot">
+                        <span class="wood-pill">Nogueira · Carvalho · Cerejeira · Faia · Mogno · Oliveira · Dark Ash · Teca</span>
+                        <button class="btn-order-small" onclick="nav('order')">Pedir</button>
+                    </div>
+                </div>
+
+                <div class="prod-card" data-type="Full Vinyl Furniture" data-brand="">
+                    <div class="pic-wrap">
+                        <img src="images/lp-storage-1.webp" alt="Caixote de LP em madeira maciça" loading="lazy" onclick="openLightbox(this.src)" style="width:100%;height:100%;object-fit:cover;cursor:zoom-in">
+                    </div>
+                    <div class="prod-body">
+                        <h3>Caixote de LP</h3>
+                        <p>Caixote de LP de secretária em madeira maciça. Acomoda 30 a 40 discos na vertical, acessíveis de imediato. Disponível em todos os tipos de madeira. Encomendado com um plinth, cortamos ambos do mesmo bloco — o veio e a cor ficam exactamente iguais.</p>
                     </div>
                     <div class="prod-foot">
                         <span class="wood-pill">Nogueira · Carvalho · Cerejeira · Faia · Mogno · Oliveira · Dark Ash · Teca</span>
@@ -769,7 +750,7 @@
 
         <div class="order-hd">
             <h2>Pedir uma peça</h2>
-            <p>Cada peça do Studio 55 é construída por encomenda. Preencha os dados abaixo e responderemos com um orçamento e prazo em 48 horas. Não é efectuado qualquer pagamento nesta fase.</p>
+            <p>Grande parte das peças do Studio 55 são construídas por encomenda. Preencha os dados abaixo e responderemos com um orçamento e prazo em 48 horas. Não é efectuado qualquer pagamento nesta fase.</p>
         </div>
 
         <div id="form-wrapper">
@@ -1025,8 +1006,8 @@ function applyFilter(btn) {
         c.style.display = (type === 'all' || c.dataset.type === type) ? '' : 'none';
     });
     const LABELS = {
-        'all': 'Todos os Produtos', 'Plinth': 'Plinths', 'Frame': 'Suportes',
-        'Record Holder': 'Suportes de Discos', 'Wooden Cartridge Case': 'Caixas p/ Gira-Agulhas',
+        'all': 'Todos os Produtos', 'Plinth': 'Plinths', 'Frame': 'Molduras',
+        'Record Holder': 'Suportes de Discos', 'Wooden Cartridge Case': 'Caixas para Gira-Agulhas',
         'Full Vinyl Furniture': 'Mobiliário Vinil'
     };
     document.getElementById('prod-heading').textContent = LABELS[type] || type;

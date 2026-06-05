@@ -501,7 +501,7 @@
                         <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg>
                     </div>
                 </div>
-                <div class="cat-info"><h3>Frames</h3><p>Armboards &amp; mounting frames</p></div>
+                <div class="cat-info"><h3>Frames</h3><p>Display frames for records &amp; album art</p></div>
             </button>
 
             <button class="cat-card" onclick="jumpToProducts('Record Holder')">
@@ -552,7 +552,6 @@
                     <button class="filter-sub-btn" data-brand="Dual"    onclick="applyBrand(this)">Dual</button>
                     <button class="filter-sub-btn" data-brand="Thorens" onclick="applyBrand(this)">Thorens</button>
                 </div>
-                <button class="filter-btn"         data-filter="Armboard"              onclick="applyFilter(this)">Armboards</button>
                 <button class="filter-btn"         data-filter="Frame"                 onclick="applyFilter(this)">Frames</button>
                 <button class="filter-btn"         data-filter="Record Holder"         onclick="applyFilter(this)">Record Holders</button>
                 <button class="filter-btn"         data-filter="Wooden Cartridge Case" onclick="applyFilter(this)">Cartridge Cases</button>
@@ -637,30 +636,7 @@
                 </div>
 
 
-                <div class="prod-card" data-type="Armboard" data-brand="">
-                    <div class="pic-wrap" data-carousel>
-                        <div class="pic-track">
-                            <div class="pic-slide"><img src="images/armboard-1.webp" alt="Armboard in solid hardwood" loading="lazy"></div>
-                            <div class="pic-slide"><img src="images/lp-stand-4.webp" alt="Armboard wood colour options" loading="lazy"></div>
-                        </div>
-                        <button class="pic-arr prev" aria-label="Previous">&#8249;</button>
-                        <button class="pic-arr next" aria-label="Next">&#8250;</button>
-                        <div class="pic-dots">
-                            <button class="pic-dot active" aria-label="Slide 1"></button>
-                            <button class="pic-dot" aria-label="Slide 2"></button>
-                        </div>
-                    </div>
-                    <div class="prod-body">
-                        <h3>Armboard</h3>
-                        <p>Precision-cut armboard in solid Portuguese hardwood. Available in all wood types. Ordered alongside a plinth, we cut both from the same block — grain and colour match exactly.</p>
-                    </div>
-                    <div class="prod-foot">
-                        <span class="wood-pill">Walnut · Oak · Cherry · Beech · Mahogany · Olive · Dark Ash · Teak</span>
-                        <button class="btn-order-small" onclick="nav('order')">Request</button>
-                    </div>
-                </div>
-
-                <div class="prod-card" data-type="Record Holder" data-brand="">
+                <div class="prod-card" data-type="Frame" data-brand="">
                     <div class="pic-wrap" data-carousel>
                         <div class="pic-track">
                             <div class="pic-slide"><img src="images/lp-frame-1.webp" alt="LP display frame in solid wood" loading="lazy"></div>
@@ -734,21 +710,26 @@
                 </div>
 
                 <div class="prod-card" data-type="Full Vinyl Furniture" data-brand="">
-                    <div class="pic-wrap" data-carousel>
-                        <div class="pic-track">
-                            <div class="pic-slide"><img src="images/vinyl-furniture-1.webp" alt="Full vinyl furniture station in solid wood" loading="lazy"></div>
-                            <div class="pic-slide"><img src="images/lp-storage-1.webp" alt="Desktop LP storage crate in solid wood" loading="lazy"></div>
-                        </div>
-                        <button class="pic-arr prev" aria-label="Previous">&#8249;</button>
-                        <button class="pic-arr next" aria-label="Next">&#8250;</button>
-                        <div class="pic-dots">
-                            <button class="pic-dot active" aria-label="Slide 1"></button>
-                            <button class="pic-dot" aria-label="Slide 2"></button>
-                        </div>
+                    <div class="pic-wrap">
+                        <img src="images/vinyl-furniture-1.webp" alt="Full vinyl hi-fi station in solid wood" loading="lazy" onclick="openLightbox(this.src)" style="width:100%;height:100%;object-fit:cover;cursor:zoom-in">
                     </div>
                     <div class="prod-body">
-                        <h3>Vinyl Furniture</h3>
-                        <p>Full vinyl station or compact LP crate — solid hardwood built for serious collections. Available in all wood types. Ordered with a plinth, we cut both from the same block — grain and colour match exactly.</p>
+                        <h3>Vinyl Station</h3>
+                        <p>A full hi-fi station in solid hardwood — turntable shelf, amp bay and record storage in one piece. Built to order. Available in all wood types. Ordered with a plinth, we cut both from the same block — grain and colour match exactly.</p>
+                    </div>
+                    <div class="prod-foot">
+                        <span class="wood-pill">Walnut · Oak · Cherry · Beech · Mahogany · Olive · Dark Ash · Teak</span>
+                        <button class="btn-order-small" onclick="nav('order')">Request</button>
+                    </div>
+                </div>
+
+                <div class="prod-card" data-type="Full Vinyl Furniture" data-brand="">
+                    <div class="pic-wrap">
+                        <img src="images/lp-storage-1.webp" alt="Desktop LP storage crate in solid wood" loading="lazy" onclick="openLightbox(this.src)" style="width:100%;height:100%;object-fit:cover;cursor:zoom-in">
+                    </div>
+                    <div class="prod-body">
+                        <h3>LP Storage Crate</h3>
+                        <p>Compact desktop LP crate in solid hardwood. Holds 30–40 records upright and accessible. Available in all wood types. Ordered with a plinth, cut from the same block — grain and colour match exactly.</p>
                     </div>
                     <div class="prod-foot">
                         <span class="wood-pill">Walnut · Oak · Cherry · Beech · Mahogany · Olive · Dark Ash · Teak</span>
