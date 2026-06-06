@@ -68,12 +68,12 @@
             display: flex; align-items: center; justify-content: space-between; height: 60px;
         }
         .brand-logo {
-            font-family: var(--serif); font-size: 1.15rem; font-weight: 400; color: var(--oak-l);
+            font-family: var(--serif); font-size: 1.15rem; font-weight: 400; color: var(--gold);
             letter-spacing: 0.04em; text-decoration: none; display: flex; align-items: center; gap: 11px;
         }
-        .brand-logo .logo-mark { width: 32px; height: 32px; flex-shrink: 0; }
+        .brand-logo .logo-mark { width: 32px; height: 32px; flex-shrink: 0; filter: brightness(0) saturate(100%) invert(72%) sepia(35%) saturate(500%) hue-rotate(340deg); }
         .brand-logo .logo-wordmark { display: flex; flex-direction: column; gap: 1px; }
-        .brand-logo .logo-name { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; color: var(--oak-l); line-height: 1; letter-spacing: 0.06em; }
+        .brand-logo .logo-name { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; color: var(--gold); line-height: 1; letter-spacing: 0.06em; }
         .brand-logo small { font-family: var(--sans); font-size: 0.6rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.28); }
         nav { display: flex; gap: 2px; }
         .nav-btn {
@@ -109,10 +109,10 @@
                 linear-gradient(170deg, #0A0806 0%, #1A1008 28%, #281A0C 52%, #1A1008 74%, #0A0806 100%);
         }
         .hero-inner { max-width: var(--max); margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
-        .hero-right { padding-top: 8px; }
+        .hero-right { padding-top: 72px; }
         .hero-maker-label { font-size: 0.64rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--oak); margin-bottom: 20px; }
-        .hero-right p { color: rgba(255,255,255,0.5); font-size: 0.9rem; line-height: 1.85; margin-bottom: 16px; max-width: none; }
-        .hero-maker-sig { font-family: var(--serif); color: var(--oak-l); font-style: italic; font-size: 0.9rem; margin-top: 8px; }
+        .hero-right p { color: rgba(255,255,255,0.5); font-size: 0.72rem; line-height: 1.65; margin-bottom: 1px; max-width: none; }
+        .hero-maker-sig { font-family: var(--serif); color: var(--oak-l); font-style: italic; font-size: 0.72rem; margin-top: 4px; }
         .hero-eyebrow {
             font-size: 0.68rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase;
             color: var(--oak-l); margin-bottom: 22px; white-space: nowrap;
@@ -296,6 +296,16 @@
         #lightbox img { max-width: 92vw; max-height: 88vh; object-fit: contain; border-radius: 2px; box-shadow: 0 12px 60px rgba(0,0,0,0.7); cursor: default; }
         #lightbox-close { position: absolute; top: 18px; right: 22px; background: none; border: none; color: rgba(255,255,255,0.6); font-size: 2rem; line-height: 1; cursor: pointer; transition: color 0.15s; }
         #lightbox-close:hover { color: #fff; }
+        #lightbox-prev, #lightbox-next {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            background: rgba(255,255,255,0.13); border: none; color: #fff;
+            width: 46px; height: 46px; border-radius: 50%; font-size: 1.9rem;
+            cursor: pointer; transition: background 0.15s;
+            display: flex; align-items: center; justify-content: center; line-height: 1;
+        }
+        #lightbox-prev { left: 20px; }
+        #lightbox-next { right: 20px; }
+        #lightbox-prev:hover, #lightbox-next:hover { background: rgba(255,255,255,0.28); }
 
         .prod-body { padding: 18px 20px; flex: 1; display: flex; flex-direction: column; }
         .prod-tag { font-size: 0.63rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--oak); margin-bottom: 7px; }
@@ -492,7 +502,6 @@
                 </div>
             </div>
             <div class="hero-right">
-                <p class="hero-maker-label">The maker</p>
                 <p>A lifelong passion for woodcraft, music and photography - the craftsman behind Studio 55 spent 50 years working and running a small woodworking company.</p>
                 <p>Now retired, he brings that half-century of craft to every piece - built by hand, one at a time, for those who take sound seriously.</p>
                 <p class="hero-maker-sig">Father of two, grandfather of three.</p>
@@ -538,32 +547,23 @@
             </button>
 
             <button class="cat-card" onclick="jumpToProducts('Wooden Cartridge Case')">
-                <div class="cat-thumb c-cases">
+                <div class="cat-thumb">
+                    <img src="images/cartridge-1.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
                     <div class="cat-badge">
                         <svg viewBox="0 0 24 24"><rect x="5" y="9" width="14" height="10" rx="1"/><path d="M9 9V7a3 3 0 0 1 6 0v2"/></svg>
                     </div>
                 </div>
-                <div class="cat-info"><h3>Cartridge Cases</h3><p>Precision storage for phono cartridges</p></div>
+                <div class="cat-info"><h3>Wooden Cartridge</h3><p>Precision storage for phono cartridges</p></div>
             </button>
 
-            <button class="cat-card" onclick="jumpToProducts('Vinyl Station')">
+            <button class="cat-card" onclick="jumpToProducts('Vinyl Furniture')">
                 <div class="cat-thumb">
                     <img src="images/vinyl-furniture-1.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
                     <div class="cat-badge">
                         <svg viewBox="0 0 24 24"><rect x="2" y="15" width="20" height="5" rx="1"/><rect x="5" y="9" width="14" height="6" rx="1"/><path d="M7 9V7h10v2"/></svg>
                     </div>
                 </div>
-                <div class="cat-info"><h3>Vinyl Station</h3><p>Full hi-fi cabinetry &amp; credenzas</p></div>
-            </button>
-
-            <button class="cat-card" onclick="jumpToProducts('LP Storage')">
-                <div class="cat-thumb">
-                    <img src="images/lp-storage-1.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
-                    <div class="cat-badge">
-                        <svg viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="1"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg>
-                    </div>
-                </div>
-                <div class="cat-info"><h3>LP Storage</h3><p>Desktop crates &amp; compact storage</p></div>
+                <div class="cat-info"><h3>Vinyl Furniture</h3><p>Hi-fi cabinetry, stations &amp; LP crates</p></div>
             </button>
 
         </div>
@@ -589,9 +589,8 @@
                 </div>
                 <button class="filter-btn"         data-filter="Frame"                 onclick="applyFilter(this)">Frames</button>
                 <button class="filter-btn"         data-filter="Record Holder"         onclick="applyFilter(this)">Record Holders</button>
-                <button class="filter-btn"         data-filter="Wooden Cartridge Case" onclick="applyFilter(this)">Cartridge Cases</button>
-                <button class="filter-btn"         data-filter="Vinyl Station"         onclick="applyFilter(this)">Vinyl Station</button>
-                <button class="filter-btn"         data-filter="LP Storage"            onclick="applyFilter(this)">LP Storage</button>
+                <button class="filter-btn"         data-filter="Wooden Cartridge Case" onclick="applyFilter(this)">Wooden Cartridge</button>
+                <button class="filter-btn"         data-filter="Vinyl Furniture"       onclick="applyFilter(this)">Vinyl Furniture</button>
             </div>
         </aside>
 
@@ -621,7 +620,7 @@
                     </div>
                     <div class="prod-foot">
                         <span class="wood-pill">Walnut · Oak · Cherry · Beech · Mahogany · Olive · Dark Ash</span>
-                        <button class="btn-order-small" onclick="nav('order')">Request</button>
+                        <button class="btn-order-small" onclick="nav('order')">Buy</button>
                     </div>
                 </div>
 
@@ -644,7 +643,7 @@
                     </div>
                     <div class="prod-foot">
                         <span class="wood-pill">Walnut · Oak · Cherry · Beech · Mahogany · Olive · Dark Ash</span>
-                        <button class="btn-order-small" onclick="nav('order')">Request</button>
+                        <button class="btn-order-small" onclick="nav('order')">Buy</button>
                     </div>
                 </div>
 
@@ -667,7 +666,7 @@
                     </div>
                     <div class="prod-foot">
                         <span class="wood-pill">Walnut · Oak · Cherry · Beech · Mahogany · Olive · Dark Ash</span>
-                        <button class="btn-order-small" onclick="nav('order')">Request</button>
+                        <button class="btn-order-small" onclick="nav('order')">Buy</button>
                     </div>
                 </div>
 
@@ -692,8 +691,8 @@
                         <p>Display your favourite record in a handmade solid wood frame. Works for LPs and 45s. Wall-mounted or shelf-standing. Available in all wood types. Ordered with a plinth, cut from the same block - grain and colour match exactly.</p>
                     </div>
                     <div class="prod-foot">
-                        <span class="wood-pill">Walnut · Oak · Cherry · Beech · Mahogany · Olive · Dark Ash · Teak</span>
-                        <button class="btn-order-small" onclick="nav('order')">Request</button>
+                        <span class="wood-pill">Walnut · Oak · Cherry · Beech · Mahogany · Olive · Dark Ash</span>
+                        <button class="btn-order-small" onclick="nav('order')">Buy</button>
                     </div>
                 </div>
 
@@ -717,8 +716,8 @@
                         <p>Desktop LP display stand in solid hardwood. Holds one record upright on your shelf, desk, or listening table. Available in all wood types. Ordered with a plinth, cut from the same block - grain and colour match exactly.</p>
                     </div>
                     <div class="prod-foot">
-                        <span class="wood-pill">Walnut · Oak · Cherry · Beech · Mahogany · Olive · Dark Ash · Teak</span>
-                        <button class="btn-order-small" onclick="nav('order')">Request</button>
+                        <span class="wood-pill">Walnut · Oak · Cherry · Beech · Mahogany · Olive · Dark Ash</span>
+                        <button class="btn-order-small" onclick="nav('order')">Buy</button>
                     </div>
                 </div>
 
@@ -740,12 +739,12 @@
                         <p>Wall-mounted record ledge in solid hardwood. Holds 3–5 records face-out for easy browsing - the album art becomes the decoration. Available in all wood types. Ordered with a plinth, cut from the same block - grain and colour match exactly.</p>
                     </div>
                     <div class="prod-foot">
-                        <span class="wood-pill">Walnut · Oak · Cherry · Beech · Mahogany · Olive · Dark Ash · Teak</span>
-                        <button class="btn-order-small" onclick="nav('order')">Request</button>
+                        <span class="wood-pill">Walnut · Oak · Cherry · Beech · Mahogany · Olive · Dark Ash</span>
+                        <button class="btn-order-small" onclick="nav('order')">Buy</button>
                     </div>
                 </div>
 
-                <div class="prod-card" data-type="Vinyl Station" data-brand="">
+                <div class="prod-card" data-type="Vinyl Furniture" data-brand="">
                     <div class="pic-wrap">
                         <img src="images/vinyl-furniture-1.webp" alt="Full vinyl hi-fi station in solid wood" loading="lazy" onclick="openLightbox(this.src)" style="width:100%;height:100%;object-fit:cover;cursor:zoom-in">
                     </div>
@@ -754,12 +753,12 @@
                         <p>A full hi-fi station in solid hardwood - turntable shelf, amp bay and record storage in one piece. Built to order. Available in all wood types. Ordered with a plinth, we cut both from the same block - grain and colour match exactly.</p>
                     </div>
                     <div class="prod-foot">
-                        <span class="wood-pill">Walnut · Oak · Cherry · Beech · Mahogany · Olive · Dark Ash · Teak</span>
-                        <button class="btn-order-small" onclick="nav('order')">Request</button>
+                        <span class="wood-pill">Walnut · Oak · Cherry · Beech · Mahogany · Olive · Dark Ash</span>
+                        <button class="btn-order-small" onclick="nav('order')">Buy</button>
                     </div>
                 </div>
 
-                <div class="prod-card" data-type="LP Storage" data-brand="">
+                <div class="prod-card" data-type="Vinyl Furniture" data-brand="">
                     <div class="pic-wrap">
                         <img src="images/lp-storage-1.webp" alt="Desktop LP storage crate in solid wood" loading="lazy" onclick="openLightbox(this.src)" style="width:100%;height:100%;object-fit:cover;cursor:zoom-in">
                     </div>
@@ -768,8 +767,31 @@
                         <p>Compact desktop LP crate in solid hardwood. Holds 30–40 records upright and accessible. Available in all wood types. Ordered with a plinth, cut from the same block - grain and colour match exactly.</p>
                     </div>
                     <div class="prod-foot">
-                        <span class="wood-pill">Walnut · Oak · Cherry · Beech · Mahogany · Olive · Dark Ash · Teak</span>
-                        <button class="btn-order-small" onclick="nav('order')">Request</button>
+                        <span class="wood-pill">Walnut · Oak · Cherry · Beech · Mahogany · Olive · Dark Ash</span>
+                        <button class="btn-order-small" onclick="nav('order')">Buy</button>
+                    </div>
+                </div>
+
+                <div class="prod-card" data-type="Wooden Cartridge Case" data-brand="">
+                    <div class="pic-wrap" data-carousel>
+                        <div class="pic-track">
+                            <div class="pic-slide"><img src="images/cartridge-1.webp" alt="Wooden headshell detail" loading="lazy"></div>
+                            <div class="pic-slide"><img src="images/cartridge-2.webp" alt="Wooden headshell mounted on tonearm" loading="lazy"></div>
+                        </div>
+                        <button class="pic-arr prev" aria-label="Previous">&#8249;</button>
+                        <button class="pic-arr next" aria-label="Next">&#8250;</button>
+                        <div class="pic-dots">
+                            <button class="pic-dot active" aria-label="Image 1"></button>
+                            <button class="pic-dot" aria-label="Image 2"></button>
+                        </div>
+                    </div>
+                    <div class="prod-body">
+                        <h3>Wooden Cartridge</h3>
+                        <p>Solid wood headshell for turntables with standard SME mount. Hand-cut Portuguese hardwood. Compatible with most tonearms with universal ½" mount. Available in all wood types.</p>
+                    </div>
+                    <div class="prod-foot">
+                        <span class="wood-pill">Walnut · Oak · Cherry · Beech · Mahogany · Olive · Dark Ash</span>
+                        <button class="btn-order-small" onclick="nav('order')">Buy</button>
                     </div>
                 </div>
 
@@ -806,7 +828,7 @@
                             <option value="Frame">Frame / Armboard</option>
                             <option value="Record Holder">Record Holder</option>
                             <option value="Wooden Cartridge Case">Wooden Cartridge Case</option>
-                            <option value="Full Vinyl Furniture">Full Vinyl Furniture</option>
+                            <option value="Vinyl Furniture">Vinyl Furniture</option>
                         </select>
                         <span class="fg-error" id="e-type">Please select a product type.</span>
                     </div>
@@ -865,7 +887,6 @@
                             <option>Mahogany</option>
                             <option>Olive</option>
                             <option>Dark Ash</option>
-                            <option>Teak</option>
                             <option>Ebony accent panels</option>
                             <option value="Custom - describe in notes">Custom - describe in notes</option>
                         </select>
@@ -1043,8 +1064,8 @@ function applyFilter(btn) {
     });
     const LABELS = {
         'all': 'All Products', 'Plinth': 'Plinths', 'Frame': 'Frames',
-        'Record Holder': 'Record Holders', 'Wooden Cartridge Case': 'Cartridge Cases',
-        'Vinyl Station': 'Vinyl Station', 'LP Storage': 'LP Storage'
+        'Record Holder': 'Record Holders', 'Wooden Cartridge Case': 'Wooden Cartridge',
+        'Vinyl Furniture': 'Vinyl Furniture'
     };
     document.getElementById('prod-heading').textContent = LABELS[type] || type;
 }
@@ -1247,7 +1268,7 @@ document.querySelectorAll('[data-carousel]').forEach(wrap => {
     const track = wrap.querySelector('.pic-track');
     const dots  = wrap.querySelectorAll('.pic-dot');
     const total = wrap.querySelectorAll('.pic-slide').length;
-    let cur = 0, timer;
+    let cur = 0;
 
     function go(n) {
         cur = (n + total) % total;
@@ -1255,35 +1276,52 @@ document.querySelectorAll('[data-carousel]').forEach(wrap => {
         dots.forEach((d, i) => d.classList.toggle('active', i === cur));
     }
 
-    dots.forEach((d, i) => d.addEventListener('click', () => { go(i); restart(); }));
-    wrap.querySelector('.pic-arr.prev').addEventListener('click', () => { go(cur - 1); restart(); });
-    wrap.querySelector('.pic-arr.next').addEventListener('click', () => { go(cur + 1); restart(); });
+    dots.forEach((d, i) => d.addEventListener('click', () => go(i)));
+    wrap.querySelector('.pic-arr.prev').addEventListener('click', () => go(cur - 1));
+    wrap.querySelector('.pic-arr.next').addEventListener('click', () => go(cur + 1));
 
-    function restart() { clearInterval(timer); timer = setInterval(() => go(cur + 1), 3500); }
-
-    wrap.querySelectorAll('.pic-slide img').forEach(img => {
-        img.addEventListener('click', () => openLightbox(img.src));
+    const imgs = [...wrap.querySelectorAll('.pic-slide img')];
+    const srcs = imgs.map(im => im.src);
+    imgs.forEach((img, i) => {
+        img.addEventListener('click', () => openLightbox(srcs, i));
     });
-
-    restart();
 });
 
 /* ── Lightbox ───────────────────────────────────────────── */
-function openLightbox(src) {
-    const lb = document.getElementById('lightbox');
-    document.getElementById('lightbox-img').src = src;
-    lb.classList.add('open');
+let lbSrcs = [], lbIdx = 0;
+
+function openLightbox(srcs, idx) {
+    lbSrcs = Array.isArray(srcs) ? srcs : [srcs];
+    lbIdx = idx !== undefined ? idx : 0;
+    document.getElementById('lightbox-img').src = lbSrcs[lbIdx];
+    const show = lbSrcs.length > 1;
+    document.getElementById('lightbox-prev').style.display = show ? 'flex' : 'none';
+    document.getElementById('lightbox-next').style.display = show ? 'flex' : 'none';
+    document.getElementById('lightbox').classList.add('open');
 }
+
+function lightboxNav(dir) {
+    lbIdx = (lbIdx + dir + lbSrcs.length) % lbSrcs.length;
+    document.getElementById('lightbox-img').src = lbSrcs[lbIdx];
+}
+
 function closeLightbox() {
     document.getElementById('lightbox').classList.remove('open');
 }
 document.getElementById('lightbox').addEventListener('click', e => { if (e.target !== document.getElementById('lightbox-img')) closeLightbox(); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+document.addEventListener('keydown', e => {
+    if (!document.getElementById('lightbox').classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') lightboxNav(-1);
+    if (e.key === 'ArrowRight') lightboxNav(1);
+});
 </script>
 
 <div id="lightbox">
     <button id="lightbox-close" onclick="closeLightbox()" aria-label="Close">&#x2715;</button>
+    <button id="lightbox-prev" onclick="lightboxNav(-1)" aria-label="Previous">&#8249;</button>
     <img id="lightbox-img" src="" alt="Product image enlarged">
+    <button id="lightbox-next" onclick="lightboxNav(1)" aria-label="Next">&#8250;</button>
 </div>
 </body>
 </html>
