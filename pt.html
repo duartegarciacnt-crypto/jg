@@ -1269,7 +1269,7 @@ document.querySelectorAll('[data-carousel]').forEach(wrap => {
     const track = wrap.querySelector('.pic-track');
     const dots  = wrap.querySelectorAll('.pic-dot');
     const total = wrap.querySelectorAll('.pic-slide').length;
-    let cur = 0, timer;
+    let cur = 0;
 
     function go(n) {
         cur = (n + total) % total;
@@ -1277,19 +1277,15 @@ document.querySelectorAll('[data-carousel]').forEach(wrap => {
         dots.forEach((d, i) => d.classList.toggle('active', i === cur));
     }
 
-    dots.forEach((d, i) => d.addEventListener('click', () => { go(i); restart(); }));
-    wrap.querySelector('.pic-arr.prev').addEventListener('click', () => { go(cur - 1); restart(); });
-    wrap.querySelector('.pic-arr.next').addEventListener('click', () => { go(cur + 1); restart(); });
-
-    function restart() { clearInterval(timer); timer = setInterval(() => go(cur + 1), 3500); }
+    dots.forEach((d, i) => d.addEventListener('click', () => go(i)));
+    wrap.querySelector('.pic-arr.prev').addEventListener('click', () => go(cur - 1));
+    wrap.querySelector('.pic-arr.next').addEventListener('click', () => go(cur + 1));
 
     const imgs = [...wrap.querySelectorAll('.pic-slide img')];
     const srcs = imgs.map(im => im.src);
     imgs.forEach((img, i) => {
         img.addEventListener('click', () => openLightbox(srcs, i));
     });
-
-    restart();
 });
 
 /* ── Lightbox ───────────────────────────────────────────── */
