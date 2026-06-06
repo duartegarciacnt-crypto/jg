@@ -68,12 +68,12 @@
             display: flex; align-items: center; justify-content: space-between; height: 60px;
         }
         .brand-logo {
-            font-family: var(--serif); font-size: 1.15rem; font-weight: 400; color: var(--oak-l);
+            font-family: var(--serif); font-size: 1.15rem; font-weight: 400; color: var(--gold);
             letter-spacing: 0.04em; text-decoration: none; display: flex; align-items: center; gap: 11px;
         }
-        .brand-logo .logo-mark { width: 32px; height: 32px; flex-shrink: 0; }
+        .brand-logo .logo-mark { width: 32px; height: 32px; flex-shrink: 0; filter: brightness(0) saturate(100%) invert(72%) sepia(35%) saturate(500%) hue-rotate(340deg); }
         .brand-logo .logo-wordmark { display: flex; flex-direction: column; gap: 1px; }
-        .brand-logo .logo-name { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; color: var(--oak-l); line-height: 1; letter-spacing: 0.06em; }
+        .brand-logo .logo-name { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; color: var(--gold); line-height: 1; letter-spacing: 0.06em; }
         .brand-logo small { font-family: var(--sans); font-size: 0.6rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.28); }
         nav { display: flex; gap: 2px; }
         .nav-btn {
@@ -296,6 +296,16 @@
         #lightbox img { max-width: 92vw; max-height: 88vh; object-fit: contain; border-radius: 2px; box-shadow: 0 12px 60px rgba(0,0,0,0.7); cursor: default; }
         #lightbox-close { position: absolute; top: 18px; right: 22px; background: none; border: none; color: rgba(255,255,255,0.6); font-size: 2rem; line-height: 1; cursor: pointer; transition: color 0.15s; }
         #lightbox-close:hover { color: #fff; }
+        #lightbox-prev, #lightbox-next {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            background: rgba(255,255,255,0.13); border: none; color: #fff;
+            width: 46px; height: 46px; border-radius: 50%; font-size: 1.9rem;
+            cursor: pointer; transition: background 0.15s;
+            display: flex; align-items: center; justify-content: center; line-height: 1;
+        }
+        #lightbox-prev { left: 20px; }
+        #lightbox-next { right: 20px; }
+        #lightbox-prev:hover, #lightbox-next:hover { background: rgba(255,255,255,0.28); }
 
         .prod-body { padding: 18px 20px; flex: 1; display: flex; flex-direction: column; }
         .prod-tag { font-size: 0.63rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--oak); margin-bottom: 7px; }
@@ -464,7 +474,7 @@
         <nav>
             <button class="nav-btn active" data-tab="home"    onclick="nav('home')">Início</button>
             <button class="nav-btn"         data-tab="products" onclick="nav('products')">Produtos</button>
-            <button class="nav-btn"         data-tab="order"  onclick="nav('order')">Encomendar</button>
+            <button class="nav-btn"         data-tab="order"  onclick="nav('order')">Comprar</button>
         </nav>
         <div class="lang-switch">
             <span class="lang-active">PT</span>
@@ -538,32 +548,23 @@
             </button>
 
             <button class="cat-card" onclick="jumpToProducts('Wooden Cartridge Case')">
-                <div class="cat-thumb c-cases">
+                <div class="cat-thumb">
+                    <img src="images/cartridge-1.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
                     <div class="cat-badge">
                         <svg viewBox="0 0 24 24"><rect x="5" y="9" width="14" height="10" rx="1"/><path d="M9 9V7a3 3 0 0 1 6 0v2"/></svg>
                     </div>
                 </div>
-                <div class="cat-info"><h3>Caixas para Gira-Agulhas</h3><p>Armazenamento de precisão para gira-agulhas</p></div>
+                <div class="cat-info"><h3>Cartucho de Madeira</h3><p>Armazenamento de precisão para gira-agulhas</p></div>
             </button>
 
-            <button class="cat-card" onclick="jumpToProducts('Vinyl Station')">
+            <button class="cat-card" onclick="jumpToProducts('Vinyl Furniture')">
                 <div class="cat-thumb">
                     <img src="images/vinyl-furniture-1.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
                     <div class="cat-badge">
                         <svg viewBox="0 0 24 24"><rect x="2" y="15" width="20" height="5" rx="1"/><rect x="5" y="9" width="14" height="6" rx="1"/><path d="M7 9V7h10v2"/></svg>
                     </div>
                 </div>
-                <div class="cat-info"><h3>Estação de Vinil</h3><p>Mobiliário hi-fi &amp; aparadores completos</p></div>
-            </button>
-
-            <button class="cat-card" onclick="jumpToProducts('LP Storage')">
-                <div class="cat-thumb">
-                    <img src="images/lp-storage-1.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
-                    <div class="cat-badge">
-                        <svg viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="1"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg>
-                    </div>
-                </div>
-                <div class="cat-info"><h3>Caixote de LP</h3><p>Caixotes de secretária &amp; armazenamento compacto</p></div>
+                <div class="cat-info"><h3>Mobília de Vinil</h3><p>Mobiliário hi-fi, estações &amp; caixotes de LP</p></div>
             </button>
 
         </div>
@@ -589,9 +590,8 @@
                 </div>
                 <button class="filter-btn"         data-filter="Frame"                 onclick="applyFilter(this)">Molduras</button>
                 <button class="filter-btn"         data-filter="Record Holder"         onclick="applyFilter(this)">Suportes de Discos</button>
-                <button class="filter-btn"         data-filter="Wooden Cartridge Case" onclick="applyFilter(this)">Caixas para Gira-Agulhas</button>
-                <button class="filter-btn"         data-filter="Vinyl Station"         onclick="applyFilter(this)">Estação de Vinil</button>
-                <button class="filter-btn"         data-filter="LP Storage"            onclick="applyFilter(this)">Caixote de LP</button>
+                <button class="filter-btn"         data-filter="Wooden Cartridge Case" onclick="applyFilter(this)">Cartucho de Madeira</button>
+                <button class="filter-btn"         data-filter="Vinyl Furniture"       onclick="applyFilter(this)">Mobília de Vinil</button>
             </div>
         </aside>
 
@@ -621,7 +621,7 @@
                     </div>
                     <div class="prod-foot">
                         <span class="wood-pill">Nogueira · Carvalho · Cerejeira · Faia · Mogno · Oliveira · Dark Ash</span>
-                        <button class="btn-order-small" onclick="nav('order')">Encomendar</button>
+                        <button class="btn-order-small" onclick="nav('order')">Comprar</button>
                     </div>
                 </div>
 
@@ -644,7 +644,7 @@
                     </div>
                     <div class="prod-foot">
                         <span class="wood-pill">Nogueira · Carvalho · Cerejeira · Faia · Mogno · Oliveira · Dark Ash</span>
-                        <button class="btn-order-small" onclick="nav('order')">Encomendar</button>
+                        <button class="btn-order-small" onclick="nav('order')">Comprar</button>
                     </div>
                 </div>
 
@@ -667,7 +667,7 @@
                     </div>
                     <div class="prod-foot">
                         <span class="wood-pill">Nogueira · Carvalho · Cerejeira · Faia · Mogno · Oliveira · Dark Ash</span>
-                        <button class="btn-order-small" onclick="nav('order')">Encomendar</button>
+                        <button class="btn-order-small" onclick="nav('order')">Comprar</button>
                     </div>
                 </div>
 
@@ -692,8 +692,8 @@
                         <p>Expõe o teu disco favorito numa moldura de madeira maciça artesanal. Para LPs e singles de 45 rpm. Para parede ou prateleira. Disponível em todos os tipos de madeira. Encomendado com um plinth, cortamos ambos do mesmo bloco - o veio e a cor ficam exactamente iguais.</p>
                     </div>
                     <div class="prod-foot">
-                        <span class="wood-pill">Nogueira · Carvalho · Cerejeira · Faia · Mogno · Oliveira · Dark Ash · Teca</span>
-                        <button class="btn-order-small" onclick="nav('order')">Pedir</button>
+                        <span class="wood-pill">Nogueira · Carvalho · Cerejeira · Faia · Mogno · Oliveira · Dark Ash</span>
+                        <button class="btn-order-small" onclick="nav('order')">Comprar</button>
                     </div>
                 </div>
 
@@ -717,8 +717,8 @@
                         <p>Suporte de secretária para LP em madeira maciça. Segura um disco na vertical, na prateleira, secretária ou mesa de escuta. Disponível em todos os tipos de madeira. Encomendado com um plinth, cortamos ambos do mesmo bloco - o veio e a cor ficam exactamente iguais.</p>
                     </div>
                     <div class="prod-foot">
-                        <span class="wood-pill">Nogueira · Carvalho · Cerejeira · Faia · Mogno · Oliveira · Dark Ash · Teca</span>
-                        <button class="btn-order-small" onclick="nav('order')">Pedir</button>
+                        <span class="wood-pill">Nogueira · Carvalho · Cerejeira · Faia · Mogno · Oliveira · Dark Ash</span>
+                        <button class="btn-order-small" onclick="nav('order')">Comprar</button>
                     </div>
                 </div>
 
@@ -740,12 +740,12 @@
                         <p>Prateleira de parede em madeira maciça para discos. Expõe 3 a 5 discos de frente para fácil navegação - a capa do álbum torna-se a decoração. Disponível em todos os tipos de madeira. Encomendado com um plinth, cortamos ambos do mesmo bloco - o veio e a cor ficam exactamente iguais.</p>
                     </div>
                     <div class="prod-foot">
-                        <span class="wood-pill">Nogueira · Carvalho · Cerejeira · Faia · Mogno · Oliveira · Dark Ash · Teca</span>
-                        <button class="btn-order-small" onclick="nav('order')">Pedir</button>
+                        <span class="wood-pill">Nogueira · Carvalho · Cerejeira · Faia · Mogno · Oliveira · Dark Ash</span>
+                        <button class="btn-order-small" onclick="nav('order')">Comprar</button>
                     </div>
                 </div>
 
-                <div class="prod-card" data-type="Vinyl Station" data-brand="">
+                <div class="prod-card" data-type="Vinyl Furniture" data-brand="">
                     <div class="pic-wrap">
                         <img src="images/vinyl-furniture-1.webp" alt="Estação de vinil completa em madeira maciça" loading="lazy" onclick="openLightbox(this.src)" style="width:100%;height:100%;object-fit:cover;cursor:zoom-in">
                     </div>
@@ -754,12 +754,12 @@
                         <p>Estação hi-fi completa em madeira maciça - prateleira para gira-discos, compartimento para amplificador e armazenamento de discos numa só peça. Feita por encomenda. Disponível em todos os tipos de madeira. Encomendado com um plinth, cortamos ambos do mesmo bloco - o veio e a cor ficam exactamente iguais.</p>
                     </div>
                     <div class="prod-foot">
-                        <span class="wood-pill">Nogueira · Carvalho · Cerejeira · Faia · Mogno · Oliveira · Dark Ash · Teca</span>
-                        <button class="btn-order-small" onclick="nav('order')">Pedir</button>
+                        <span class="wood-pill">Nogueira · Carvalho · Cerejeira · Faia · Mogno · Oliveira · Dark Ash</span>
+                        <button class="btn-order-small" onclick="nav('order')">Comprar</button>
                     </div>
                 </div>
 
-                <div class="prod-card" data-type="LP Storage" data-brand="">
+                <div class="prod-card" data-type="Vinyl Furniture" data-brand="">
                     <div class="pic-wrap">
                         <img src="images/lp-storage-1.webp" alt="Caixote de LP em madeira maciça" loading="lazy" onclick="openLightbox(this.src)" style="width:100%;height:100%;object-fit:cover;cursor:zoom-in">
                     </div>
@@ -768,8 +768,31 @@
                         <p>Caixote de LP de secretária em madeira maciça. Acomoda 30 a 40 discos na vertical, acessíveis de imediato. Disponível em todos os tipos de madeira. Encomendado com um plinth, cortamos ambos do mesmo bloco - o veio e a cor ficam exactamente iguais.</p>
                     </div>
                     <div class="prod-foot">
-                        <span class="wood-pill">Nogueira · Carvalho · Cerejeira · Faia · Mogno · Oliveira · Dark Ash · Teca</span>
-                        <button class="btn-order-small" onclick="nav('order')">Pedir</button>
+                        <span class="wood-pill">Nogueira · Carvalho · Cerejeira · Faia · Mogno · Oliveira · Dark Ash</span>
+                        <button class="btn-order-small" onclick="nav('order')">Comprar</button>
+                    </div>
+                </div>
+
+                <div class="prod-card" data-type="Wooden Cartridge Case" data-brand="">
+                    <div class="pic-wrap" data-carousel>
+                        <div class="pic-track">
+                            <div class="pic-slide"><img src="images/cartridge-1.webp" alt="Cartucho de madeira para gira-discos, vista detalhe" loading="lazy"></div>
+                            <div class="pic-slide"><img src="images/cartridge-2.webp" alt="Cartucho de madeira montado no braço do gira-discos" loading="lazy"></div>
+                        </div>
+                        <button class="pic-arr prev" aria-label="Anterior">&#8249;</button>
+                        <button class="pic-arr next" aria-label="Seguinte">&#8250;</button>
+                        <div class="pic-dots">
+                            <button class="pic-dot active" aria-label="Imagem 1"></button>
+                            <button class="pic-dot" aria-label="Imagem 2"></button>
+                        </div>
+                    </div>
+                    <div class="prod-body">
+                        <h3>Cartucho de Madeira</h3>
+                        <p>Headshell em madeira maciça para gira-discos com ligação standard SME. Madeira portuguesa cortada à mão. Compatível com a maioria dos braços com encaixe universal de ½". Disponível em todos os tipos de madeira.</p>
+                    </div>
+                    <div class="prod-foot">
+                        <span class="wood-pill">Nogueira · Carvalho · Cerejeira · Faia · Mogno · Oliveira · Dark Ash</span>
+                        <button class="btn-order-small" onclick="nav('order')">Comprar</button>
                     </div>
                 </div>
 
@@ -785,7 +808,7 @@
     <div class="order-layout">
 
         <div class="order-hd">
-            <h2>Pedir uma peça</h2>
+            <h2>Comprar uma peça</h2>
             <p>Grande parte das peças do Studio 55 são construídas por encomenda. Preencha os dados abaixo e responderemos com um orçamento e prazo em 48 horas. Não é efectuado qualquer pagamento nesta fase.</p>
         </div>
 
@@ -805,8 +828,8 @@
                             <option value="Plinth">Plinth (base de gira-discos)</option>
                             <option value="Frame">Suporte / Prancha de braço</option>
                             <option value="Record Holder">Suporte de Discos</option>
-                            <option value="Wooden Cartridge Case">Caixa de Madeira para Gira-Agulha</option>
-                            <option value="Full Vinyl Furniture">Mobiliário Completo para Vinil</option>
+                            <option value="Wooden Cartridge Case">Cartucho de Madeira</option>
+                            <option value="Vinyl Furniture">Mobília de Vinil</option>
                         </select>
                         <span class="fg-error" id="e-type">Por favor seleccione um tipo de produto.</span>
                     </div>
@@ -819,7 +842,7 @@
                 <!-- Step 2: Brand + Model -->
                 <div class="form-step" data-step="2">
                     <h3 class="step-title">Qual o gira-discos?</h3>
-                    <p class="step-desc">Seleccione a marca e o modelo. Se encomendar um suporte de discos, mobiliário ou caixa para gira-agulha, pode deixar em branco.</p>
+                    <p class="step-desc">Seleccione a marca e o modelo. Se comprar um suporte de discos, mobiliário ou cartucho de madeira, pode deixar em branco.</p>
                     <div class="fg" id="brand-group">
                         <label for="f-brand">Marca</label>
                         <select id="f-brand" name="brand">
@@ -865,7 +888,6 @@
                             <option>Mogno</option>
                             <option>Oliveira</option>
                             <option>Dark Ash</option>
-                            <option>Teca</option>
                             <option>Painéis em Ébano</option>
                             <option value="Custom - describe in notes">Personalizado - descrever nas notas</option>
                         </select>
@@ -1043,8 +1065,8 @@ function applyFilter(btn) {
     });
     const LABELS = {
         'all': 'Todos os Produtos', 'Plinth': 'Plinths', 'Frame': 'Molduras',
-        'Record Holder': 'Suportes de Discos', 'Wooden Cartridge Case': 'Caixas para Gira-Agulhas',
-        'Vinyl Station': 'Estação de Vinil', 'LP Storage': 'Caixote de LP'
+        'Record Holder': 'Suportes de Discos', 'Wooden Cartridge Case': 'Cartucho de Madeira',
+        'Vinyl Furniture': 'Mobília de Vinil'
     };
     document.getElementById('prod-heading').textContent = LABELS[type] || type;
 }
@@ -1261,29 +1283,50 @@ document.querySelectorAll('[data-carousel]').forEach(wrap => {
 
     function restart() { clearInterval(timer); timer = setInterval(() => go(cur + 1), 3500); }
 
-    wrap.querySelectorAll('.pic-slide img').forEach(img => {
-        img.addEventListener('click', () => openLightbox(img.src));
+    const imgs = [...wrap.querySelectorAll('.pic-slide img')];
+    const srcs = imgs.map(im => im.src);
+    imgs.forEach((img, i) => {
+        img.addEventListener('click', () => openLightbox(srcs, i));
     });
 
     restart();
 });
 
 /* ── Lightbox ───────────────────────────────────────────── */
-function openLightbox(src) {
-    const lb = document.getElementById('lightbox');
-    document.getElementById('lightbox-img').src = src;
-    lb.classList.add('open');
+let lbSrcs = [], lbIdx = 0;
+
+function openLightbox(srcs, idx) {
+    lbSrcs = Array.isArray(srcs) ? srcs : [srcs];
+    lbIdx = idx !== undefined ? idx : 0;
+    document.getElementById('lightbox-img').src = lbSrcs[lbIdx];
+    const show = lbSrcs.length > 1;
+    document.getElementById('lightbox-prev').style.display = show ? 'flex' : 'none';
+    document.getElementById('lightbox-next').style.display = show ? 'flex' : 'none';
+    document.getElementById('lightbox').classList.add('open');
 }
+
+function lightboxNav(dir) {
+    lbIdx = (lbIdx + dir + lbSrcs.length) % lbSrcs.length;
+    document.getElementById('lightbox-img').src = lbSrcs[lbIdx];
+}
+
 function closeLightbox() {
     document.getElementById('lightbox').classList.remove('open');
 }
 document.getElementById('lightbox').addEventListener('click', e => { if (e.target !== document.getElementById('lightbox-img')) closeLightbox(); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+document.addEventListener('keydown', e => {
+    if (!document.getElementById('lightbox').classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') lightboxNav(-1);
+    if (e.key === 'ArrowRight') lightboxNav(1);
+});
 </script>
 
 <div id="lightbox">
     <button id="lightbox-close" onclick="closeLightbox()" aria-label="Fechar">&#x2715;</button>
+    <button id="lightbox-prev" onclick="lightboxNav(-1)" aria-label="Anterior">&#8249;</button>
     <img id="lightbox-img" src="" alt="Imagem do produto ampliada">
+    <button id="lightbox-next" onclick="lightboxNav(1)" aria-label="Seguinte">&#8250;</button>
 </div>
 </body>
 </html>
