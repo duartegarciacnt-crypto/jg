@@ -30,7 +30,8 @@
         /* ── Reset ──────────────────────────────────────────── */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; overflow-x: hidden; }
-        body { font-family: var(--sans); background: var(--cream); color: var(--ink-m); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        body { font-family: var(--sans); background: var(--cream); color: var(--ink-m); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; max-width: 100vw; }
+        img, video, iframe { max-width: 100%; height: auto; display: block; }
         button { cursor: pointer; font-family: inherit; }
 
         /* ── Password overlay ───────────────────────────────── */
@@ -399,6 +400,7 @@
         /* ── Responsive ─────────────────────────────────────── */
         @media (max-width: 960px) {
             .hero-inner { grid-template-columns: 1fr; gap: 36px; }
+            .hero-inner > * { min-width: 0; }
             .hero-right { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 28px; }
             .cats-grid { grid-template-columns: repeat(3,1fr); }
             .craft-inner { grid-template-columns: 1fr; gap: 40px; }
@@ -414,7 +416,8 @@
             .brand-logo small { display: none; }
             /* Hero */
             .hero { min-height: 320px; padding: 48px 20px 40px; }
-            .hero-eyebrow { white-space: normal; letter-spacing: 0.1em; }
+            .hero-eyebrow { white-space: normal; letter-spacing: 0.08em; font-size: 0.62rem; }
+            .hero h1 { font-size: clamp(1.8rem, 6vw, 2.4rem); }
             .hero-right p { font-size: 0.84rem; margin-bottom: 12px; }
             /* Cats section */
             .cats-section { padding: 44px 16px; }
@@ -441,11 +444,19 @@
             .footer-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
             .footer-right { text-align: left; }
         }
+        @media (max-width: 480px) {
+            /* Hide "Home" nav btn — logo click navigates home */
+            .nav-btn[data-tab="home"] { display: none; }
+            /* Tuck lang switch closer so nav buttons have room */
+            .lang-switch { margin-left: 12px; font-size: 0.62rem; }
+        }
         @media (max-width: 420px) {
             .cats-grid { grid-template-columns: 1fr; }
             .craft-details { grid-template-columns: 1fr; }
-            .nav-btn { padding: 6px 8px; font-size: 0.68rem; }
+            .nav-btn { padding: 6px 10px; font-size: 0.7rem; }
             .brand-logo .logo-name { font-size: 0.95rem; }
+            .hero { padding: 40px 16px 32px; }
+            .hero h1 { font-size: 1.8rem; }
         }
     </style>
 </head>
