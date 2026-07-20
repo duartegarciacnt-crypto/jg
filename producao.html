@@ -354,7 +354,6 @@ function pdfOrder(o){
     ["Dias restantes", daysText(daysLeft(o))],
   ].map(([k,v])=>`<tr><td>${esc(k)}</td><td>${esc(v)}</td></tr>`).join("");
   const refPhotos=(Array.isArray(o.client_photos)?o.client_photos:[]).map(s=>`<img src="${s}">`).join("");
-  const finalPhotos=(Array.isArray(o.final_photos)?o.final_photos:[]).map(s=>`<img src="${s}">`).join("");
   const html=`<!doctype html><html lang="pt"><head><meta charset="utf-8"><title>Encomenda ${esc(o.number||"")}</title>
 <style>
   *{box-sizing:border-box}
@@ -393,7 +392,6 @@ function pdfOrder(o){
     <tbody>${detail}</tbody>
   </table>
   ${refPhotos?`<div class="sec">Fotografias da encomenda</div><div class="photos">${refPhotos}</div>`:""}
-  ${finalPhotos?`<div class="sec">Fotos do produto final</div><div class="photos">${finalPhotos}</div>`:""}
   <div class="foot">Ficha de produção · gerado em ${esc(fmtDate(todayISO()))} · sem valores</div>
   <script>
     window.addEventListener('load',function(){
