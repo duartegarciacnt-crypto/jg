@@ -11,6 +11,14 @@
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.4}
   .wrap{max-width:760px;margin:0 auto;padding:0 16px 60px;overflow-x:hidden}
   header{display:flex;align-items:center;gap:8px;padding:12px 0;position:sticky;top:0;background:var(--bg);z-index:20}
+  /* cabeçalho + menu colam juntos ao topo (o header deixa de colar sozinho lá dentro) */
+  .topstick{position:sticky;top:0;background:var(--bg);z-index:20}
+  .topstick header{position:static}
+  .tabs{display:flex;gap:8px;overflow-x:auto;padding:0 0 12px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{flex:none;border:1px solid var(--line);background:var(--card);color:var(--dim);border-radius:999px;padding:9px 15px;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;font-family:inherit}
+  .tab:active{transform:translateY(1px)}
+  .tab.on{background:var(--accent);border-color:var(--accent);color:#fff}
   header h1{font-size:19px;margin:0;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   header .sub{color:var(--dim);font-size:12px;font-weight:400}
   .btn{border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:10px;padding:9px 13px;font-size:14px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px}
@@ -70,6 +78,25 @@
   .b-green{background:#dcf3e6;color:#1a8a4e}
   .b-amber{background:#fdf0dd;color:#b5730c}
   .b-red{background:#fbe2e2;color:#cc2f2f}
+  /* etiqueta de tipo (encomendas internas) */
+  .tag{background:#eceff3;color:#5b6774;border-radius:999px;padding:3px 10px;font-size:12px;font-weight:700;flex:none}
+  /* lista de progresso: cabeçalho de grupo, cartão por item, linha com caixa */
+  .gsec{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--dim);font-weight:800;margin:22px 0 10px}
+  .gsec:first-child{margin-top:4px}
+  .gcount{font-weight:700;letter-spacing:0;text-transform:none;color:var(--dim);margin-left:4px}
+  .card.item{padding:6px 8px 8px}
+  .ihead{display:flex;align-items:center;gap:10px;padding:8px 8px 10px;border-bottom:1px solid var(--line)}
+  .iname{flex:1;min-width:0;font-weight:700;font-size:16px}
+  .iprog{flex:none;font-size:12px;font-weight:700;color:var(--dim);background:var(--bg);border-radius:999px;padding:3px 10px}
+  .iprog.full{background:#dcf3e6;color:#1a8a4e}
+  .wsep{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--dim);font-weight:800;margin:12px 0 2px;padding:0 8px}
+  /* linha inteira clicável: alvo grande para o telemóvel */
+  .chk{display:flex;align-items:center;gap:12px;padding:12px 8px;cursor:pointer;border-radius:9px;user-select:none;-webkit-user-select:none}
+  .chk:active{background:var(--bg)}
+  .box{flex:none;width:24px;height:24px;border:2px solid var(--line);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;color:#fff;background:#fff}
+  .chk.on .box{background:var(--green);border-color:var(--green)}
+  .chl{flex:1;min-width:0;font-size:15px}
+  .chk.on .chl{text-decoration:line-through;color:var(--dim)}
   .empty{text-align:center;color:var(--dim);padding:50px 20px}
   .muted{color:var(--dim);font-size:12px;margin-top:10px}
   /* modal */
@@ -119,6 +146,10 @@ const phaseLabel=k=>(PHASES.find(p=>p[0]===k)||["",k||"—"])[1];
 /* Horas de recolha: só duas opções. */
 const SLOTS=[["am","09:00 – 13:00"],["pm","14:00 – 17:00"]];
 const slotLabel=k=>(SLOTS.find(s=>s[0]===k)||["",""])[1];
+/* Encomendas internas: sem cliente, para stock ou para experimentar. */
+const KINDS={stock:"Stock",prototype:"Protótipo"};
+const kindLabel=k=>KINDS[k]||"Interna";
+const isInternal=o=>String(o.kind||"client")==="internal";
 const DEADLINE_DAYS=10;                       // prazo de produção = data da encomenda + 10 dias
 const SKEY="s55_prod_session";
 
@@ -153,6 +184,17 @@ async function getOrders(){
   const list=await r.json();
   const n=x=>parseInt(String(x.number||"").replace(/\D/g,""))||0;
   return list.sort((a,b)=>n(a)-n(b));
+}
+async function getTasks(){
+  const r=await api("/rest/v1/tasks?select=*");
+  // 404 = a tabela ainda não existe (falta correr o supabase.sql). Não é falta de rede.
+  if(r.status===404) throw new Error("no table");
+  if(!r.ok) throw new Error("read");
+  return await r.json();
+}
+async function saveTask(id,fields){
+  const r=await api("/rest/v1/tasks?id=eq."+encodeURIComponent(id),{method:"PATCH",headers:{Prefer:"return=minimal"},body:JSON.stringify(fields)});
+  if(!r.ok) throw new Error(await r.text());
 }
 async function saveWorkflow(id,fields){
   const r=await api("/rest/v1/orders?id=eq."+encodeURIComponent(id),{method:"PATCH",headers:{Prefer:"return=minimal"},body:JSON.stringify(fields)});
@@ -233,55 +275,99 @@ function renderLogin(msg){
   </div>`;
   const pw=document.getElementById("pw"), go=document.getElementById("go");
   const submit=async()=>{ go.disabled=true; go.textContent="A entrar…"; document.getElementById("err").textContent="";
-    try{ await login(pw.value); renderList(); }
+    try{ await login(pw.value); renderApp(); }
     catch(e){ document.getElementById("err").textContent=e.message||"Falha"; go.disabled=false; go.textContent="Entrar"; } };
   go.onclick=submit; pw.onkeydown=e=>{ if(e.key==="Enter") submit(); };
   pw.focus();
 }
 
+/* ===== Menu de secções ===== */
+/* A primeira é a que abre por defeito. */
+const TABS=[["clients","Encomendas para clientes"],["internal","Encomendas internas"],["tasks","Tarefas"]];
+let tab=TABS[0][0];
+
 let pollTimer=null, orderCache=[];
-async function renderList(){
-  app.innerHTML=`<header>
-      <h1>Produção</h1>
-      <button class="btn ghost" id="refresh" title="Atualizar">↻</button>
-      <button class="btn ghost" id="logout" title="Sair">Sair</button>
-    </header>
-    <div id="list"><div class="empty">A carregar…</div></div>`;
+async function renderApp(){
+  app.innerHTML=`<div class="topstick">
+      <header>
+        <h1>Produção</h1>
+        <button class="btn ghost" id="refresh" title="Atualizar">↻</button>
+        <button class="btn ghost" id="logout" title="Sair">Sair</button>
+      </header>
+      <nav class="tabs" id="tabs">${TABS.map(([k,l])=>`<button class="tab${k===tab?" on":""}" data-tab="${esc(k)}">${esc(l)}</button>`).join("")}</nav>
+    </div>
+    <div id="tabview"></div>`;
   document.getElementById("logout").onclick=()=>{ setSession(null); clearInterval(pollTimer); renderLogin(); };
-  document.getElementById("refresh").onclick=()=>loadOrders();
-  await loadOrders();
+  document.getElementById("refresh").onclick=()=>renderTab();
+  app.querySelectorAll("[data-tab]").forEach(b=>b.onclick=()=>{
+    if(tab===b.dataset.tab) return;
+    tab=b.dataset.tab;
+    app.querySelectorAll("[data-tab]").forEach(x=>x.classList.toggle("on",x.dataset.tab===tab));
+    renderTab();
+  });
+  await renderTab();
   clearInterval(pollTimer);
-  pollTimer=setInterval(()=>{ if(!modalOpen) loadOrders(true); }, 25000);
+  // Atualiza periodicamente a secção que estiver aberta.
+  pollTimer=setInterval(()=>{ if(modalOpen) return;
+    if(tab==="tasks"){ if(!taskSaving) loadTasks(true); }   // não recarregar a meio de uma gravação
+    else loadOrders(true); }, 25000);
+}
+
+/* Desenha a secção escolhida no menu. */
+async function renderTab(){
+  const view=document.getElementById("tabview"); if(!view) return;
+  view.innerHTML=`<div id="list"><div class="empty">A carregar…</div></div>`;
+  if(tab==="tasks") await loadTasks(); else await loadOrders();
 }
 
 async function loadOrders(silent){
   let orders;
   try{ orders=await getOrders(); }
   catch(e){ if(String(e.message).match(/no session|expired/)){ renderLogin("A sessão expirou. Entra de novo."); return; }
-    if(!silent) document.getElementById("list").innerHTML=`<div class="empty">Sem ligação. Tenta ↻ atualizar.</div>`; return; }
+    const box=document.getElementById("list");
+    if(!silent && box) box.innerHTML=`<div class="empty">Sem ligação. Tenta ↻ atualizar.</div>`; return; }
   // As encomendas marcadas como "Enviado" saem da lista (ficam concluídas).
-  orders=orders.filter(o=>o.phase!=="shipped");
-  // Ordenar por prazo de produção (mais urgente primeiro; sem data vai para o fim).
-  orders.sort((a,b)=>{ const da=deadlineISO(a)||"9999-99-99", dbb=deadlineISO(b)||"9999-99-99"; return da<dbb?-1:da>dbb?1:0; });
-  orderCache=orders;
+  orderCache=orders.filter(o=>o.phase!=="shipped");
+  renderOrderList();
+}
+
+/* Desenha a lista da secção aberta: clientes ou internas. */
+function renderOrderList(){
   const list=document.getElementById("list"); if(!list) return;
-  if(!orders.length){ list.innerHTML=`<div class="empty">Sem encomendas em produção.<br>As novas aparecem aqui; as enviadas saem da lista.</div>`; return; }
-  list.innerHTML=orders.map(cardHTML).join("");
-  orders.forEach(wireCard);
+  const internal = tab==="internal";
+  const rows=orderCache.filter(o=>isInternal(o)===internal);
+  // Clientes: por prazo de produção (mais urgente primeiro; sem data vai para o fim).
+  // Internas: não têm prazo — mostram-se da mais recente para a mais antiga.
+  if(internal) rows.sort((a,b)=>String(b.order_date||"").localeCompare(String(a.order_date||"")));
+  else rows.sort((a,b)=>{ const da=deadlineISO(a)||"9999-99-99", dbb=deadlineISO(b)||"9999-99-99"; return da<dbb?-1:da>dbb?1:0; });
+  if(!rows.length){
+    list.innerHTML=internal
+      ? `<div class="empty">Sem encomendas internas.<br>São as peças para stock e os protótipos.</div>`
+      : `<div class="empty">Sem encomendas em produção.<br>As novas aparecem aqui; as enviadas saem da lista.</div>`;
+    return;
+  }
+  list.innerHTML=rows.map(cardHTML).join("");
+  rows.forEach(wireCard);
 }
 
 function cardHTML(o){
-  const dl=daysLeft(o);
-  const dlISO=deadlineISO(o);
+  const internal=isInternal(o);
+  const dl=internal?null:daysLeft(o);
+  const dlISO=internal?"":deadlineISO(o);
   const badge=dl==null?"":`<span class="badge ${daysClass(dl)}">${esc(daysText(dl))}</span>`;
-  const flag=o.dest_flag?` <span class="flag">${esc(o.dest_flag)}</span>`:"";
+  const flag=(!internal&&o.dest_flag)?` <span class="flag">${esc(o.dest_flag)}</span>`:"";
   const spec=specLine(o);
+  // Nas internas o lugar do cliente é ocupado pela etiqueta do tipo (Stock / Protótipo).
+  const head=internal
+    ? `<span class="tag">${esc(kindLabel(o.internal_kind))}</span>`
+    : `<span class="cust">${esc(o.customer||"")}${flag}</span>`;
   return `<div class="card row clickable" data-id="${esc(o.id)}">
     <div class="rmain">
-      <div class="top"><span class="num">${esc(o.number||"—")}</span><span class="cust">${esc(o.customer||"")}${flag}</span></div>
+      <div class="top"><span class="num">${esc(o.number||"—")}</span>${head}</div>
       ${o.summary?`<div class="summ">${esc(o.summary)}</div>`:""}
       ${spec?`<div class="plinth">${esc(spec)}</div>`:""}
       ${dlISO?`<div class="dl2">Prazo: ${esc(deadlineLong(o))}</div>`:""}
+      ${internal&&o.order_date?`<div class="dl2">Criada em ${esc(fmtDate(o.order_date))}</div>`:""}
     </div>
     <div class="ractions">
       ${badge}
@@ -296,9 +382,77 @@ function wireCard(o){
   card.onclick=()=>openView(o);      // clicar no cartão abre o modo Ver
 }
 
+/* ----- Tarefas: lista de progresso dos modelos e acessórios -----
+   Uma caixa por item × tarefa × madeira. Marcar risca a linha; desmarcar repõe.
+   Nada desaparece da lista. */
+let taskCache=[], taskSaving=0;
+async function loadTasks(silent){
+  let tasks;
+  try{ tasks=await getTasks(); }
+  catch(e){ if(String(e.message).match(/no session|expired/)){ renderLogin("A sessão expirou. Entra de novo."); return; }
+    const box=document.getElementById("list");
+    if(box && String(e.message)==="no table"){
+      box.innerHTML=`<div class="empty">Lista ainda não configurada.<br>Falta correr o <b>supabase.sql</b> no Supabase.</div>`; return; }
+    if(!silent && box) box.innerHTML=`<div class="empty">Sem ligação. Tenta ↻ atualizar.</div>`; return; }
+  taskCache=Array.isArray(tasks)?tasks:[];
+  renderTaskList();
+}
+const GROUPS=[["model","Gira-discos"],["accessory","Acessórios"]];
+/* Agrupa as linhas por item, pela ordem definida no Supabase. */
+function taskItems(cat){
+  const byItem=new Map();
+  taskCache.filter(t=>t.category===cat)
+    .sort((a,b)=>(a.item_pos-b.item_pos)||(a.pos-b.pos))
+    .forEach(t=>{ if(!byItem.has(t.item)) byItem.set(t.item,[]); byItem.get(t.item).push(t); });
+  return [...byItem.entries()];
+}
+function checkRow(t){
+  return `<div class="chk${t.done?" on":""}" data-chk="${esc(t.id)}">
+    <span class="box">${t.done?"✓":""}</span><span class="chl">${esc(t.task)}</span></div>`;
+}
+function itemCardHTML(item,rows){
+  const done=rows.filter(t=>t.done).length;
+  // Tarefas sem madeira primeiro; as restantes agrupadas por madeira, pela ordem original.
+  const plain=rows.filter(t=>!t.wood), woods=[];
+  rows.filter(t=>t.wood).forEach(t=>{ const g=woods.find(w=>w[0]===t.wood); g?g[1].push(t):woods.push([t.wood,[t]]); });
+  return `<div class="card item">
+    <div class="ihead"><span class="iname">${esc(item)}</span><span class="iprog${done===rows.length?" full":""}">${done}/${rows.length}</span></div>
+    ${plain.map(checkRow).join("")}
+    ${woods.map(([w,ts])=>`<div class="wsep">${esc(w)}</div>${ts.map(checkRow).join("")}`).join("")}
+  </div>`;
+}
+function renderTaskList(){
+  const list=document.getElementById("list"); if(!list) return;
+  if(!taskCache.length){ list.innerHTML=`<div class="empty">Lista vazia.</div>`; return; }
+  list.innerHTML=GROUPS.map(([cat,label])=>{
+    const items=taskItems(cat); if(!items.length) return "";
+    const tot=taskCache.filter(t=>t.category===cat), dn=tot.filter(t=>t.done).length;
+    return `<div class="gsec">${esc(label)} <span class="gcount">${dn}/${tot.length}</span></div>`
+      + items.map(([item,rows])=>itemCardHTML(item,rows)).join("");
+  }).join("");
+  list.querySelectorAll("[data-chk]").forEach(el=>el.onclick=()=>toggleTask(el.dataset.chk,el));
+}
+/* Marca/desmarca já no ecrã e grava a seguir; se falhar, desfaz. */
+async function toggleTask(id,el){
+  const t=taskCache.find(x=>x.id===id); if(!t||el.dataset.busy) return;
+  const done=!t.done, now=new Date().toISOString();
+  t.done=done; t.done_at=done?now:null;
+  el.classList.toggle("on",done);
+  el.querySelector(".box").textContent=done?"✓":"";
+  const card=el.closest(".item");
+  if(card){ const rows=[...card.querySelectorAll("[data-chk]")];
+    const n=rows.filter(r=>r.classList.contains("on")).length;
+    const p=card.querySelector(".iprog"); if(p){ p.textContent=n+"/"+rows.length; p.classList.toggle("full",n===rows.length); } }
+  el.dataset.busy="1"; taskSaving++;
+  try{ await saveTask(id,{done, done_at:done?now:null, updated_at:now, updated_by:"produção"}); }
+  catch(e){ t.done=!done; t.done_at=null; toast("Não gravou. Tenta de novo."); renderTaskList(); }
+  finally{ taskSaving--; delete el.dataset.busy; }
+}
+
 /* ----- Ver (só leitura) ----- */
 function openView(o){
-  const dl=daysLeft(o);
+  const internal=isInternal(o);
+  const dl=internal?null:daysLeft(o);
   const specs=o.piece_specs||{};
   const ref=Array.isArray(o.client_photos)?o.client_photos:[];
   const fin=Array.isArray(o.final_photos)?o.final_photos:[];
@@ -309,16 +463,18 @@ function openView(o){
     ? `<div class="thumbs vthumbs">${arr.map((s,i)=>`<div class="th"><img src="${s}" data-fs="${tag}:${i}" alt="foto ${i+1}"><span class="thn">${i+1}</span></div>`).join("")}</div>`
     : `<div class="vempty">Sem fotos.</div>`;
   const body=`
-    <div class="vsec">Cliente</div>
-    ${row("Nome", esc(o.customer||"—")+flag)}
-    <div class="vsec">Encomenda</div>
+    ${internal
+      ? `<div class="vsec">Encomenda interna</div>${row("Tipo", esc(kindLabel(o.internal_kind)))}`
+      : `<div class="vsec">Cliente</div>${row("Nome", esc(o.customer||"—")+flag)}<div class="vsec">Encomenda</div>`}
     ${row("Modelo", esc(o.summary||"—"))}
     ${row("Madeira", esc(specs.wood||"—"))}
     ${row("Acabamento", esc(specs.paint||"—"))}
     ${row("Espessura", esc(specs.thickness||"—"))}
     ${row("Base", esc(specs.base||"—"))}
     ${row("Estado", `<span class="pill ${esc(o.phase||"queued")}">${esc(phaseLabel(o.phase))}</span>`)}
-    ${row("Prazo", (deadlineLong(o)||"—")+(dl!=null?` &nbsp;<span class="badge ${daysClass(dl)}">${esc(daysText(dl))}</span>`:""))}
+    ${internal
+      ? row("Criada em", esc(fmtDate(o.order_date)))
+      : row("Prazo", (deadlineLong(o)||"—")+(dl!=null?` &nbsp;<span class="badge ${daysClass(dl)}">${esc(daysText(dl))}</span>`:""))}
     <div class="vlbl">Comentários</div>
     <div class="vnotes">${o.order_notes?esc(o.order_notes):"—"}</div>
     <div class="vlbl">Fotos da encomenda</div>${thumbs(ref,"ref")}
@@ -329,7 +485,7 @@ function openView(o){
     ${row("Data", o.pickup_date?fmtDate(o.pickup_date):"—")}
     ${row("Hora", o.pickup_slot?esc(slotLabel(o.pickup_slot)):"—")}
     ${o.updated_by?row("Última alteração", esc(o.updated_by)+(o.updated_at?" · "+esc(fmtWhen(o.updated_at)):"")):""}`;
-  const m=openModal("Encomenda "+(o.number||""), body,
+  const m=openModal((internal?"Interna ":"Encomenda ")+(o.number||""), body,
     `<button class="btn ghost" data-ok>Fechar</button><button class="btn" data-pdf>⬇ PDF</button>`,
     `<button class="btn primary sm" data-toedit>Editar</button>`);
   m.ov.querySelector("[data-ok]").onclick=m.close;
@@ -481,7 +637,7 @@ function openEdit(o){
 }
 
 /* arranque */
-if(getSession()) renderList(); else renderLogin();
+if(getSession()) renderApp(); else renderLogin();
 </script>
 </body>
 </html>
